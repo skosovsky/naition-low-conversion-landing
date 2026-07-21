@@ -1,3 +1,29 @@
+import * as amplitude from '@amplitude/unified';
+
+const AMPLITUDE_INITIALIZED_KEY = '__naitionAmplitudeInitialized';
+
+function initializeAmplitude() {
+    if (typeof window === 'undefined' || window[AMPLITUDE_INITIALIZED_KEY]) {
+        return;
+    }
+
+    window[AMPLITUDE_INITIALIZED_KEY] = true;
+    amplitude.initAll('663d1cc85176e9b1f2c6e4204bcb23d5', {
+        analytics: { autocapture: true },
+        sessionReplay: { sampleRate: 1 },
+    });
+}
+
+function trackEvent(eventName, eventProperties) {
+    if (typeof window === 'undefined' || !window[AMPLITUDE_INITIALIZED_KEY]) {
+        return;
+    }
+
+    amplitude.track(eventName, eventProperties);
+}
+
+initializeAmplitude();
+
 document.addEventListener('DOMContentLoaded', () => {
     const registrationSection = document.getElementById('registration');
     const form = document.getElementById('registration-form');
@@ -6,6 +32,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     registerButtons.forEach((button) => {
         button.addEventListener('click', () => {
+            const pricingCard = button.closest('.pricing-card');
+            const planName = pricingCard?.querySelector('h3')?.textContent?.trim() || 'Unknown';
+
+            trackEvent('Pricing Plan Selected', { plan: planName });
+
             if (!registrationSection) {
                 return;
             }
@@ -23,6 +54,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const submitButton = form.querySelector('button[type="submit"]');
         const formData = new FormData(form);
+        let responseStatus = null;
+
+        trackEvent('Registration Form Submitted');
 
         if (submitButton instanceof HTMLButtonElement) {
             submitButton.disabled = true;
@@ -38,6 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 method: 'POST',
                 body: formData,
             });
+            responseStatus = response.status;
 
             const data = await response.json();
 
@@ -50,8 +85,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 message.className = 'form-message success';
             }
 
+            trackEvent('Registration Completed');
             form.reset();
         } catch (error) {
+            trackEvent('Registration Failed', {
+                failure_type: responseStatus === null ? 'network' : 'server',
+                response_status: responseStatus,
+            });
+
             if (message) {
                 message.textContent = error instanceof Error ? error.message : 'Не удалось отправить заявку.';
                 message.className = 'form-message error';

@@ -1,0 +1,13 @@
+{
+  "name": "naition-low-conversion-landing",
+  "private": true,
+  "scripts": {
+    "build": "esbuild js/main.js --bundle --minify --platform=browser --format=iife --outfile=js/main.bundle.js"
+  },
+  "dependencies": {
+    "@amplitude/unified": "^1.1.26"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.1"
+  }
+}

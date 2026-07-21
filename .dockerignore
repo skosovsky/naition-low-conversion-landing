@@ -1,4 +1,5 @@
 data/app.db
 .git
 .DS_Store
+node_modules
 *.md
