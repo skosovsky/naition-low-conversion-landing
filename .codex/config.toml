@@ -1,0 +1,21 @@
+[mcp_servers.chrome_devtools]
+command = "npx"
+args = ["-y", "chrome-devtools-mcp@latest", "--browser-url=http://127.0.0.1:9222"]
+env = { npm_config_cache = ".codex/npm-cache" }
+startup_timeout_sec = 30
+
+[mcp_servers.yandex_metrica]
+command = "npx"
+args = ["-y", "yandex-metrica-mcp"]
+env = { YANDEX_METRIKA_COUNTER_ID = "110921681", npm_config_cache = ".codex/npm-cache" }
+startup_timeout_sec = 30
+
+[mcp_servers.google_analytics]
+command = "pipx"
+args = ["run", "analytics-mcp"]
+env_vars = ["GOOGLE_APPLICATION_CREDENTIALS", "GOOGLE_CLOUD_PROJECT"]
+startup_timeout_sec = 30
+
+[mcp_servers.amplitude]
+url = "https://mcp.amplitude.com/mcp"
+auth = "oauth"

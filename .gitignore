@@ -1,1 +1,7 @@
 node_modules/
+.codex/npm-cache/
+.codex/chrome-mcp-profile/
+.codex/chrome-mcp.log
+.codex/chrome-mcp.pid
+.codex/exports/
+analytics/
