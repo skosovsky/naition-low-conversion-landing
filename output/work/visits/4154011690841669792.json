@@ -1,0 +1,33 @@
+{
+  "visitId": "4154011690841669792",
+  "conversion": {
+    "status": "not_attempted",
+    "evidence": "Взаимодействие с conversionGoal и submit не зафиксированы."
+  },
+  "journey": {
+    "durationSec": 23,
+    "maxScrollY": 310,
+    "scrollDepthPct": 3.6,
+    "sectionsSeen": [
+      "s1"
+    ],
+    "deepestSection": "s1",
+    "funnelStage": "load"
+  },
+  "primary": {
+    "label": "Первый экран не дал явного следующего шага",
+    "behavior": "Посетитель остался в первом экране и не достиг блока с форматом курса или предложением.",
+    "friction": "На первом экране нет CTA, поэтому после чтения оффера отсутствует очевидное продолжение пути.",
+    "section": "s1",
+    "funnelStage": "load",
+    "evidence": "maxScrollY=310, scrollDepth=3.6%, durationSec=23, deepestSection=hero; heroCTA=false",
+    "suggestedFix": "Добавить на первый экран явный переход к тарифам и короткую строку доверия."
+  },
+  "secondary": [],
+  "dataQuality": {
+    "grade": "good",
+    "rawEvents": 63,
+    "parsedEvents": 46,
+    "source": "raw-validated analytics/visit-features derivative"
+  }
+}

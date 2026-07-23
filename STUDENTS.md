@@ -23,7 +23,7 @@
 ## Что нельзя менять (сломается симулятор)
 
 - Форма `#registration-form` с `action="api/submit.php"`
-- Поля формы: `name`, `phone`, `email`, `purpose`
+- Поля формы: `name`, `phone`, `email`
 - Скрытое поле `bot_session_id`
 - Скрипт `<script src="api/visit.php">` в `<head>`
 - Классы: `.btn-register`, `.pricing-section`, `.program-module`, `.program-list`

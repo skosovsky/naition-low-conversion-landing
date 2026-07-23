@@ -1,0 +1,38 @@
+{
+  "visitId": "4138128073833840642",
+  "conversion": {
+    "status": "not_attempted",
+    "evidence": "Взаимодействие с conversionGoal и submit не зафиксированы."
+  },
+  "journey": {
+    "durationSec": 440.9,
+    "maxScrollY": 6084,
+    "scrollDepthPct": 68.8,
+    "sectionsSeen": [
+      "s1",
+      "s2",
+      "s3",
+      "s4",
+      "s5",
+      "s6"
+    ],
+    "deepestSection": "s6",
+    "funnelStage": "m5"
+  },
+  "primary": {
+    "label": "Длинный информационный путь прервал движение к тарифам",
+    "behavior": "Посетитель прошёл до секции «Практика сердечно-легочной реанимации», но не достиг тарифной CTA и формы.",
+    "friction": "До первого конверсионного действия расположено несколько плотных и частично повторяющихся информационных секций.",
+    "section": "s6",
+    "funnelStage": "m5",
+    "evidence": "maxScrollY=6084, scrollDepth=68.8%, durationSec=440.9, deepestSection=emotional_photo; pricingReached=false; formEvents=0",
+    "suggestedFix": "Сократить плотные описания и раньше обозначить переход к формату участия."
+  },
+  "secondary": [],
+  "dataQuality": {
+    "grade": "good",
+    "rawEvents": 175,
+    "parsedEvents": 137,
+    "source": "raw-validated analytics/visit-features derivative"
+  }
+}

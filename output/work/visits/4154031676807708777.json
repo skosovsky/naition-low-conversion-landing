@@ -1,0 +1,36 @@
+{
+  "visitId": "4154031676807708777",
+  "conversion": {
+    "status": "not_attempted",
+    "evidence": "Взаимодействие с conversionGoal и submit не зафиксированы."
+  },
+  "journey": {
+    "durationSec": 46.1,
+    "maxScrollY": 3937,
+    "scrollDepthPct": 46.3,
+    "sectionsSeen": [
+      "s1",
+      "s2",
+      "s3",
+      "s4"
+    ],
+    "deepestSection": "s4",
+    "funnelStage": "m3"
+  },
+  "primary": {
+    "label": "Длинный информационный путь прервал движение к тарифам",
+    "behavior": "Посетитель прошёл до секции «Виды травм и состояний», но не достиг тарифной CTA и формы.",
+    "friction": "До первого конверсионного действия расположено несколько плотных и частично повторяющихся информационных секций.",
+    "section": "s4",
+    "funnelStage": "m3",
+    "evidence": "maxScrollY=3937, scrollDepth=46.3%, durationSec=46.1, deepestSection=injuries; pricingReached=false; formEvents=0",
+    "suggestedFix": "Сократить плотные описания и раньше обозначить переход к формату участия."
+  },
+  "secondary": [],
+  "dataQuality": {
+    "grade": "good",
+    "rawEvents": 128,
+    "parsedEvents": 104,
+    "source": "raw-validated analytics/visit-features derivative"
+  }
+}

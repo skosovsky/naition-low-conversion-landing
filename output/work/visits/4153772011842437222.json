@@ -1,0 +1,35 @@
+{
+  "visitId": "4153772011842437222",
+  "conversion": {
+    "status": "not_attempted",
+    "evidence": "Взаимодействие с conversionGoal и submit не зафиксированы."
+  },
+  "journey": {
+    "durationSec": 40.1,
+    "maxScrollY": 3660,
+    "scrollDepthPct": 43,
+    "sectionsSeen": [
+      "s1",
+      "s2",
+      "s3"
+    ],
+    "deepestSection": "s3",
+    "funnelStage": "m3"
+  },
+  "primary": {
+    "label": "Длинный информационный путь прервал движение к тарифам",
+    "behavior": "Посетитель прошёл до секции «Программа курса», но не достиг тарифной CTA и формы.",
+    "friction": "До первого конверсионного действия расположено несколько плотных и частично повторяющихся информационных секций.",
+    "section": "s3",
+    "funnelStage": "m3",
+    "evidence": "maxScrollY=3660, scrollDepth=43%, durationSec=40.1, deepestSection=program; pricingReached=false; formEvents=0",
+    "suggestedFix": "Сократить плотные описания и раньше обозначить переход к формату участия."
+  },
+  "secondary": [],
+  "dataQuality": {
+    "grade": "good",
+    "rawEvents": 114,
+    "parsedEvents": 91,
+    "source": "raw-validated analytics/visit-features derivative"
+  }
+}

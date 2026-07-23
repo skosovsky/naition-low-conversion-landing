@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const registrationSection = document.getElementById('registration');
     const form = document.getElementById('registration-form');
     const message = document.getElementById('form-message');
+    const selectionMessage = document.getElementById('registration-selection');
     const registerButtons = document.querySelectorAll('.btn-register');
 
     registerButtons.forEach((button) => {
@@ -39,6 +40,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (!registrationSection) {
                 return;
+            }
+
+            registerButtons.forEach((registerButton) => {
+                registerButton.setAttribute('aria-pressed', 'false');
+                registerButton.closest('.pricing-card')?.classList.remove('is-selected');
+            });
+            button.setAttribute('aria-pressed', 'true');
+            pricingCard?.classList.add('is-selected');
+
+            if (selectionMessage && planName !== 'Unknown') {
+                selectionMessage.textContent = `Вы выбрали тариф «${planName}». Оставьте контакты — подтвердим место и детали участия.`;
+                selectionMessage.classList.add('has-selection');
             }
 
             registrationSection.scrollIntoView({ behavior: 'smooth', block: 'start' });

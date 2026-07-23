@@ -1,0 +1,45 @@
+{
+  "visitId": "4153557553552818387",
+  "conversion": {
+    "status": "not_attempted",
+    "evidence": "Взаимодействие с conversionGoal и submit не зафиксированы."
+  },
+  "journey": {
+    "durationSec": 3.8,
+    "maxScrollY": 3309,
+    "scrollDepthPct": 38.9,
+    "sectionsSeen": [
+      "s1",
+      "s2",
+      "s3"
+    ],
+    "deepestSection": "s3",
+    "funnelStage": "m2"
+  },
+  "primary": {
+    "label": "Длинный информационный путь прервал движение к тарифам",
+    "behavior": "Посетитель прошёл до секции «Программа курса», но не достиг тарифной CTA и формы.",
+    "friction": "До первого конверсионного действия расположено несколько плотных и частично повторяющихся информационных секций.",
+    "section": "s3",
+    "funnelStage": "m2",
+    "evidence": "maxScrollY=3309, scrollDepth=38.9%, durationSec=3.8, deepestSection=program; pricingReached=false; formEvents=0",
+    "suggestedFix": "Сократить плотные описания и раньше обозначить переход к формату участия."
+  },
+  "secondary": [
+    {
+      "label": "Статическая карточка выглядела интерактивной",
+      "behavior": "В визите зафиксирован клик по информационной карточке с pointer/hover-оформлением.",
+      "friction": "Клик не приводит к действию и создаёт ложное ожидание перед следующим шагом.",
+      "section": "s3",
+      "funnelStage": "m2",
+      "evidence": "click target содержит feature-card/program-module/injury-card; falseAffordances=article.feature-card, article.program-module, article.injury-card",
+      "suggestedFix": "Убрать интерактивный cursor/hover у элементов без обработчика."
+    }
+  ],
+  "dataQuality": {
+    "grade": "good",
+    "rawEvents": 53,
+    "parsedEvents": 40,
+    "source": "raw-validated analytics/visit-features derivative"
+  }
+}

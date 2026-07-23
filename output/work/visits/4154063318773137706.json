@@ -1,0 +1,41 @@
+{
+  "visitId": "4154063318773137706",
+  "conversion": {
+    "status": "attempted_unconfirmed",
+    "evidence": "Есть взаимодействие с полями, подтверждённого submit нет."
+  },
+  "journey": {
+    "durationSec": 57.2,
+    "maxScrollY": 7701,
+    "scrollDepthPct": 90.5,
+    "sectionsSeen": [
+      "s1",
+      "s2",
+      "s3",
+      "s4",
+      "s5",
+      "s6",
+      "s7",
+      "s8",
+      "s9"
+    ],
+    "deepestSection": "s9",
+    "funnelStage": "interaction_start"
+  },
+  "primary": {
+    "label": "Заполнение формы началось, но не завершилось отправкой",
+    "behavior": "Посетитель дошёл до формы и взаимодействовал с её полями, но подтверждённого submit не зафиксировано.",
+    "friction": "Следующий ожидаемый шаг — отправка формы — не произошёл после начала ввода.",
+    "section": "s9",
+    "funnelStage": "interaction_start",
+    "evidence": "maxScrollY=7701, scrollDepth=90.5%, durationSec=57.2, deepestSection=registration; submit=false; formInteraction=true",
+    "suggestedFix": "Сделать ожидания от заявки и следующий шаг понятнее, сохранив текущий контракт полей."
+  },
+  "secondary": [],
+  "dataQuality": {
+    "grade": "good",
+    "rawEvents": 385,
+    "parsedEvents": 348,
+    "source": "raw-validated analytics/visit-features derivative"
+  }
+}

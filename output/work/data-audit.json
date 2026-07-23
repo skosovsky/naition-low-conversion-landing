@@ -1,0 +1,3194 @@
+{
+  "generatedFrom": "raw JSON files under analytics/webvisor-20260717-20260723/visits only",
+  "definitions": {
+    "durationSec": "max(metadata ym:s:visitDurationShort, fetchHit.result.data.duration); source values are seconds",
+    "pageHeight": "maximum resize.meta.pageHeight, falling back to fetchHit.result.data.documentHeight",
+    "maxScrollY": "maximum page scroll event meta.y",
+    "scrollDepthPct": "min(100, (maxScrollY + viewportHeight) / pageHeight * 100); viewport-bottom exposure, not raw scrollY/pageHeight",
+    "clicks": "count of raw Webvisor event.type=click",
+    "formEvents": "raw focus/change events whose target is a form control, plus submit; blur and ordinary clicks are excluded",
+    "converted": "at least one raw Webvisor event.type=submit; submit formId resolves to the registration form in every converted visit"
+  },
+  "validation": {
+    "discoveredJsonFiles": 514,
+    "validJsonFiles": 514,
+    "invalidJsonFiles": 0,
+    "invalidFiles": [],
+    "schemaIssueFiles": 0,
+    "schemaErrors": [],
+    "uniqueVisitIds": 514,
+    "duplicateVisitIds": [],
+    "encodedPayloadsChecked": 73145,
+    "invalidEncodedEventPayloads": 0,
+    "filenameVisitIdMatches": true,
+    "metadataVisitIdMatches": true,
+    "invalidDateTimes": []
+  },
+  "sourcePeriod": {
+    "firstVisitDateTime": "2026-07-21 19:54:56",
+    "lastVisitDateTime": "2026-07-23 18:13:08",
+    "days": [
+      "2026-07-21",
+      "2026-07-22",
+      "2026-07-23"
+    ],
+    "visitsByDay": [
+      {
+        "day": "2026-07-21",
+        "n": 11
+      },
+      {
+        "day": "2026-07-22",
+        "n": 502
+      },
+      {
+        "day": "2026-07-23",
+        "n": 1
+      }
+    ]
+  },
+  "schemaProfile": {
+    "topLevelKeys": [
+      "visit_id",
+      "status",
+      "metadata",
+      "provenance",
+      "responses"
+    ],
+    "responseKeys": [
+      "getVisitInfo",
+      "getCalculatedVisitInfo",
+      "fetchHit"
+    ],
+    "usefulRawFields": [
+      "metadata.ym:s:dateTime",
+      "metadata.ym:s:visitDurationShort",
+      "metadata.ym:s:trafficSource",
+      "metadata.ym:s:operatingSystem",
+      "metadata.ym:s:browser",
+      "responses.fetchHit[].result.data.{duration,documentHeight,windowHeight,url,events}",
+      "events[group=page].data.content[] for DOM ids/tags/attributes",
+      "events[group=event].data.{time,type,target,meta}"
+    ],
+    "eventGroups": [
+      {
+        "name": "event",
+        "n": 72618
+      },
+      {
+        "name": "activity",
+        "n": 8724
+      },
+      {
+        "name": "mutation",
+        "n": 4895
+      },
+      {
+        "name": "page",
+        "n": 527
+      }
+    ],
+    "eventTypes": [
+      {
+        "name": "mousemove",
+        "n": 34925
+      },
+      {
+        "name": "scroll",
+        "n": 25822
+      },
+      {
+        "name": "change",
+        "n": 2455
+      },
+      {
+        "name": "click",
+        "n": 1935
+      },
+      {
+        "name": "mousedown",
+        "n": 1922
+      },
+      {
+        "name": "mouseup",
+        "n": 1921
+      },
+      {
+        "name": "eof",
+        "n": 1042
+      },
+      {
+        "name": "windowfocus",
+        "n": 629
+      },
+      {
+        "name": "resize",
+        "n": 538
+      },
+      {
+        "name": "windowblur",
+        "n": 533
+      },
+      {
+        "name": "focus",
+        "n": 528
+      },
+      {
+        "name": "keystroke",
+        "n": 253
+      },
+      {
+        "name": "blur",
+        "n": 103
+      },
+      {
+        "name": "submit",
+        "n": 12
+      }
+    ],
+    "inputSelectorsByVisitPresence": [
+      {
+        "name": "input[name=\"email\"]",
+        "n": 514
+      },
+      {
+        "name": "input[name=\"name\"]",
+        "n": 514
+      },
+      {
+        "name": "input[name=\"phone\"]",
+        "n": 514
+      },
+      {
+        "name": "textarea[name=\"purpose\"]",
+        "n": 514
+      }
+    ],
+    "fetchHitCount": {
+      "n": 514,
+      "min": 1,
+      "p25": 1,
+      "median": 1,
+      "p75": 1,
+      "p90": 1,
+      "p95": 1,
+      "max": 8,
+      "mean": 1.03
+    },
+    "rawEventCount": {
+      "n": 514,
+      "min": 11,
+      "p25": 155,
+      "median": 172,
+      "p75": 184,
+      "p90": 195,
+      "p95": 203.35,
+      "max": 400,
+      "mean": 168.8
+    },
+    "parsedDomNodeCount": {
+      "n": 514,
+      "min": 528,
+      "p25": 535,
+      "median": 536,
+      "p75": 536,
+      "p90": 536,
+      "p95": 536,
+      "max": 558,
+      "mean": 535.79
+    },
+    "visitsMissingPageHeight": [],
+    "visitsWithoutPageSnapshot": [],
+    "sourceUrls": [
+      "https://skosovsky.naition.sortedmap.ru/",
+      "https://skosovsky.naition.sortedmap.ru/?_ym_debug=2",
+      "https://skosovsky.naition.sortedmap.ru/?_ym_status-check=110921681&_ym_lang=ru"
+    ]
+  },
+  "conversion": {
+    "totalVisits": 514,
+    "convertedVisits": 12,
+    "attemptedUnconfirmedVisits": 5,
+    "notAttemptedVisits": 497,
+    "nonConvertedVisits": 502,
+    "conversionRatePct": 2.33,
+    "convertedVisitIds": [
+      "4153558868547600497",
+      "4153585275004518656",
+      "4153687848509243517",
+      "4153757390007697737",
+      "4153821895986774432",
+      "4153906850006302916",
+      "4153909347040362779",
+      "4153989879216734693",
+      "4153990674676449514",
+      "4154104844803899552",
+      "4154133201156571235",
+      "4154152370086084768"
+    ],
+    "attemptedUnconfirmedVisitIds": [
+      "4153558868591378514",
+      "4153948810264182817",
+      "4154005856544096319",
+      "4154063318773137706",
+      "4154073931031511351"
+    ],
+    "totalSubmitEvents": 12
+  },
+  "funnelReady": {
+    "definitions": {
+      "load": "all valid raw visits",
+      "firstViewport": "maxScrollY >= viewportHeight",
+      "anyClick": "at least one event.type=click",
+      "interactionStart": "focus or change on a DOM input/textarea/select",
+      "attemptedUnconfirmed": "interactionStart without submit",
+      "converted": "at least one event.type=submit"
+    },
+    "stages": [
+      {
+        "stage": "load",
+        "n": 514,
+        "pctOfLoad": 100
+      },
+      {
+        "stage": "firstViewport",
+        "n": 494,
+        "pctOfLoad": 96.11
+      },
+      {
+        "stage": "anyClick",
+        "n": 494,
+        "pctOfLoad": 96.11
+      },
+      {
+        "stage": "interactionStart",
+        "n": 17,
+        "pctOfLoad": 3.31
+      },
+      {
+        "stage": "converted",
+        "n": 12,
+        "pctOfLoad": 2.33
+      }
+    ]
+  },
+  "visitFeaturesCrossCheck": {
+    "role": "cross-check only; all reported analytics above are derived from raw JSON",
+    "directory": "analytics/visit-features",
+    "featureFiles": 514,
+    "invalidFeatureFiles": [],
+    "statusCounts": [
+      {
+        "name": "not_attempted",
+        "n": 497
+      },
+      {
+        "name": "confirmed",
+        "n": 12
+      },
+      {
+        "name": "attempted",
+        "n": 5
+      }
+    ],
+    "mismatches": []
+  },
+  "distributions": {
+    "durationSec": {
+      "summary": {
+        "n": 514,
+        "min": 0,
+        "p25": 47,
+        "median": 51,
+        "p75": 55,
+        "p90": 59,
+        "p95": 60,
+        "max": 1706,
+        "mean": 58.56
+      },
+      "converted": {
+        "n": 12,
+        "min": 51,
+        "p25": 53.75,
+        "median": 56.5,
+        "p75": 60.5,
+        "p90": 63.8,
+        "p95": 64.45,
+        "max": 65,
+        "mean": 57.25
+      },
+      "nonConverted": {
+        "n": 502,
+        "min": 0,
+        "p25": 47,
+        "median": 51,
+        "p75": 55,
+        "p90": 58,
+        "p95": 60,
+        "max": 1706,
+        "mean": 58.59
+      },
+      "histogram": [
+        {
+          "range": "0–<5",
+          "n": 3,
+          "pct": 0.58
+        },
+        {
+          "range": "5–<15",
+          "n": 4,
+          "pct": 0.78
+        },
+        {
+          "range": "15–<30",
+          "n": 13,
+          "pct": 2.53
+        },
+        {
+          "range": "30–<60",
+          "n": 462,
+          "pct": 89.88
+        },
+        {
+          "range": "60–<120",
+          "n": 29,
+          "pct": 5.64
+        },
+        {
+          "range": "120–<300",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "range": "300+",
+          "n": 3,
+          "pct": 0.58
+        }
+      ]
+    },
+    "maxScrollY": {
+      "summary": {
+        "n": 514,
+        "min": 0,
+        "p25": 7537,
+        "median": 7577,
+        "p75": 7699,
+        "p90": 7793,
+        "p95": 7793,
+        "max": 7800,
+        "mean": 6908.51
+      },
+      "converted": {
+        "n": 12,
+        "min": 7537,
+        "p25": 7537,
+        "median": 7548,
+        "p75": 7629.75,
+        "p90": 7682.7,
+        "p95": 7692.4,
+        "max": 7699,
+        "mean": 7583.08
+      },
+      "nonConverted": {
+        "n": 502,
+        "min": 0,
+        "p25": 7537,
+        "median": 7579.5,
+        "p75": 7701,
+        "p90": 7793,
+        "p95": 7793,
+        "max": 7800,
+        "mean": 6892.39
+      },
+      "histogram": [
+        {
+          "range": "0–<1",
+          "n": 7,
+          "pct": 1.36
+        },
+        {
+          "range": "1–<720",
+          "n": 13,
+          "pct": 2.53
+        },
+        {
+          "range": "720–<2000",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "range": "2000–<4000",
+          "n": 25,
+          "pct": 4.86
+        },
+        {
+          "range": "4000–<6000",
+          "n": 37,
+          "pct": 7.2
+        },
+        {
+          "range": "6000–<8000",
+          "n": 432,
+          "pct": 84.05
+        },
+        {
+          "range": "8000+",
+          "n": 0,
+          "pct": 0
+        }
+      ]
+    },
+    "scrollDepthPct": {
+      "summary": {
+        "n": 514,
+        "min": 11.31,
+        "p25": 96.99,
+        "median": 97.5,
+        "p75": 98.92,
+        "p90": 100,
+        "p95": 100,
+        "max": 100,
+        "mean": 90.26
+      },
+      "converted": {
+        "n": 12,
+        "min": 96.99,
+        "p25": 96.99,
+        "median": 97.12,
+        "p75": 98.09,
+        "p90": 98.7,
+        "p95": 98.82,
+        "max": 98.9,
+        "mean": 97.53
+      },
+      "nonConverted": {
+        "n": 502,
+        "min": 11.31,
+        "p25": 96.99,
+        "median": 97.53,
+        "p75": 98.93,
+        "p90": 100,
+        "p95": 100,
+        "max": 100,
+        "mean": 90.09
+      },
+      "histogram": [
+        {
+          "range": "0–<10",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "range": "10–<25",
+          "n": 16,
+          "pct": 3.11
+        },
+        {
+          "range": "25–<50",
+          "n": 3,
+          "pct": 0.58
+        },
+        {
+          "range": "50–<75",
+          "n": 60,
+          "pct": 11.67
+        },
+        {
+          "range": "75–<90",
+          "n": 1,
+          "pct": 0.19
+        },
+        {
+          "range": "90–<100",
+          "n": 369,
+          "pct": 71.79
+        },
+        {
+          "range": "100+",
+          "n": 65,
+          "pct": 12.65
+        }
+      ]
+    },
+    "pageHeight": {
+      "summary": {
+        "n": 514,
+        "min": 8513,
+        "p25": 8513,
+        "median": 8513,
+        "p75": 8513,
+        "p90": 8513,
+        "p95": 8513,
+        "max": 16296,
+        "mean": 8574.52
+      },
+      "converted": {
+        "n": 12,
+        "min": 8513,
+        "p25": 8513,
+        "median": 8513,
+        "p75": 8513,
+        "p90": 8513,
+        "p95": 8513,
+        "max": 8513,
+        "mean": 8513
+      },
+      "nonConverted": {
+        "n": 502,
+        "min": 8513,
+        "p25": 8513,
+        "median": 8513,
+        "p75": 8513,
+        "p90": 8513,
+        "p95": 8513,
+        "max": 16296,
+        "mean": 8575.99
+      },
+      "histogram": [
+        {
+          "range": "0–<7000",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "range": "7000–<8000",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "range": "8000–<8500",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "range": "8500–<9000",
+          "n": 509,
+          "pct": 99.03
+        },
+        {
+          "range": "9000–<10000",
+          "n": 1,
+          "pct": 0.19
+        },
+        {
+          "range": "10000–<12000",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "range": "12000+",
+          "n": 4,
+          "pct": 0.78
+        }
+      ]
+    },
+    "clicks": {
+      "summary": {
+        "n": 514,
+        "min": 0,
+        "p25": 4,
+        "median": 4,
+        "p75": 4,
+        "p90": 4,
+        "p95": 4,
+        "max": 9,
+        "mean": 3.76
+      },
+      "converted": {
+        "n": 12,
+        "min": 9,
+        "p25": 9,
+        "median": 9,
+        "p75": 9,
+        "p90": 9,
+        "p95": 9,
+        "max": 9,
+        "mean": 9
+      },
+      "nonConverted": {
+        "n": 502,
+        "min": 0,
+        "p25": 4,
+        "median": 4,
+        "p75": 4,
+        "p90": 4,
+        "p95": 4,
+        "max": 8,
+        "mean": 3.64
+      },
+      "histogram": [
+        {
+          "range": "0–<1",
+          "n": 20,
+          "pct": 3.89
+        },
+        {
+          "range": "1–<2",
+          "n": 22,
+          "pct": 4.28
+        },
+        {
+          "range": "2–<3",
+          "n": 20,
+          "pct": 3.89
+        },
+        {
+          "range": "3–<5",
+          "n": 433,
+          "pct": 84.24
+        },
+        {
+          "range": "5–<10",
+          "n": 19,
+          "pct": 3.7
+        },
+        {
+          "range": "10–<20",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "range": "20+",
+          "n": 0,
+          "pct": 0
+        }
+      ]
+    },
+    "formEvents": {
+      "summary": {
+        "n": 514,
+        "min": 0,
+        "p25": 0,
+        "median": 0,
+        "p75": 0,
+        "p90": 0,
+        "p95": 0,
+        "max": 172,
+        "mean": 4.93
+      },
+      "converted": {
+        "n": 12,
+        "min": 129,
+        "p25": 133.75,
+        "median": 149,
+        "p75": 157.5,
+        "p90": 162,
+        "p95": 166.5,
+        "max": 172,
+        "mean": 147.5
+      },
+      "nonConverted": {
+        "n": 502,
+        "min": 0,
+        "p25": 0,
+        "median": 0,
+        "p75": 0,
+        "p90": 0,
+        "p95": 0,
+        "max": 163,
+        "mean": 1.52
+      },
+      "histogram": [
+        {
+          "range": "0–<1",
+          "n": 497,
+          "pct": 96.69
+        },
+        {
+          "range": "1–<2",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "range": "2–<5",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "range": "5–<10",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "range": "10–<50",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "range": "50–<100",
+          "n": 0,
+          "pct": 0
+        },
+        {
+          "range": "100+",
+          "n": 17,
+          "pct": 3.31
+        }
+      ]
+    },
+    "topClickSelectors": [
+      {
+        "name": "html",
+        "n": 1409
+      },
+      {
+        "name": "button.btn.btn-register",
+        "n": 430
+      },
+      {
+        "name": "input[name=\"email\"]",
+        "n": 17
+      },
+      {
+        "name": "input[name=\"name\"]",
+        "n": 17
+      },
+      {
+        "name": "input[name=\"phone\"]",
+        "n": 17
+      },
+      {
+        "name": "textarea[name=\"purpose\"]",
+        "n": 17
+      },
+      {
+        "name": "button.btn",
+        "n": 12
+      },
+      {
+        "name": "article.program-module",
+        "n": 10
+      },
+      {
+        "name": "article.feature-card",
+        "n": 2
+      },
+      {
+        "name": "article.injury-card",
+        "n": 2
+      },
+      {
+        "name": "div.container",
+        "n": 1
+      },
+      {
+        "name": "header.hero",
+        "n": 1
+      }
+    ]
+  },
+  "confirmedVisitsChronology": [
+    {
+      "status": "confirmed",
+      "visitId": "4153558868547600497",
+      "dateTime": "2026-07-22 12:16:09",
+      "durationSec": 65,
+      "pageHeight": 8513,
+      "viewportHeight": 720,
+      "maxScrollY": 7561,
+      "scrollDepthPct": 97.27,
+      "clicks": 9,
+      "formEvents": {
+        "focus": 4,
+        "change": 157,
+        "submit": 1
+      },
+      "submitCount": 1,
+      "timeline": [
+        {
+          "atSec": 18.207,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 10,
+          "scrollY": 157,
+          "viewportBottomDepthPct": 10.3
+        },
+        {
+          "atSec": 20.906,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 25,
+          "scrollY": 1572,
+          "viewportBottomDepthPct": 26.92
+        },
+        {
+          "atSec": 21.723,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 50,
+          "scrollY": 3674,
+          "viewportBottomDepthPct": 51.62
+        },
+        {
+          "atSec": 42.319,
+          "action": "click",
+          "selector": "html"
+        },
+        {
+          "atSec": 43.467,
+          "action": "click",
+          "selector": "html"
+        },
+        {
+          "atSec": 44.302,
+          "action": "click",
+          "selector": "html"
+        },
+        {
+          "atSec": 46.422,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 75,
+          "scrollY": 6009,
+          "viewportBottomDepthPct": 79.04
+        },
+        {
+          "atSec": 51.038,
+          "action": "click",
+          "selector": "button.btn.btn-register"
+        },
+        {
+          "atSec": 51.105,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 90,
+          "scrollY": 6973,
+          "viewportBottomDepthPct": 90.37
+        },
+        {
+          "atSec": 54.116,
+          "action": "form_focus",
+          "selector": "input[name=\"name\"]"
+        },
+        {
+          "atSec": 54.119,
+          "action": "click",
+          "selector": "input[name=\"name\"]"
+        },
+        {
+          "atSec": 54.175,
+          "action": "form_input_started",
+          "selector": "input[name=\"name\"]"
+        },
+        {
+          "atSec": 55.572,
+          "action": "form_focus",
+          "selector": "input[name=\"phone\"]"
+        },
+        {
+          "atSec": 55.573,
+          "action": "click",
+          "selector": "input[name=\"phone\"]"
+        },
+        {
+          "atSec": 55.585,
+          "action": "form_input_started",
+          "selector": "input[name=\"phone\"]"
+        },
+        {
+          "atSec": 56.786,
+          "action": "form_focus",
+          "selector": "input[name=\"email\"]"
+        },
+        {
+          "atSec": 56.787,
+          "action": "click",
+          "selector": "input[name=\"email\"]"
+        },
+        {
+          "atSec": 56.804,
+          "action": "form_input_started",
+          "selector": "input[name=\"email\"]"
+        },
+        {
+          "atSec": 58.137,
+          "action": "form_focus",
+          "selector": "textarea[name=\"purpose\"]"
+        },
+        {
+          "atSec": 58.138,
+          "action": "click",
+          "selector": "textarea[name=\"purpose\"]"
+        },
+        {
+          "atSec": 58.18,
+          "action": "form_input_started",
+          "selector": "textarea[name=\"purpose\"]"
+        },
+        {
+          "atSec": 63.097,
+          "action": "click",
+          "selector": "button.btn"
+        },
+        {
+          "atSec": 63.105,
+          "action": "form_submit",
+          "selector": "#registration-form",
+          "filledFieldCount": 4
+        }
+      ]
+    },
+    {
+      "status": "confirmed",
+      "visitId": "4153585275004518656",
+      "dateTime": "2026-07-22 12:17:50",
+      "durationSec": 56,
+      "pageHeight": 8513,
+      "viewportHeight": 720,
+      "maxScrollY": 7687,
+      "scrollDepthPct": 98.75,
+      "clicks": 9,
+      "formEvents": {
+        "focus": 4,
+        "change": 140,
+        "submit": 1
+      },
+      "submitCount": 1,
+      "timeline": [
+        {
+          "atSec": 17.017,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 10,
+          "scrollY": 208,
+          "viewportBottomDepthPct": 10.9
+        },
+        {
+          "atSec": 19.483,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 25,
+          "scrollY": 1523,
+          "viewportBottomDepthPct": 26.35
+        },
+        {
+          "atSec": 20.201,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 50,
+          "scrollY": 3690,
+          "viewportBottomDepthPct": 51.8
+        },
+        {
+          "atSec": 32.503,
+          "action": "click",
+          "selector": "html"
+        },
+        {
+          "atSec": 33.869,
+          "action": "click",
+          "selector": "html"
+        },
+        {
+          "atSec": 34.959,
+          "action": "click",
+          "selector": "html"
+        },
+        {
+          "atSec": 37.149,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 75,
+          "scrollY": 5900,
+          "viewportBottomDepthPct": 77.76
+        },
+        {
+          "atSec": 43.426,
+          "action": "click",
+          "selector": "button.btn.btn-register"
+        },
+        {
+          "atSec": 43.499,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 90,
+          "scrollY": 6973,
+          "viewportBottomDepthPct": 90.37
+        },
+        {
+          "atSec": 46.059,
+          "action": "form_focus",
+          "selector": "input[name=\"name\"]"
+        },
+        {
+          "atSec": 46.061,
+          "action": "click",
+          "selector": "input[name=\"name\"]"
+        },
+        {
+          "atSec": 46.144,
+          "action": "form_input_started",
+          "selector": "input[name=\"name\"]"
+        },
+        {
+          "atSec": 47.382,
+          "action": "form_focus",
+          "selector": "input[name=\"phone\"]"
+        },
+        {
+          "atSec": 47.383,
+          "action": "click",
+          "selector": "input[name=\"phone\"]"
+        },
+        {
+          "atSec": 47.396,
+          "action": "form_input_started",
+          "selector": "input[name=\"phone\"]"
+        },
+        {
+          "atSec": 48.543,
+          "action": "form_focus",
+          "selector": "input[name=\"email\"]"
+        },
+        {
+          "atSec": 48.545,
+          "action": "click",
+          "selector": "input[name=\"email\"]"
+        },
+        {
+          "atSec": 48.56,
+          "action": "form_input_started",
+          "selector": "input[name=\"email\"]"
+        },
+        {
+          "atSec": 49.84,
+          "action": "form_focus",
+          "selector": "textarea[name=\"purpose\"]"
+        },
+        {
+          "atSec": 49.842,
+          "action": "click",
+          "selector": "textarea[name=\"purpose\"]"
+        },
+        {
+          "atSec": 49.883,
+          "action": "form_input_started",
+          "selector": "textarea[name=\"purpose\"]"
+        },
+        {
+          "atSec": 54.556,
+          "action": "click",
+          "selector": "button.btn"
+        },
+        {
+          "atSec": 54.563,
+          "action": "form_submit",
+          "selector": "#registration-form",
+          "filledFieldCount": 4
+        }
+      ]
+    },
+    {
+      "status": "confirmed",
+      "visitId": "4153687848509243517",
+      "dateTime": "2026-07-22 12:24:21",
+      "durationSec": 62,
+      "pageHeight": 8513,
+      "viewportHeight": 720,
+      "maxScrollY": 7559,
+      "scrollDepthPct": 97.25,
+      "clicks": 9,
+      "formEvents": {
+        "focus": 4,
+        "change": 124,
+        "submit": 1
+      },
+      "submitCount": 1,
+      "timeline": [
+        {
+          "atSec": 18.87,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 10,
+          "scrollY": 212,
+          "viewportBottomDepthPct": 10.95
+        },
+        {
+          "atSec": 21.837,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 25,
+          "scrollY": 1414,
+          "viewportBottomDepthPct": 25.07
+        },
+        {
+          "atSec": 22.57,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 50,
+          "scrollY": 3727,
+          "viewportBottomDepthPct": 52.24
+        },
+        {
+          "atSec": 41.145,
+          "action": "click",
+          "selector": "html"
+        },
+        {
+          "atSec": 41.856,
+          "action": "click",
+          "selector": "html"
+        },
+        {
+          "atSec": 42.826,
+          "action": "click",
+          "selector": "html"
+        },
+        {
+          "atSec": 44.836,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 75,
+          "scrollY": 5903,
+          "viewportBottomDepthPct": 77.8
+        },
+        {
+          "atSec": 50.013,
+          "action": "click",
+          "selector": "button.btn.btn-register"
+        },
+        {
+          "atSec": 50.102,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 90,
+          "scrollY": 7049,
+          "viewportBottomDepthPct": 91.26
+        },
+        {
+          "atSec": 52.077,
+          "action": "form_focus",
+          "selector": "input[name=\"name\"]"
+        },
+        {
+          "atSec": 52.079,
+          "action": "click",
+          "selector": "input[name=\"name\"]"
+        },
+        {
+          "atSec": 52.165,
+          "action": "form_input_started",
+          "selector": "input[name=\"name\"]"
+        },
+        {
+          "atSec": 53.287,
+          "action": "form_focus",
+          "selector": "input[name=\"phone\"]"
+        },
+        {
+          "atSec": 53.288,
+          "action": "click",
+          "selector": "input[name=\"phone\"]"
+        },
+        {
+          "atSec": 53.301,
+          "action": "form_input_started",
+          "selector": "input[name=\"phone\"]"
+        },
+        {
+          "atSec": 54.349,
+          "action": "form_focus",
+          "selector": "input[name=\"email\"]"
+        },
+        {
+          "atSec": 54.35,
+          "action": "click",
+          "selector": "input[name=\"email\"]"
+        },
+        {
+          "atSec": 54.366,
+          "action": "form_input_started",
+          "selector": "input[name=\"email\"]"
+        },
+        {
+          "atSec": 56.16,
+          "action": "form_focus",
+          "selector": "textarea[name=\"purpose\"]"
+        },
+        {
+          "atSec": 56.161,
+          "action": "click",
+          "selector": "textarea[name=\"purpose\"]"
+        },
+        {
+          "atSec": 56.201,
+          "action": "form_input_started",
+          "selector": "textarea[name=\"purpose\"]"
+        },
+        {
+          "atSec": 59.997,
+          "action": "click",
+          "selector": "button.btn"
+        },
+        {
+          "atSec": 60.007,
+          "action": "form_submit",
+          "selector": "#registration-form",
+          "filledFieldCount": 4
+        }
+      ]
+    },
+    {
+      "status": "confirmed",
+      "visitId": "4153757390007697737",
+      "dateTime": "2026-07-22 12:28:46",
+      "durationSec": 55,
+      "pageHeight": 8513,
+      "viewportHeight": 720,
+      "maxScrollY": 7537,
+      "scrollDepthPct": 96.99,
+      "clicks": 9,
+      "formEvents": {
+        "focus": 4,
+        "change": 130,
+        "submit": 1
+      },
+      "submitCount": 1,
+      "timeline": [
+        {
+          "atSec": 15.272,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 10,
+          "scrollY": 203,
+          "viewportBottomDepthPct": 10.84
+        },
+        {
+          "atSec": 18.172,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 25,
+          "scrollY": 1599,
+          "viewportBottomDepthPct": 27.24
+        },
+        {
+          "atSec": 18.79,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 50,
+          "scrollY": 3716,
+          "viewportBottomDepthPct": 52.11
+        },
+        {
+          "atSec": 32.498,
+          "action": "click",
+          "selector": "html"
+        },
+        {
+          "atSec": 33.699,
+          "action": "click",
+          "selector": "html"
+        },
+        {
+          "atSec": 34.7,
+          "action": "click",
+          "selector": "html"
+        },
+        {
+          "atSec": 36.954,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 75,
+          "scrollY": 5870,
+          "viewportBottomDepthPct": 77.41
+        },
+        {
+          "atSec": 43.131,
+          "action": "click",
+          "selector": "button.btn.btn-register"
+        },
+        {
+          "atSec": 43.221,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 90,
+          "scrollY": 7049,
+          "viewportBottomDepthPct": 91.26
+        },
+        {
+          "atSec": 45.129,
+          "action": "form_focus",
+          "selector": "input[name=\"name\"]"
+        },
+        {
+          "atSec": 45.131,
+          "action": "click",
+          "selector": "input[name=\"name\"]"
+        },
+        {
+          "atSec": 45.192,
+          "action": "form_input_started",
+          "selector": "input[name=\"name\"]"
+        },
+        {
+          "atSec": 46.603,
+          "action": "form_focus",
+          "selector": "input[name=\"phone\"]"
+        },
+        {
+          "atSec": 46.604,
+          "action": "click",
+          "selector": "input[name=\"phone\"]"
+        },
+        {
+          "atSec": 46.617,
+          "action": "form_input_started",
+          "selector": "input[name=\"phone\"]"
+        },
+        {
+          "atSec": 47.789,
+          "action": "form_focus",
+          "selector": "input[name=\"email\"]"
+        },
+        {
+          "atSec": 47.79,
+          "action": "click",
+          "selector": "input[name=\"email\"]"
+        },
+        {
+          "atSec": 47.808,
+          "action": "form_input_started",
+          "selector": "input[name=\"email\"]"
+        },
+        {
+          "atSec": 49.333,
+          "action": "form_focus",
+          "selector": "textarea[name=\"purpose\"]"
+        },
+        {
+          "atSec": 49.334,
+          "action": "click",
+          "selector": "textarea[name=\"purpose\"]"
+        },
+        {
+          "atSec": 49.391,
+          "action": "form_input_started",
+          "selector": "textarea[name=\"purpose\"]"
+        },
+        {
+          "atSec": 53.196,
+          "action": "click",
+          "selector": "button.btn"
+        },
+        {
+          "atSec": 53.205,
+          "action": "form_submit",
+          "selector": "#registration-form",
+          "filledFieldCount": 4
+        }
+      ]
+    },
+    {
+      "status": "confirmed",
+      "visitId": "4153821895986774432",
+      "dateTime": "2026-07-22 12:32:53",
+      "durationSec": 60,
+      "pageHeight": 8513,
+      "viewportHeight": 720,
+      "maxScrollY": 7537,
+      "scrollDepthPct": 96.99,
+      "clicks": 9,
+      "formEvents": {
+        "focus": 4,
+        "change": 148,
+        "submit": 1
+      },
+      "submitCount": 1,
+      "timeline": [
+        {
+          "atSec": 19.872,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 10,
+          "scrollY": 238,
+          "viewportBottomDepthPct": 11.25
+        },
+        {
+          "atSec": 22.588,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 25,
+          "scrollY": 1537,
+          "viewportBottomDepthPct": 26.51
+        },
+        {
+          "atSec": 23.372,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 50,
+          "scrollY": 3562,
+          "viewportBottomDepthPct": 50.3
+        },
+        {
+          "atSec": 36.849,
+          "action": "click",
+          "selector": "html"
+        },
+        {
+          "atSec": 37.737,
+          "action": "click",
+          "selector": "html"
+        },
+        {
+          "atSec": 38.891,
+          "action": "click",
+          "selector": "html"
+        },
+        {
+          "atSec": 41.304,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 75,
+          "scrollY": 6042,
+          "viewportBottomDepthPct": 79.43
+        },
+        {
+          "atSec": 46.148,
+          "action": "click",
+          "selector": "button.btn.btn-register"
+        },
+        {
+          "atSec": 46.221,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 90,
+          "scrollY": 6973,
+          "viewportBottomDepthPct": 90.37
+        },
+        {
+          "atSec": 48.801,
+          "action": "form_focus",
+          "selector": "input[name=\"name\"]"
+        },
+        {
+          "atSec": 48.803,
+          "action": "click",
+          "selector": "input[name=\"name\"]"
+        },
+        {
+          "atSec": 48.89,
+          "action": "form_input_started",
+          "selector": "input[name=\"name\"]"
+        },
+        {
+          "atSec": 50.186,
+          "action": "form_focus",
+          "selector": "input[name=\"phone\"]"
+        },
+        {
+          "atSec": 50.187,
+          "action": "click",
+          "selector": "input[name=\"phone\"]"
+        },
+        {
+          "atSec": 50.198,
+          "action": "form_input_started",
+          "selector": "input[name=\"phone\"]"
+        },
+        {
+          "atSec": 51.251,
+          "action": "form_focus",
+          "selector": "input[name=\"email\"]"
+        },
+        {
+          "atSec": 51.252,
+          "action": "click",
+          "selector": "input[name=\"email\"]"
+        },
+        {
+          "atSec": 51.275,
+          "action": "form_input_started",
+          "selector": "input[name=\"email\"]"
+        },
+        {
+          "atSec": 53.113,
+          "action": "form_focus",
+          "selector": "textarea[name=\"purpose\"]"
+        },
+        {
+          "atSec": 53.114,
+          "action": "click",
+          "selector": "textarea[name=\"purpose\"]"
+        },
+        {
+          "atSec": 53.155,
+          "action": "form_input_started",
+          "selector": "textarea[name=\"purpose\"]"
+        },
+        {
+          "atSec": 57.93,
+          "action": "click",
+          "selector": "button.btn"
+        },
+        {
+          "atSec": 57.938,
+          "action": "form_submit",
+          "selector": "#registration-form",
+          "filledFieldCount": 4
+        }
+      ]
+    },
+    {
+      "status": "confirmed",
+      "visitId": "4153906850006302916",
+      "dateTime": "2026-07-22 12:38:17",
+      "durationSec": 54,
+      "pageHeight": 8513,
+      "viewportHeight": 720,
+      "maxScrollY": 7537,
+      "scrollDepthPct": 96.99,
+      "clicks": 9,
+      "formEvents": {
+        "focus": 4,
+        "change": 151,
+        "submit": 1
+      },
+      "submitCount": 1,
+      "timeline": [
+        {
+          "atSec": 13.273,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 10,
+          "scrollY": 254,
+          "viewportBottomDepthPct": 11.44
+        },
+        {
+          "atSec": 16.306,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 25,
+          "scrollY": 1528,
+          "viewportBottomDepthPct": 26.41
+        },
+        {
+          "atSec": 17.123,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 50,
+          "scrollY": 3640,
+          "viewportBottomDepthPct": 51.22
+        },
+        {
+          "atSec": 33.892,
+          "action": "click",
+          "selector": "html"
+        },
+        {
+          "atSec": 34.664,
+          "action": "click",
+          "selector": "html"
+        },
+        {
+          "atSec": 36.03,
+          "action": "click",
+          "selector": "html"
+        },
+        {
+          "atSec": 38.138,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 75,
+          "scrollY": 5922,
+          "viewportBottomDepthPct": 78.02
+        },
+        {
+          "atSec": 38.538,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 90,
+          "scrollY": 7014,
+          "viewportBottomDepthPct": 90.85
+        },
+        {
+          "atSec": 42.847,
+          "action": "click",
+          "selector": "button.btn.btn-register"
+        },
+        {
+          "atSec": 45.316,
+          "action": "form_focus",
+          "selector": "input[name=\"name\"]"
+        },
+        {
+          "atSec": 45.318,
+          "action": "click",
+          "selector": "input[name=\"name\"]"
+        },
+        {
+          "atSec": 45.407,
+          "action": "form_input_started",
+          "selector": "input[name=\"name\"]"
+        },
+        {
+          "atSec": 46.659,
+          "action": "form_focus",
+          "selector": "input[name=\"phone\"]"
+        },
+        {
+          "atSec": 46.66,
+          "action": "click",
+          "selector": "input[name=\"phone\"]"
+        },
+        {
+          "atSec": 46.678,
+          "action": "form_input_started",
+          "selector": "input[name=\"phone\"]"
+        },
+        {
+          "atSec": 47.685,
+          "action": "form_focus",
+          "selector": "input[name=\"email\"]"
+        },
+        {
+          "atSec": 47.686,
+          "action": "click",
+          "selector": "input[name=\"email\"]"
+        },
+        {
+          "atSec": 47.703,
+          "action": "form_input_started",
+          "selector": "input[name=\"email\"]"
+        },
+        {
+          "atSec": 49.134,
+          "action": "form_focus",
+          "selector": "textarea[name=\"purpose\"]"
+        },
+        {
+          "atSec": 49.135,
+          "action": "click",
+          "selector": "textarea[name=\"purpose\"]"
+        },
+        {
+          "atSec": 49.162,
+          "action": "form_input_started",
+          "selector": "textarea[name=\"purpose\"]"
+        },
+        {
+          "atSec": 52.964,
+          "action": "click",
+          "selector": "button.btn"
+        },
+        {
+          "atSec": 52.972,
+          "action": "form_submit",
+          "selector": "#registration-form",
+          "filledFieldCount": 4
+        }
+      ]
+    },
+    {
+      "status": "confirmed",
+      "visitId": "4153909347040362779",
+      "dateTime": "2026-07-22 12:38:26",
+      "durationSec": 58,
+      "pageHeight": 8513,
+      "viewportHeight": 720,
+      "maxScrollY": 7537,
+      "scrollDepthPct": 96.99,
+      "clicks": 9,
+      "formEvents": {
+        "focus": 4,
+        "change": 151,
+        "submit": 1
+      },
+      "submitCount": 1,
+      "timeline": [
+        {
+          "atSec": 14.127,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 10,
+          "scrollY": 165,
+          "viewportBottomDepthPct": 10.4
+        },
+        {
+          "atSec": 17.443,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 25,
+          "scrollY": 1436,
+          "viewportBottomDepthPct": 25.33
+        },
+        {
+          "atSec": 18.26,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 50,
+          "scrollY": 3610,
+          "viewportBottomDepthPct": 50.86
+        },
+        {
+          "atSec": 36.903,
+          "action": "click",
+          "selector": "html"
+        },
+        {
+          "atSec": 38.004,
+          "action": "click",
+          "selector": "html"
+        },
+        {
+          "atSec": 39.334,
+          "action": "click",
+          "selector": "html"
+        },
+        {
+          "atSec": 41.659,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 75,
+          "scrollY": 5756,
+          "viewportBottomDepthPct": 76.07
+        },
+        {
+          "atSec": 45.52,
+          "action": "click",
+          "selector": "button.btn.btn-register"
+        },
+        {
+          "atSec": 45.659,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 90,
+          "scrollY": 7255,
+          "viewportBottomDepthPct": 93.68
+        },
+        {
+          "atSec": 48.034,
+          "action": "form_focus",
+          "selector": "input[name=\"name\"]"
+        },
+        {
+          "atSec": 48.036,
+          "action": "click",
+          "selector": "input[name=\"name\"]"
+        },
+        {
+          "atSec": 48.117,
+          "action": "form_input_started",
+          "selector": "input[name=\"name\"]"
+        },
+        {
+          "atSec": 49.693,
+          "action": "form_focus",
+          "selector": "input[name=\"phone\"]"
+        },
+        {
+          "atSec": 49.694,
+          "action": "click",
+          "selector": "input[name=\"phone\"]"
+        },
+        {
+          "atSec": 49.706,
+          "action": "form_input_started",
+          "selector": "input[name=\"phone\"]"
+        },
+        {
+          "atSec": 51.035,
+          "action": "form_focus",
+          "selector": "input[name=\"email\"]"
+        },
+        {
+          "atSec": 51.037,
+          "action": "click",
+          "selector": "input[name=\"email\"]"
+        },
+        {
+          "atSec": 51.052,
+          "action": "form_input_started",
+          "selector": "input[name=\"email\"]"
+        },
+        {
+          "atSec": 52.584,
+          "action": "form_focus",
+          "selector": "textarea[name=\"purpose\"]"
+        },
+        {
+          "atSec": 52.586,
+          "action": "click",
+          "selector": "textarea[name=\"purpose\"]"
+        },
+        {
+          "atSec": 52.625,
+          "action": "form_input_started",
+          "selector": "textarea[name=\"purpose\"]"
+        },
+        {
+          "atSec": 56.425,
+          "action": "click",
+          "selector": "button.btn"
+        },
+        {
+          "atSec": 56.436,
+          "action": "form_submit",
+          "selector": "#registration-form",
+          "filledFieldCount": 4
+        }
+      ]
+    },
+    {
+      "status": "confirmed",
+      "visitId": "4153989879216734693",
+      "dateTime": "2026-07-22 12:43:33",
+      "durationSec": 51,
+      "pageHeight": 8513,
+      "viewportHeight": 720,
+      "maxScrollY": 7537,
+      "scrollDepthPct": 96.99,
+      "clicks": 9,
+      "formEvents": {
+        "focus": 4,
+        "change": 128,
+        "submit": 1
+      },
+      "submitCount": 1,
+      "timeline": [
+        {
+          "atSec": 13.011,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 10,
+          "scrollY": 155,
+          "viewportBottomDepthPct": 10.28
+        },
+        {
+          "atSec": 15.91,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 25,
+          "scrollY": 1460,
+          "viewportBottomDepthPct": 25.61
+        },
+        {
+          "atSec": 16.761,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 50,
+          "scrollY": 3545,
+          "viewportBottomDepthPct": 50.1
+        },
+        {
+          "atSec": 27.373,
+          "action": "click",
+          "selector": "html"
+        },
+        {
+          "atSec": 28.687,
+          "action": "click",
+          "selector": "html"
+        },
+        {
+          "atSec": 29.64,
+          "action": "click",
+          "selector": "html"
+        },
+        {
+          "atSec": 31.826,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 75,
+          "scrollY": 5703,
+          "viewportBottomDepthPct": 75.45
+        },
+        {
+          "atSec": 38.02,
+          "action": "click",
+          "selector": "button.btn.btn-register"
+        },
+        {
+          "atSec": 38.092,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 90,
+          "scrollY": 6973,
+          "viewportBottomDepthPct": 90.37
+        },
+        {
+          "atSec": 41.002,
+          "action": "form_focus",
+          "selector": "input[name=\"name\"]"
+        },
+        {
+          "atSec": 41.004,
+          "action": "click",
+          "selector": "input[name=\"name\"]"
+        },
+        {
+          "atSec": 41.059,
+          "action": "form_input_started",
+          "selector": "input[name=\"name\"]"
+        },
+        {
+          "atSec": 42.226,
+          "action": "form_focus",
+          "selector": "input[name=\"phone\"]"
+        },
+        {
+          "atSec": 42.227,
+          "action": "click",
+          "selector": "input[name=\"phone\"]"
+        },
+        {
+          "atSec": 42.243,
+          "action": "form_input_started",
+          "selector": "input[name=\"phone\"]"
+        },
+        {
+          "atSec": 43.604,
+          "action": "form_focus",
+          "selector": "input[name=\"email\"]"
+        },
+        {
+          "atSec": 43.605,
+          "action": "click",
+          "selector": "input[name=\"email\"]"
+        },
+        {
+          "atSec": 43.62,
+          "action": "form_input_started",
+          "selector": "input[name=\"email\"]"
+        },
+        {
+          "atSec": 44.951,
+          "action": "form_focus",
+          "selector": "textarea[name=\"purpose\"]"
+        },
+        {
+          "atSec": 44.952,
+          "action": "click",
+          "selector": "textarea[name=\"purpose\"]"
+        },
+        {
+          "atSec": 44.988,
+          "action": "form_input_started",
+          "selector": "textarea[name=\"purpose\"]"
+        },
+        {
+          "atSec": 48.518,
+          "action": "click",
+          "selector": "button.btn"
+        },
+        {
+          "atSec": 48.525,
+          "action": "form_submit",
+          "selector": "#registration-form",
+          "filledFieldCount": 4
+        }
+      ]
+    },
+    {
+      "status": "confirmed",
+      "visitId": "4153990674676449514",
+      "dateTime": "2026-07-22 12:43:36",
+      "durationSec": 53,
+      "pageHeight": 8513,
+      "viewportHeight": 720,
+      "maxScrollY": 7537,
+      "scrollDepthPct": 96.99,
+      "clicks": 9,
+      "formEvents": {
+        "focus": 4,
+        "change": 167,
+        "submit": 1
+      },
+      "submitCount": 1,
+      "timeline": [
+        {
+          "atSec": 11.691,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 10,
+          "scrollY": 253,
+          "viewportBottomDepthPct": 11.43
+        },
+        {
+          "atSec": 14.091,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 25,
+          "scrollY": 1625,
+          "viewportBottomDepthPct": 27.55
+        },
+        {
+          "atSec": 14.808,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 50,
+          "scrollY": 3834,
+          "viewportBottomDepthPct": 53.49
+        },
+        {
+          "atSec": 27.267,
+          "action": "click",
+          "selector": "html"
+        },
+        {
+          "atSec": 28.435,
+          "action": "click",
+          "selector": "html"
+        },
+        {
+          "atSec": 29.609,
+          "action": "click",
+          "selector": "html"
+        },
+        {
+          "atSec": 32.307,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 75,
+          "scrollY": 5669,
+          "viewportBottomDepthPct": 75.05
+        },
+        {
+          "atSec": 39.552,
+          "action": "click",
+          "selector": "button.btn.btn-register"
+        },
+        {
+          "atSec": 39.623,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 90,
+          "scrollY": 6973,
+          "viewportBottomDepthPct": 90.37
+        },
+        {
+          "atSec": 41.999,
+          "action": "form_focus",
+          "selector": "input[name=\"name\"]"
+        },
+        {
+          "atSec": 42.001,
+          "action": "click",
+          "selector": "input[name=\"name\"]"
+        },
+        {
+          "atSec": 42.085,
+          "action": "form_input_started",
+          "selector": "input[name=\"name\"]"
+        },
+        {
+          "atSec": 43.39,
+          "action": "form_focus",
+          "selector": "input[name=\"phone\"]"
+        },
+        {
+          "atSec": 43.392,
+          "action": "click",
+          "selector": "input[name=\"phone\"]"
+        },
+        {
+          "atSec": 43.405,
+          "action": "form_input_started",
+          "selector": "input[name=\"phone\"]"
+        },
+        {
+          "atSec": 44.568,
+          "action": "form_focus",
+          "selector": "input[name=\"email\"]"
+        },
+        {
+          "atSec": 44.569,
+          "action": "click",
+          "selector": "input[name=\"email\"]"
+        },
+        {
+          "atSec": 44.583,
+          "action": "form_input_started",
+          "selector": "input[name=\"email\"]"
+        },
+        {
+          "atSec": 46.316,
+          "action": "form_focus",
+          "selector": "textarea[name=\"purpose\"]"
+        },
+        {
+          "atSec": 46.318,
+          "action": "click",
+          "selector": "textarea[name=\"purpose\"]"
+        },
+        {
+          "atSec": 46.358,
+          "action": "form_input_started",
+          "selector": "textarea[name=\"purpose\"]"
+        },
+        {
+          "atSec": 50.682,
+          "action": "click",
+          "selector": "button.btn"
+        },
+        {
+          "atSec": 50.691,
+          "action": "form_submit",
+          "selector": "#registration-form",
+          "filledFieldCount": 4
+        }
+      ]
+    },
+    {
+      "status": "confirmed",
+      "visitId": "4154104844803899552",
+      "dateTime": "2026-07-22 12:50:52",
+      "durationSec": 52,
+      "pageHeight": 8513,
+      "viewportHeight": 720,
+      "maxScrollY": 7699,
+      "scrollDepthPct": 98.9,
+      "clicks": 9,
+      "formEvents": {
+        "focus": 4,
+        "change": 128,
+        "submit": 1
+      },
+      "submitCount": 1,
+      "timeline": [
+        {
+          "atSec": 14.591,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 10,
+          "scrollY": 141,
+          "viewportBottomDepthPct": 10.11
+        },
+        {
+          "atSec": 17.519,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 25,
+          "scrollY": 1411,
+          "viewportBottomDepthPct": 25.03
+        },
+        {
+          "atSec": 18.569,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 50,
+          "scrollY": 3572,
+          "viewportBottomDepthPct": 50.42
+        },
+        {
+          "atSec": 27.901,
+          "action": "click",
+          "selector": "html"
+        },
+        {
+          "atSec": 29.363,
+          "action": "click",
+          "selector": "html"
+        },
+        {
+          "atSec": 30.614,
+          "action": "click",
+          "selector": "html"
+        },
+        {
+          "atSec": 33.118,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 75,
+          "scrollY": 5941,
+          "viewportBottomDepthPct": 78.25
+        },
+        {
+          "atSec": 39.697,
+          "action": "click",
+          "selector": "button.btn.btn-register"
+        },
+        {
+          "atSec": 39.768,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 90,
+          "scrollY": 6973,
+          "viewportBottomDepthPct": 90.37
+        },
+        {
+          "atSec": 42.243,
+          "action": "form_focus",
+          "selector": "input[name=\"name\"]"
+        },
+        {
+          "atSec": 42.245,
+          "action": "click",
+          "selector": "input[name=\"name\"]"
+        },
+        {
+          "atSec": 42.306,
+          "action": "form_input_started",
+          "selector": "input[name=\"name\"]"
+        },
+        {
+          "atSec": 43.454,
+          "action": "form_focus",
+          "selector": "input[name=\"phone\"]"
+        },
+        {
+          "atSec": 43.455,
+          "action": "click",
+          "selector": "input[name=\"phone\"]"
+        },
+        {
+          "atSec": 43.469,
+          "action": "form_input_started",
+          "selector": "input[name=\"phone\"]"
+        },
+        {
+          "atSec": 44.481,
+          "action": "form_focus",
+          "selector": "input[name=\"email\"]"
+        },
+        {
+          "atSec": 44.483,
+          "action": "click",
+          "selector": "input[name=\"email\"]"
+        },
+        {
+          "atSec": 44.501,
+          "action": "form_input_started",
+          "selector": "input[name=\"email\"]"
+        },
+        {
+          "atSec": 45.909,
+          "action": "form_focus",
+          "selector": "textarea[name=\"purpose\"]"
+        },
+        {
+          "atSec": 45.91,
+          "action": "click",
+          "selector": "textarea[name=\"purpose\"]"
+        },
+        {
+          "atSec": 45.938,
+          "action": "form_input_started",
+          "selector": "textarea[name=\"purpose\"]"
+        },
+        {
+          "atSec": 50.176,
+          "action": "click",
+          "selector": "button.btn"
+        },
+        {
+          "atSec": 50.183,
+          "action": "form_submit",
+          "selector": "#registration-form",
+          "filledFieldCount": 4
+        }
+      ]
+    },
+    {
+      "status": "confirmed",
+      "visitId": "4154133201156571235",
+      "dateTime": "2026-07-22 12:52:40",
+      "durationSec": 64,
+      "pageHeight": 8513,
+      "viewportHeight": 720,
+      "maxScrollY": 7625,
+      "scrollDepthPct": 98.03,
+      "clicks": 9,
+      "formEvents": {
+        "focus": 4,
+        "change": 129,
+        "submit": 1
+      },
+      "submitCount": 1,
+      "timeline": [
+        {
+          "atSec": 17.152,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 10,
+          "scrollY": 133,
+          "viewportBottomDepthPct": 10.02
+        },
+        {
+          "atSec": 20.302,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 25,
+          "scrollY": 1666,
+          "viewportBottomDepthPct": 28.03
+        },
+        {
+          "atSec": 21.119,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 50,
+          "scrollY": 3773,
+          "viewportBottomDepthPct": 52.78
+        },
+        {
+          "atSec": 42.919,
+          "action": "click",
+          "selector": "html"
+        },
+        {
+          "atSec": 44.206,
+          "action": "click",
+          "selector": "html"
+        },
+        {
+          "atSec": 45.348,
+          "action": "click",
+          "selector": "html"
+        },
+        {
+          "atSec": 47.634,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 75,
+          "scrollY": 6032,
+          "viewportBottomDepthPct": 79.31
+        },
+        {
+          "atSec": 52.362,
+          "action": "click",
+          "selector": "button.btn.btn-register"
+        },
+        {
+          "atSec": 52.434,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 90,
+          "scrollY": 6973,
+          "viewportBottomDepthPct": 90.37
+        },
+        {
+          "atSec": 55.243,
+          "action": "form_focus",
+          "selector": "input[name=\"name\"]"
+        },
+        {
+          "atSec": 55.245,
+          "action": "click",
+          "selector": "input[name=\"name\"]"
+        },
+        {
+          "atSec": 55.297,
+          "action": "form_input_started",
+          "selector": "input[name=\"name\"]"
+        },
+        {
+          "atSec": 56.569,
+          "action": "form_focus",
+          "selector": "input[name=\"phone\"]"
+        },
+        {
+          "atSec": 56.57,
+          "action": "click",
+          "selector": "input[name=\"phone\"]"
+        },
+        {
+          "atSec": 56.584,
+          "action": "form_input_started",
+          "selector": "input[name=\"phone\"]"
+        },
+        {
+          "atSec": 57.848,
+          "action": "form_focus",
+          "selector": "input[name=\"email\"]"
+        },
+        {
+          "atSec": 57.85,
+          "action": "click",
+          "selector": "input[name=\"email\"]"
+        },
+        {
+          "atSec": 57.872,
+          "action": "form_input_started",
+          "selector": "input[name=\"email\"]"
+        },
+        {
+          "atSec": 59.177,
+          "action": "form_focus",
+          "selector": "textarea[name=\"purpose\"]"
+        },
+        {
+          "atSec": 59.178,
+          "action": "click",
+          "selector": "textarea[name=\"purpose\"]"
+        },
+        {
+          "atSec": 59.214,
+          "action": "form_input_started",
+          "selector": "textarea[name=\"purpose\"]"
+        },
+        {
+          "atSec": 62.459,
+          "action": "click",
+          "selector": "button.btn"
+        },
+        {
+          "atSec": 62.467,
+          "action": "form_submit",
+          "selector": "#registration-form",
+          "filledFieldCount": 4
+        }
+      ]
+    },
+    {
+      "status": "confirmed",
+      "visitId": "4154152370086084768",
+      "dateTime": "2026-07-22 12:53:53",
+      "durationSec": 57,
+      "pageHeight": 8513,
+      "viewportHeight": 720,
+      "maxScrollY": 7644,
+      "scrollDepthPct": 98.25,
+      "clicks": 9,
+      "formEvents": {
+        "focus": 4,
+        "change": 157,
+        "submit": 1
+      },
+      "submitCount": 1,
+      "timeline": [
+        {
+          "atSec": 18.681,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 10,
+          "scrollY": 194,
+          "viewportBottomDepthPct": 10.74
+        },
+        {
+          "atSec": 21.53,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 25,
+          "scrollY": 1427,
+          "viewportBottomDepthPct": 25.22
+        },
+        {
+          "atSec": 22.347,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 50,
+          "scrollY": 3646,
+          "viewportBottomDepthPct": 51.29
+        },
+        {
+          "atSec": 34.607,
+          "action": "click",
+          "selector": "html"
+        },
+        {
+          "atSec": 35.973,
+          "action": "click",
+          "selector": "html"
+        },
+        {
+          "atSec": 37.235,
+          "action": "click",
+          "selector": "html"
+        },
+        {
+          "atSec": 39.246,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 75,
+          "scrollY": 5978,
+          "viewportBottomDepthPct": 78.68
+        },
+        {
+          "atSec": 39.546,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 90,
+          "scrollY": 6970,
+          "viewportBottomDepthPct": 90.33
+        },
+        {
+          "atSec": 43.772,
+          "action": "click",
+          "selector": "button.btn.btn-register"
+        },
+        {
+          "atSec": 46.305,
+          "action": "form_focus",
+          "selector": "input[name=\"name\"]"
+        },
+        {
+          "atSec": 46.306,
+          "action": "click",
+          "selector": "input[name=\"name\"]"
+        },
+        {
+          "atSec": 46.378,
+          "action": "form_input_started",
+          "selector": "input[name=\"name\"]"
+        },
+        {
+          "atSec": 47.83,
+          "action": "form_focus",
+          "selector": "input[name=\"phone\"]"
+        },
+        {
+          "atSec": 47.832,
+          "action": "click",
+          "selector": "input[name=\"phone\"]"
+        },
+        {
+          "atSec": 47.845,
+          "action": "form_input_started",
+          "selector": "input[name=\"phone\"]"
+        },
+        {
+          "atSec": 49.041,
+          "action": "form_focus",
+          "selector": "input[name=\"email\"]"
+        },
+        {
+          "atSec": 49.042,
+          "action": "click",
+          "selector": "input[name=\"email\"]"
+        },
+        {
+          "atSec": 49.056,
+          "action": "form_input_started",
+          "selector": "input[name=\"email\"]"
+        },
+        {
+          "atSec": 50.438,
+          "action": "form_focus",
+          "selector": "textarea[name=\"purpose\"]"
+        },
+        {
+          "atSec": 50.44,
+          "action": "click",
+          "selector": "textarea[name=\"purpose\"]"
+        },
+        {
+          "atSec": 50.482,
+          "action": "form_input_started",
+          "selector": "textarea[name=\"purpose\"]"
+        },
+        {
+          "atSec": 55.221,
+          "action": "click",
+          "selector": "button.btn"
+        },
+        {
+          "atSec": 55.228,
+          "action": "form_submit",
+          "selector": "#registration-form",
+          "filledFieldCount": 4
+        }
+      ]
+    }
+  ],
+  "attemptedUnconfirmedVisitsChronology": [
+    {
+      "status": "attempted",
+      "visitId": "4153558868591378514",
+      "dateTime": "2026-07-22 12:16:09",
+      "durationSec": 58,
+      "pageHeight": 8513,
+      "viewportHeight": 720,
+      "maxScrollY": 7537,
+      "scrollDepthPct": 96.99,
+      "clicks": 8,
+      "formEvents": {
+        "focus": 4,
+        "change": 159,
+        "submit": 0
+      },
+      "submitCount": 0,
+      "timeline": [
+        {
+          "atSec": 19.215,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 10,
+          "scrollY": 138,
+          "viewportBottomDepthPct": 10.08
+        },
+        {
+          "atSec": 22.065,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 25,
+          "scrollY": 1518,
+          "viewportBottomDepthPct": 26.29
+        },
+        {
+          "atSec": 22.931,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 50,
+          "scrollY": 3542,
+          "viewportBottomDepthPct": 50.06
+        },
+        {
+          "atSec": 37.665,
+          "action": "click",
+          "selector": "html"
+        },
+        {
+          "atSec": 38.649,
+          "action": "click",
+          "selector": "html"
+        },
+        {
+          "atSec": 39.882,
+          "action": "click",
+          "selector": "html"
+        },
+        {
+          "atSec": 41.897,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 75,
+          "scrollY": 5761,
+          "viewportBottomDepthPct": 76.13
+        },
+        {
+          "atSec": 42.297,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 90,
+          "scrollY": 6958,
+          "viewportBottomDepthPct": 90.19
+        },
+        {
+          "atSec": 45.34,
+          "action": "click",
+          "selector": "button.btn.btn-register"
+        },
+        {
+          "atSec": 48.205,
+          "action": "form_focus",
+          "selector": "input[name=\"name\"]"
+        },
+        {
+          "atSec": 48.208,
+          "action": "click",
+          "selector": "input[name=\"name\"]"
+        },
+        {
+          "atSec": 48.292,
+          "action": "form_input_started",
+          "selector": "input[name=\"name\"]"
+        },
+        {
+          "atSec": 49.702,
+          "action": "form_focus",
+          "selector": "input[name=\"phone\"]"
+        },
+        {
+          "atSec": 49.704,
+          "action": "click",
+          "selector": "input[name=\"phone\"]"
+        },
+        {
+          "atSec": 49.722,
+          "action": "form_input_started",
+          "selector": "input[name=\"phone\"]"
+        },
+        {
+          "atSec": 51.076,
+          "action": "form_focus",
+          "selector": "input[name=\"email\"]"
+        },
+        {
+          "atSec": 51.078,
+          "action": "click",
+          "selector": "input[name=\"email\"]"
+        },
+        {
+          "atSec": 51.096,
+          "action": "form_input_started",
+          "selector": "input[name=\"email\"]"
+        },
+        {
+          "atSec": 52.708,
+          "action": "form_focus",
+          "selector": "textarea[name=\"purpose\"]"
+        },
+        {
+          "atSec": 52.709,
+          "action": "click",
+          "selector": "textarea[name=\"purpose\"]"
+        },
+        {
+          "atSec": 52.751,
+          "action": "form_input_started",
+          "selector": "textarea[name=\"purpose\"]"
+        }
+      ]
+    },
+    {
+      "status": "attempted",
+      "visitId": "4153948810264182817",
+      "dateTime": "2026-07-22 12:40:57",
+      "durationSec": 66,
+      "pageHeight": 8513,
+      "viewportHeight": 720,
+      "maxScrollY": 7580,
+      "scrollDepthPct": 97.5,
+      "clicks": 8,
+      "formEvents": {
+        "focus": 4,
+        "change": 144,
+        "submit": 0
+      },
+      "submitCount": 0,
+      "timeline": [
+        {
+          "atSec": 25.29,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 10,
+          "scrollY": 221,
+          "viewportBottomDepthPct": 11.05
+        },
+        {
+          "atSec": 27.657,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 25,
+          "scrollY": 1594,
+          "viewportBottomDepthPct": 27.18
+        },
+        {
+          "atSec": 28.258,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 50,
+          "scrollY": 3763,
+          "viewportBottomDepthPct": 52.66
+        },
+        {
+          "atSec": 44.514,
+          "action": "click",
+          "selector": "html"
+        },
+        {
+          "atSec": 45.919,
+          "action": "click",
+          "selector": "html"
+        },
+        {
+          "atSec": 47.004,
+          "action": "click",
+          "selector": "html"
+        },
+        {
+          "atSec": 48.956,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 75,
+          "scrollY": 5755,
+          "viewportBottomDepthPct": 76.06
+        },
+        {
+          "atSec": 52.016,
+          "action": "click",
+          "selector": "button.btn.btn-register"
+        },
+        {
+          "atSec": 52.106,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 90,
+          "scrollY": 7049,
+          "viewportBottomDepthPct": 91.26
+        },
+        {
+          "atSec": 55.432,
+          "action": "form_focus",
+          "selector": "input[name=\"name\"]"
+        },
+        {
+          "atSec": 55.435,
+          "action": "click",
+          "selector": "input[name=\"name\"]"
+        },
+        {
+          "atSec": 55.487,
+          "action": "form_input_started",
+          "selector": "input[name=\"name\"]"
+        },
+        {
+          "atSec": 56.709,
+          "action": "form_focus",
+          "selector": "input[name=\"phone\"]"
+        },
+        {
+          "atSec": 56.711,
+          "action": "click",
+          "selector": "input[name=\"phone\"]"
+        },
+        {
+          "atSec": 56.723,
+          "action": "form_input_started",
+          "selector": "input[name=\"phone\"]"
+        },
+        {
+          "atSec": 58.002,
+          "action": "form_focus",
+          "selector": "input[name=\"email\"]"
+        },
+        {
+          "atSec": 58.004,
+          "action": "click",
+          "selector": "input[name=\"email\"]"
+        },
+        {
+          "atSec": 58.021,
+          "action": "form_input_started",
+          "selector": "input[name=\"email\"]"
+        },
+        {
+          "atSec": 59.45,
+          "action": "form_focus",
+          "selector": "textarea[name=\"purpose\"]"
+        },
+        {
+          "atSec": 59.452,
+          "action": "click",
+          "selector": "textarea[name=\"purpose\"]"
+        },
+        {
+          "atSec": 59.485,
+          "action": "form_input_started",
+          "selector": "textarea[name=\"purpose\"]"
+        }
+      ]
+    },
+    {
+      "status": "attempted",
+      "visitId": "4154005856544096319",
+      "dateTime": "2026-07-22 12:44:34",
+      "durationSec": 60,
+      "pageHeight": 8513,
+      "viewportHeight": 720,
+      "maxScrollY": 7557,
+      "scrollDepthPct": 97.23,
+      "clicks": 8,
+      "formEvents": {
+        "focus": 4,
+        "change": 147,
+        "submit": 0
+      },
+      "submitCount": 0,
+      "timeline": [
+        {
+          "atSec": 13.591,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 10,
+          "scrollY": 273,
+          "viewportBottomDepthPct": 11.66
+        },
+        {
+          "atSec": 16.44,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 25,
+          "scrollY": 1555,
+          "viewportBottomDepthPct": 26.72
+        },
+        {
+          "atSec": 17.258,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 50,
+          "scrollY": 3578,
+          "viewportBottomDepthPct": 50.49
+        },
+        {
+          "atSec": 36.658,
+          "action": "click",
+          "selector": "html"
+        },
+        {
+          "atSec": 37.715,
+          "action": "click",
+          "selector": "html"
+        },
+        {
+          "atSec": 38.909,
+          "action": "click",
+          "selector": "html"
+        },
+        {
+          "atSec": 40.756,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 75,
+          "scrollY": 5801,
+          "viewportBottomDepthPct": 76.6
+        },
+        {
+          "atSec": 46.717,
+          "action": "click",
+          "selector": "button.btn.btn-register"
+        },
+        {
+          "atSec": 46.789,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 90,
+          "scrollY": 6973,
+          "viewportBottomDepthPct": 90.37
+        },
+        {
+          "atSec": 49.314,
+          "action": "form_focus",
+          "selector": "input[name=\"name\"]"
+        },
+        {
+          "atSec": 49.316,
+          "action": "click",
+          "selector": "input[name=\"name\"]"
+        },
+        {
+          "atSec": 49.396,
+          "action": "form_input_started",
+          "selector": "input[name=\"name\"]"
+        },
+        {
+          "atSec": 50.672,
+          "action": "form_focus",
+          "selector": "input[name=\"phone\"]"
+        },
+        {
+          "atSec": 50.673,
+          "action": "click",
+          "selector": "input[name=\"phone\"]"
+        },
+        {
+          "atSec": 50.684,
+          "action": "form_input_started",
+          "selector": "input[name=\"phone\"]"
+        },
+        {
+          "atSec": 51.853,
+          "action": "form_focus",
+          "selector": "input[name=\"email\"]"
+        },
+        {
+          "atSec": 51.854,
+          "action": "click",
+          "selector": "input[name=\"email\"]"
+        },
+        {
+          "atSec": 51.87,
+          "action": "form_input_started",
+          "selector": "input[name=\"email\"]"
+        },
+        {
+          "atSec": 53.399,
+          "action": "form_focus",
+          "selector": "textarea[name=\"purpose\"]"
+        },
+        {
+          "atSec": 53.4,
+          "action": "click",
+          "selector": "textarea[name=\"purpose\"]"
+        },
+        {
+          "atSec": 53.435,
+          "action": "form_input_started",
+          "selector": "textarea[name=\"purpose\"]"
+        }
+      ]
+    },
+    {
+      "status": "attempted",
+      "visitId": "4154063318773137706",
+      "dateTime": "2026-07-22 12:48:13",
+      "durationSec": 57,
+      "pageHeight": 8513,
+      "viewportHeight": 720,
+      "maxScrollY": 7701,
+      "scrollDepthPct": 98.92,
+      "clicks": 8,
+      "formEvents": {
+        "focus": 4,
+        "change": 158,
+        "submit": 0
+      },
+      "submitCount": 0,
+      "timeline": [
+        {
+          "atSec": 19.427,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 10,
+          "scrollY": 191,
+          "viewportBottomDepthPct": 10.7
+        },
+        {
+          "atSec": 22.656,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 25,
+          "scrollY": 1514,
+          "viewportBottomDepthPct": 26.24
+        },
+        {
+          "atSec": 23.257,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 50,
+          "scrollY": 3596,
+          "viewportBottomDepthPct": 50.7
+        },
+        {
+          "atSec": 32.164,
+          "action": "click",
+          "selector": "html"
+        },
+        {
+          "atSec": 33.732,
+          "action": "click",
+          "selector": "html"
+        },
+        {
+          "atSec": 35.036,
+          "action": "click",
+          "selector": "html"
+        },
+        {
+          "atSec": 37.322,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 75,
+          "scrollY": 6133,
+          "viewportBottomDepthPct": 80.5
+        },
+        {
+          "atSec": 42.817,
+          "action": "click",
+          "selector": "button.btn.btn-register"
+        },
+        {
+          "atSec": 42.938,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 90,
+          "scrollY": 6995,
+          "viewportBottomDepthPct": 90.63
+        },
+        {
+          "atSec": 45.53,
+          "action": "form_focus",
+          "selector": "input[name=\"name\"]"
+        },
+        {
+          "atSec": 45.532,
+          "action": "click",
+          "selector": "input[name=\"name\"]"
+        },
+        {
+          "atSec": 45.608,
+          "action": "form_input_started",
+          "selector": "input[name=\"name\"]"
+        },
+        {
+          "atSec": 46.658,
+          "action": "form_focus",
+          "selector": "input[name=\"phone\"]"
+        },
+        {
+          "atSec": 46.66,
+          "action": "click",
+          "selector": "input[name=\"phone\"]"
+        },
+        {
+          "atSec": 46.673,
+          "action": "form_input_started",
+          "selector": "input[name=\"phone\"]"
+        },
+        {
+          "atSec": 47.921,
+          "action": "form_focus",
+          "selector": "input[name=\"email\"]"
+        },
+        {
+          "atSec": 47.923,
+          "action": "click",
+          "selector": "input[name=\"email\"]"
+        },
+        {
+          "atSec": 47.945,
+          "action": "form_input_started",
+          "selector": "input[name=\"email\"]"
+        },
+        {
+          "atSec": 49.449,
+          "action": "form_focus",
+          "selector": "textarea[name=\"purpose\"]"
+        },
+        {
+          "atSec": 49.45,
+          "action": "click",
+          "selector": "textarea[name=\"purpose\"]"
+        },
+        {
+          "atSec": 49.495,
+          "action": "form_input_started",
+          "selector": "textarea[name=\"purpose\"]"
+        }
+      ]
+    },
+    {
+      "status": "attempted",
+      "visitId": "4154073931031511351",
+      "dateTime": "2026-07-22 12:48:54",
+      "durationSec": 57,
+      "pageHeight": 8513,
+      "viewportHeight": 720,
+      "maxScrollY": 7572,
+      "scrollDepthPct": 97.4,
+      "clicks": 8,
+      "formEvents": {
+        "focus": 4,
+        "change": 137,
+        "submit": 0
+      },
+      "submitCount": 0,
+      "timeline": [
+        {
+          "atSec": 14.31,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 10,
+          "scrollY": 211,
+          "viewportBottomDepthPct": 10.94
+        },
+        {
+          "atSec": 16.627,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 25,
+          "scrollY": 1526,
+          "viewportBottomDepthPct": 26.38
+        },
+        {
+          "atSec": 17.36,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 50,
+          "scrollY": 3887,
+          "viewportBottomDepthPct": 54.12
+        },
+        {
+          "atSec": 31.804,
+          "action": "click",
+          "selector": "html"
+        },
+        {
+          "atSec": 33.078,
+          "action": "click",
+          "selector": "html"
+        },
+        {
+          "atSec": 34.109,
+          "action": "click",
+          "selector": "html"
+        },
+        {
+          "atSec": 36.492,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 75,
+          "scrollY": 6293,
+          "viewportBottomDepthPct": 82.38
+        },
+        {
+          "atSec": 43.117,
+          "action": "click",
+          "selector": "button.btn.btn-register"
+        },
+        {
+          "atSec": 43.242,
+          "action": "scroll_depth_reached",
+          "thresholdPct": 90,
+          "scrollY": 7047,
+          "viewportBottomDepthPct": 91.24
+        },
+        {
+          "atSec": 46.251,
+          "action": "form_focus",
+          "selector": "input[name=\"name\"]"
+        },
+        {
+          "atSec": 46.253,
+          "action": "click",
+          "selector": "input[name=\"name\"]"
+        },
+        {
+          "atSec": 46.332,
+          "action": "form_input_started",
+          "selector": "input[name=\"name\"]"
+        },
+        {
+          "atSec": 47.441,
+          "action": "form_focus",
+          "selector": "input[name=\"phone\"]"
+        },
+        {
+          "atSec": 47.442,
+          "action": "click",
+          "selector": "input[name=\"phone\"]"
+        },
+        {
+          "atSec": 47.454,
+          "action": "form_input_started",
+          "selector": "input[name=\"phone\"]"
+        },
+        {
+          "atSec": 48.436,
+          "action": "form_focus",
+          "selector": "input[name=\"email\"]"
+        },
+        {
+          "atSec": 48.438,
+          "action": "click",
+          "selector": "input[name=\"email\"]"
+        },
+        {
+          "atSec": 48.454,
+          "action": "form_input_started",
+          "selector": "input[name=\"email\"]"
+        },
+        {
+          "atSec": 50.318,
+          "action": "form_focus",
+          "selector": "textarea[name=\"purpose\"]"
+        },
+        {
+          "atSec": 50.319,
+          "action": "click",
+          "selector": "textarea[name=\"purpose\"]"
+        },
+        {
+          "atSec": 50.35,
+          "action": "form_input_started",
+          "selector": "textarea[name=\"purpose\"]"
+        }
+      ]
+    }
+  ]
+}

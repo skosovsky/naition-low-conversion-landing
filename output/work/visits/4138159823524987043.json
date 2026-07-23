@@ -1,0 +1,40 @@
+{
+  "visitId": "4138159823524987043",
+  "conversion": {
+    "status": "not_attempted",
+    "evidence": "Взаимодействие с conversionGoal и submit не зафиксированы."
+  },
+  "journey": {
+    "durationSec": 61.1,
+    "maxScrollY": 7438,
+    "scrollDepthPct": 87.1,
+    "sectionsSeen": [
+      "s1",
+      "s2",
+      "s3",
+      "s4",
+      "s5",
+      "s6",
+      "s7",
+      "s8"
+    ],
+    "deepestSection": "s8",
+    "funnelStage": "m7"
+  },
+  "primary": {
+    "label": "Тарифы просмотрены, но формат участия не выбран",
+    "behavior": "Посетитель достиг тарифов, но не перешёл к заполнению формы.",
+    "friction": "Различия и следующий шаг в тарифных карточках не дали достаточного основания выбрать вариант.",
+    "section": "s8",
+    "funnelStage": "m6",
+    "evidence": "maxScrollY=7438, scrollDepth=87.1%, durationSec=61.1, deepestSection=pricing; formEvents=0",
+    "suggestedFix": "Уточнить назначение тарифов и сделать действие каждой карточки конкретным."
+  },
+  "secondary": [],
+  "dataQuality": {
+    "grade": "good",
+    "rawEvents": 71,
+    "parsedEvents": 35,
+    "source": "raw-validated analytics/visit-features derivative"
+  }
+}

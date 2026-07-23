@@ -1,0 +1,41 @@
+{
+  "visitId": "4154179522977595570",
+  "conversion": {
+    "status": "not_attempted",
+    "evidence": "Взаимодействие с conversionGoal и submit не зафиксированы."
+  },
+  "journey": {
+    "durationSec": 45.8,
+    "maxScrollY": 7537,
+    "scrollDepthPct": 88.5,
+    "sectionsSeen": [
+      "s1",
+      "s2",
+      "s3",
+      "s4",
+      "s5",
+      "s6",
+      "s7",
+      "s8",
+      "s9"
+    ],
+    "deepestSection": "s9",
+    "funnelStage": "m7"
+  },
+  "primary": {
+    "label": "После выбора тарифа форма осталась незаполненной",
+    "behavior": "Посетитель нажал тарифную CTA и перешёл к форме, но не сфокусировался ни на одном поле.",
+    "friction": "Переход от тарифной CTA к общей форме потерял контекст выбранного тарифа и не привёл к началу заполнения.",
+    "section": "s9",
+    "funnelStage": "m7",
+    "evidence": "maxScrollY=7537, scrollDepth=88.5%, durationSec=45.8, deepestSection=registration; pricingCtaClicked=true; formEvents=0; conversionStatus=not_attempted",
+    "suggestedFix": "Сохранить и явно показать контекст выбранного тарифа рядом с формой, объяснив, что произойдёт после заявки."
+  },
+  "secondary": [],
+  "dataQuality": {
+    "grade": "good",
+    "rawEvents": 157,
+    "parsedEvents": 129,
+    "source": "raw-validated analytics/visit-features derivative"
+  }
+}

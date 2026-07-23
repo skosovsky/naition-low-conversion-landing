@@ -1,0 +1,82 @@
+{
+  "inputFiles": 514,
+  "generatedFiles": 514,
+  "totalVisits": 514,
+  "converted": 12,
+  "attemptedUnconfirmed": 5,
+  "nonConverted": 502,
+  "lateClusterDurationMedianSec": 52.9,
+  "stageCounts": {
+    "converted": 12,
+    "interaction_start": 5,
+    "load": 20,
+    "m2": 5,
+    "m3": 57,
+    "m5": 1,
+    "m7": 414
+  },
+  "primaryClusters": [
+    {
+      "label": "После выбора тарифа форма осталась незаполненной",
+      "funnelStage": "m7",
+      "section": "s9",
+      "n": 413,
+      "pctOfNonConverted": 82.27
+    },
+    {
+      "label": "Длинный информационный путь прервал движение к тарифам",
+      "funnelStage": "m3",
+      "section": "s4",
+      "n": 54,
+      "pctOfNonConverted": 10.76
+    },
+    {
+      "label": "Первый экран не дал явного следующего шага",
+      "funnelStage": "load",
+      "section": "s1",
+      "n": 20,
+      "pctOfNonConverted": 3.98
+    },
+    {
+      "label": "Длинный информационный путь прервал движение к тарифам",
+      "funnelStage": "m2",
+      "section": "s3",
+      "n": 5,
+      "pctOfNonConverted": 1
+    },
+    {
+      "label": "Заполнение формы началось, но не завершилось отправкой",
+      "funnelStage": "interaction_start",
+      "section": "s9",
+      "n": 5,
+      "pctOfNonConverted": 1
+    },
+    {
+      "label": "Длинный информационный путь прервал движение к тарифам",
+      "funnelStage": "m3",
+      "section": "s3",
+      "n": 3,
+      "pctOfNonConverted": 0.6
+    },
+    {
+      "label": "Длинный информационный путь прервал движение к тарифам",
+      "funnelStage": "m5",
+      "section": "s6",
+      "n": 1,
+      "pctOfNonConverted": 0.2
+    },
+    {
+      "label": "Тарифы просмотрены, но формат участия не выбран",
+      "funnelStage": "m6",
+      "section": "s8",
+      "n": 1,
+      "pctOfNonConverted": 0.2
+    }
+  ],
+  "primaryClusterTotal": 502,
+  "checks": {
+    "allInputsCovered": true,
+    "generatedCountMatches": true,
+    "clusterTotalMatchesNonConverted": true
+  }
+}

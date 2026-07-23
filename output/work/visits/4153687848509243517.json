@@ -1,0 +1,33 @@
+{
+  "visitId": "4153687848509243517",
+  "conversion": {
+    "status": "converted",
+    "evidence": "Raw-validated submit; Заявка успешно отправлена. Мы свяжемся с вами в ближайшее время."
+  },
+  "journey": {
+    "durationSec": 62.4,
+    "maxScrollY": 7559,
+    "scrollDepthPct": 88.8,
+    "sectionsSeen": [
+      "s1",
+      "s2",
+      "s3",
+      "s4",
+      "s5",
+      "s6",
+      "s7",
+      "s8",
+      "s9"
+    ],
+    "deepestSection": "s9",
+    "funnelStage": "converted"
+  },
+  "primary": null,
+  "secondary": [],
+  "dataQuality": {
+    "grade": "good",
+    "rawEvents": 355,
+    "parsedEvents": 312,
+    "source": "raw-validated analytics/visit-features derivative"
+  }
+}
