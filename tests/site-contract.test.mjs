@@ -103,10 +103,42 @@ test('candidate experiment marker matches the executable analytics contract', ()
 
     // Assert
     assert.deepEqual(markers, {
-        contractExperimentId: 'rank1-fear-to-rehearsal-iter7-20260724',
-        experimentMarker: 'rank1-fear-to-rehearsal-iter7-20260724',
-        siteVersion: 'fear-to-rehearsal-v1-iter7-20260724',
+        contractExperimentId: 'rank1-plan-fit-rule-c21-20260725',
+        experimentMarker: 'rank1-plan-fit-rule-c21-20260725',
+        siteVersion: 'plan-fit-rule-v1-c21-20260725',
     });
+});
+
+test('pricing exposes one explicit truth-bounded personal plan-fit rule', () => {
+    // Arrange
+    const pricing = html.match(
+        /<section class="section pricing-section"[\s\S]*?<\/section>/,
+    )?.[0] || '';
+    const expectedRule = [
+        'Для личного участия выбирайте бесплатный полный курс; курс с набором —',
+        'если нужны перевязочные материалы домой; корпоративный формат — для команды.',
+    ].join(' ');
+    const normalize = (value) => value.replace(/\s+/g, ' ').trim();
+
+    // Act
+    const rule = pricing.match(
+        /<p class="section-lead pricing-fit-rule">([\s\S]*?)<\/p>/,
+    )?.[1] || '';
+    const ruleAt = pricing.indexOf('class="section-lead pricing-fit-rule"');
+    const gridAt = pricing.indexOf('class="pricing-grid"');
+    const interactions = rule.match(
+        /<(?:a|button|input|select|textarea)\b/g,
+    ) || [];
+
+    // Assert
+    assert.equal(normalize(rule), expectedRule);
+    assert.equal(
+        (pricing.match(/class="section-lead pricing-fit-rule"/g) || []).length,
+        1,
+    );
+    assert.ok(ruleAt > 0);
+    assert.ok(ruleAt < gridAt);
+    assert.deepEqual(interactions, []);
 });
 
 test('hero and first section expose the audience-to-outcome hierarchy', () => {

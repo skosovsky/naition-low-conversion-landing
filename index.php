@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="naition-site-version" content="fear-to-rehearsal-v1-iter7-20260724">
-    <meta name="naition-experiment-id" content="rank1-fear-to-rehearsal-iter7-20260724">
+    <meta name="naition-site-version" content="plan-fit-rule-v1-c21-20260725">
+    <meta name="naition-experiment-id" content="rank1-plan-fit-rule-c21-20260725">
     <title>Практический курс первой помощи за один день</title>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-699YWESPJ1"></script>
@@ -284,6 +284,10 @@
                 <p class="section-lead">
                     Полный однодневный курс для частных участников проходит бесплатно.
                     Оставьте контакты — мы подтвердим участие и ответим на вопросы.
+                </p>
+                <p class="section-lead pricing-fit-rule">
+                    Для личного участия выбирайте бесплатный полный курс; курс с набором —
+                    если нужны перевязочные материалы домой; корпоративный формат — для команды.
                 </p>
                 <div class="pricing-grid">
                     <article class="pricing-card featured">
