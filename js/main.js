@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const registrationSection = document.getElementById('registration');
     const form = document.getElementById('registration-form');
     const message = document.getElementById('form-message');
+    const registrationReward = document.getElementById('registration-reward');
     const selectionMessage = document.getElementById('registration-selection');
     const registerButtons = document.querySelectorAll('.btn-register');
     const trackEvent = createAnalyticsDispatcher({
@@ -99,6 +100,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const submitButton = form.querySelector('button[type="submit"]');
         const formData = new FormData(form);
+        if (registrationReward) {
+            registrationReward.hidden = true;
+        }
 
         trackEvent('registration_attempted', {
             form_surface: 'registration',
@@ -124,6 +128,10 @@ document.addEventListener('DOMContentLoaded', () => {
             if (message) {
                 message.textContent = 'Заявка успешно отправлена. Мы свяжемся с вами в ближайшее время.';
                 message.className = 'form-message ym-hide-content success';
+            }
+
+            if (registrationReward) {
+                registrationReward.hidden = false;
             }
 
             trackEvent('registration_completed', {

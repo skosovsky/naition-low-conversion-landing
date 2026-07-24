@@ -103,10 +103,43 @@ test('candidate experiment marker matches the executable analytics contract', ()
 
     // Assert
     assert.deepEqual(markers, {
-        contractExperimentId: 'rank1-free-full-course-20260724',
-        experimentMarker: 'rank1-free-full-course-20260724',
-        siteVersion: 'free-full-course-v1-20260724',
+        contractExperimentId: 'rank1-reciprocal-practice-card-20260724',
+        experimentMarker: 'rank1-reciprocal-practice-card-20260724',
+        siteVersion: 'reciprocal-practice-card-v1-20260724',
     });
+});
+
+test('reciprocal value is concrete and delivered only by the success path', () => {
+    // Arrange
+    const source = fs.readFileSync(
+        new URL('../js/main.js', import.meta.url),
+        'utf8',
+    );
+    const asset = fs.readFileSync(
+        new URL('../downloads/first-aid-practice-card.html', import.meta.url),
+        'utf8',
+    );
+
+    // Act
+    const submitConfirmedAt = source.indexOf('await submitRegistrationRequest');
+    const rewardRevealedAt = source.indexOf('registrationReward.hidden = false');
+    const completedTrackedAt = source.indexOf("trackEvent('registration_completed'");
+
+    // Assert
+    assert.match(html, /id="registration-reward"[^>]+hidden/);
+    assert.match(html, /href="downloads\/first-aid-practice-card\.html"/);
+    assert.ok(asset.length > 2000);
+    assert.match(asset, /Карта практики первой помощи/);
+    assert.match(asset, /не является медицинской инструкцией/i);
+    assert.ok(submitConfirmedAt > -1);
+    assert.ok(rewardRevealedAt > submitConfirmedAt);
+    assert.ok(completedTrackedAt > rewardRevealedAt);
+    assert.equal(
+        source.slice(source.indexOf('} catch (error)')).includes(
+            'registrationReward.hidden = false',
+        ),
+        false,
+    );
 });
 
 test('free Basic offer is explicit and internally consistent', () => {

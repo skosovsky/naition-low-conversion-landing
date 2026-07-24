@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Карта практики первой помощи</title>
+    <style>
+        :root {
+            color-scheme: light;
+            --ink: #17352c;
+            --muted: #5d6966;
+            --line: #cfe1da;
+            --soft: #eef7f3;
+            --accent: #2f7d5b;
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            background: #f3f6f4;
+            color: var(--ink);
+            font: 16px/1.5 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        }
+        main {
+            width: min(920px, calc(100% - 32px));
+            margin: 32px auto;
+            padding: 40px;
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            background: #fff;
+            box-shadow: 0 18px 50px rgba(23, 53, 44, 0.08);
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            gap: 24px;
+            align-items: flex-start;
+            padding-bottom: 24px;
+            border-bottom: 2px solid var(--ink);
+        }
+        h1 { margin: 4px 0 8px; font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1; }
+        h2 { margin: 0 0 6px; font-size: 1.05rem; }
+        p { margin: 0; }
+        .eyebrow {
+            color: var(--accent);
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+        .meta {
+            min-width: 210px;
+            padding: 14px 16px;
+            border-radius: 12px;
+            background: var(--soft);
+            color: var(--muted);
+        }
+        .schedule {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+            margin: 28px 0;
+        }
+        article {
+            padding: 18px;
+            border: 1px solid var(--line);
+            border-radius: 14px;
+        }
+        time {
+            display: block;
+            margin-bottom: 6px;
+            color: var(--accent);
+            font-weight: 800;
+        }
+        .skills {
+            padding: 22px;
+            border-radius: 14px;
+            background: var(--soft);
+        }
+        .skills ul {
+            columns: 2;
+            margin: 12px 0 0;
+            padding-left: 20px;
+        }
+        .questions { margin-top: 28px; }
+        .question-line {
+            min-height: 46px;
+            margin-top: 10px;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--muted);
+            color: var(--muted);
+        }
+        footer {
+            margin-top: 30px;
+            padding-top: 18px;
+            border-top: 1px solid var(--line);
+            color: var(--muted);
+            font-size: 0.88rem;
+        }
+        .print {
+            margin-top: 18px;
+            padding: 11px 16px;
+            border: 0;
+            border-radius: 10px;
+            background: var(--ink);
+            color: #fff;
+            font: inherit;
+            font-weight: 700;
+            cursor: pointer;
+        }
+        @media (max-width: 680px) {
+            main { width: 100%; margin: 0; padding: 24px; border: 0; border-radius: 0; }
+            header { display: block; }
+            .meta { margin-top: 18px; }
+            .schedule { grid-template-columns: 1fr; }
+            .skills ul { columns: 1; }
+        }
+        @media print {
+            body { background: #fff; }
+            main { width: 100%; margin: 0; padding: 0; border: 0; box-shadow: none; }
+            .print { display: none; }
+        }
+    </style>
+</head>
+<body>
+<main>
+    <header>
+        <div>
+            <p class="eyebrow">Подготовка к очной практике · версия 2026-07-24</p>
+            <h1>Карта практики первой помощи</h1>
+            <p>Шесть блоков курса и место для вопросов, которые вы хотите разобрать с инструктором.</p>
+        </div>
+        <div class="meta">
+            <strong>15 августа 2026</strong><br>
+            10:00–18:00 · Москва<br>
+            Практический офлайн-курс
+        </div>
+    </header>
+
+    <section class="schedule" aria-label="Расписание практических блоков">
+        <article>
+            <time>10:00–11:00</time>
+            <h2>Оценка обстановки и безопасность</h2>
+            <p>Риски, сознание и дыхание, вызов помощи, тренировка алгоритма на манекене и в паре.</p>
+        </article>
+        <article>
+            <time>11:00–12:30</time>
+            <h2>Сердечно-лёгочная реанимация</h2>
+            <p>Компрессии, смена спасателя и работа с тренировочным AED.</p>
+        </article>
+        <article>
+            <time>12:30–13:30</time>
+            <h2>Обед и разбор кейсов</h2>
+            <p>Ситуации из практики, типичные ошибки очевидцев и вопросы инструктору.</p>
+        </article>
+        <article>
+            <time>13:30–15:00</time>
+            <h2>Кровотечения и шок</h2>
+            <p>Практика с имитаторами ран, давящей повязкой и тренировочным турникетом.</p>
+        </article>
+        <article>
+            <time>15:00–16:30</time>
+            <h2>Переломы, вывихи и ожоги</h2>
+            <p>Фиксация конечности, помощь при ожогах и безопасное ожидание медиков.</p>
+        </article>
+        <article>
+            <time>16:30–18:00</time>
+            <h2>Итоговая практика</h2>
+            <p>Цельный сценарий, расстановка приоритетов, разбор и индивидуальная обратная связь.</p>
+        </article>
+    </section>
+
+    <section class="skills">
+        <h2>Навыки, которые вы будете отрабатывать</h2>
+        <ul>
+            <li>оценка безопасности;</li>
+            <li>проверка сознания и дыхания;</li>
+            <li>вызов помощи;</li>
+            <li>СЛР и тренировочный AED;</li>
+            <li>действия при сильном кровотечении;</li>
+            <li>помощь при травмах и ожогах.</li>
+        </ul>
+    </section>
+
+    <section class="questions">
+        <h2>Мои вопросы инструктору</h2>
+        <div class="question-line">1.</div>
+        <div class="question-line">2.</div>
+        <div class="question-line">3.</div>
+    </section>
+
+    <button class="print" type="button" onclick="window.print()">Распечатать или сохранить в PDF</button>
+
+    <footer>
+        Это учебная карта подготовки к курсу. Она не подтверждает место,
+        не является медицинской инструкцией и не заменяет очную практику с инструктором.
+        Содержание повторяет программу курса на сайте.
+    </footer>
+</main>
+</body>
+</html>
