@@ -103,9 +103,9 @@ test('candidate experiment marker matches the executable analytics contract', ()
 
     // Assert
     assert.deepEqual(markers, {
-        contractExperimentId: 'rank1-audience-outcome-20260724',
-        experimentMarker: 'rank1-audience-outcome-20260724',
-        siteVersion: 'audience-outcome-v1-20260724',
+        contractExperimentId: 'rank1-evidence-only-credibility-20260724',
+        experimentMarker: 'rank1-evidence-only-credibility-20260724',
+        siteVersion: 'evidence-only-credibility-v1-20260724',
     });
 });
 
@@ -156,6 +156,43 @@ test('hero and first section expose the audience-to-outcome hierarchy', () => {
     assert.deepEqual(firstSectionOccurrences, Array(10).fill(1));
     assert.equal(featureCards.length, 4);
     assert.deepEqual(leakedCopy, []);
+});
+
+test('candidate removes unsupported authority precision without adding proof claims', () => {
+    // Arrange
+    const unsupportedClaims = [
+        'Добросовестный помощник',
+        'закон защищает вас от необоснованных претензий',
+        'Алексей Кравцов',
+        'Марина Соколова',
+        'Дмитрий Новиков',
+        'Более 8 000 выездов',
+        'более 1 200 слушателей',
+        'European Resuscitation Council',
+        'ERC First Aid Provider',
+        'региональной команды инструкторов РКК',
+    ];
+    const sourceBoundedFacts = [
+        'Порядок действий до приезда медиков',
+        'Оценить обстановку',
+        'Передать пострадавшего медикам',
+        'Как проходит практика',
+        'Короткий разбор',
+        'Демонстрация',
+        'Практика руками',
+    ];
+
+    // Act
+    const survivingUnsupportedClaims = unsupportedClaims.filter(
+        (claim) => html.includes(claim),
+    );
+    const missingSourceBoundedFacts = sourceBoundedFacts.filter(
+        (fact) => !html.includes(fact),
+    );
+
+    // Assert
+    assert.deepEqual(survivingUnsupportedClaims, []);
+    assert.deepEqual(missingSourceBoundedFacts, []);
 });
 
 test('reciprocal value is concrete and delivered only by the success path', () => {

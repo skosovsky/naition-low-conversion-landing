@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="naition-site-version" content="audience-outcome-v1-20260724">
-    <meta name="naition-experiment-id" content="rank1-audience-outcome-20260724">
+    <meta name="naition-site-version" content="evidence-only-credibility-v1-20260724">
+    <meta name="naition-experiment-id" content="rank1-evidence-only-credibility-20260724">
     <title>Практический курс первой помощи за один день</title>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-699YWESPJ1"></script>
@@ -181,31 +181,30 @@
 
         <section class="section legal-section">
             <div class="container">
-                <h2 class="section-title">Юридические аспекты</h2>
+                <h2 class="section-title">Порядок действий до приезда медиков</h2>
                 <p class="section-lead">
-                    Многие люди боятся помогать из-за страха юридической ответственности. На курсе
-                    мы отдельно разбираем, что говорит закон и как действовать правильно.
+                    В программе вы пройдёте путь от оценки обстановки и вызова помощи
+                    до передачи пострадавшего медикам. Каждый шаг сначала разбирается,
+                    затем отрабатывается на практике.
                 </p>
                 <div class="legal-block">
-                    <h3>Добросовестный помощник</h3>
+                    <h3>Оценить обстановку</h3>
                     <p>
-                        В России действует принцип добросовестного помощника: если вы помогаете пострадавшему
-                        в разумных пределах своих возможностей и без грубой неосторожности, закон защищает
-                        вас от необоснованных претензий.
+                        Оцените риски, проверьте сознание и дыхание
+                        и не создавайте дополнительную опасность.
                     </p>
                 </div>
                 <div class="legal-block">
-                    <h3>Границы ответственности</h3>
+                    <h3>Вызвать помощь</h3>
                     <p>
-                        Мы разбираем, какие действия считаются разумными, когда нужно дождаться медиков,
-                        и как фиксировать обстоятельства происшествия, если вы оказались свидетелем или участником помощи.
+                        Отработайте вызов помощи и передачу информации диспетчеру.
                     </p>
                 </div>
                 <div class="legal-block">
-                    <h3>Документирование и вызов служб</h3>
+                    <h3>Передать пострадавшего медикам</h3>
                     <p>
-                        Как правильно передать информацию диспетчеру, что сообщить медикам по прибытии и
-                        какие данные важно сохранить для дальнейшего разбирательства или страхового случая.
+                        Пройдите на практическом сценарии полный цикл
+                        от проверки дыхания до передачи пострадавшего медикам.
                     </p>
                 </div>
             </div>
@@ -217,39 +216,40 @@
 
         <section class="section">
             <div class="container">
-                <h2 class="section-title">Практику ведут специалисты экстренной помощи</h2>
+                <h2 class="section-title">Как проходит практика</h2>
                 <p class="section-lead">
-                    Ниже — роль, опыт и профессиональная подготовка каждого инструктора.
+                    В каждом модуле: короткий разбор, демонстрация
+                    и практика руками.
                 </p>
                 <div class="instructors-grid">
                     <article class="instructor-card">
-                        <div class="instructor-photo">АК</div>
-                        <h3>Алексей Кравцов</h3>
-                        <p class="instructor-title">Врач скорой медицинской помощи, стаж 14 лет</p>
+                        <div class="instructor-photo">1</div>
+                        <h3>Короткий разбор</h3>
+                        <p class="instructor-title">Сначала — порядок действий</p>
                         <ul class="credentials">
-                            <li>Более 8 000 выездов бригады скорой помощи</li>
-                            <li>Сертификат European Resuscitation Council BLS</li>
-                            <li>Автор программы «Первая помощь дома и на работе»</li>
+                            <li>Оценка обстановки и безопасность</li>
+                            <li>Проверка сознания и дыхания</li>
+                            <li>Вызов помощи</li>
                         </ul>
                     </article>
                     <article class="instructor-card">
-                        <div class="instructor-photo">МС</div>
-                        <h3>Марина Соколова</h3>
-                        <p class="instructor-title">Инструктор РКК, фельдшер, стаж 11 лет</p>
+                        <div class="instructor-photo">2</div>
+                        <h3>Демонстрация</h3>
+                        <p class="instructor-title">Алгоритм целиком перед практикой</p>
                         <ul class="credentials">
-                            <li>Обучила более 1 200 слушателей базовой первой помощи</li>
-                            <li>Член региональной команды инструкторов РКК</li>
-                            <li>Специализация: помощь детям и подросткам</li>
+                            <li>СЛР и смена спасателя</li>
+                            <li>Давящая повязка и турникет</li>
+                            <li>Фиксация при травмах и помощь при ожогах</li>
                         </ul>
                     </article>
                     <article class="instructor-card">
-                        <div class="instructor-photo">ДН</div>
-                        <h3>Дмитрий Новиков</h3>
-                        <p class="instructor-title">Парамедик, наставник учебного центра</p>
+                        <div class="instructor-photo">3</div>
+                        <h3>Практика руками</h3>
+                        <p class="instructor-title">Манекены, имитаторы ран и работа в паре</p>
                         <ul class="credentials">
-                            <li>Сертификат ERC First Aid Provider</li>
-                            <li>Опыт работы в корпоративных программах безопасности</li>
-                            <li>Ведёт практические блоки по кровотечениям и травмам</li>
+                            <li>Повторение ключевых действий</li>
+                            <li>Цельные сценарии с расстановкой приоритетов</li>
+                            <li>Индивидуальная обратная связь</li>
                         </ul>
                     </article>
                 </div>
