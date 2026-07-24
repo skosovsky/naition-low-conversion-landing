@@ -103,10 +103,59 @@ test('candidate experiment marker matches the executable analytics contract', ()
 
     // Assert
     assert.deepEqual(markers, {
-        contractExperimentId: 'rank1-reciprocal-practice-card-20260724',
-        experimentMarker: 'rank1-reciprocal-practice-card-20260724',
-        siteVersion: 'reciprocal-practice-card-v1-20260724',
+        contractExperimentId: 'rank1-audience-outcome-20260724',
+        experimentMarker: 'rank1-audience-outcome-20260724',
+        siteVersion: 'audience-outcome-v1-20260724',
     });
+});
+
+test('hero and first section expose the audience-to-outcome hierarchy', () => {
+    // Arrange
+    const heroCopy = [
+        'Первая помощь в первые минуты: дома, на работе и в дороге',
+        'За один день вы руками отработаете четыре действия: оценить сознание и дыхание, вызвать помощь, начать сердечно-лёгочную реанимацию и остановить опасное кровотечение. Каждый алгоритм проходит под контролем инструктора.',
+    ];
+    const firstSectionCopy = [
+        'Что вы сможете сделать до приезда медиков',
+        'Дома, на работе или в дороге вы будете знать, с чего начать и какие действия безопасно выполнить до приезда помощи.',
+        'Дома: проверить сознание и дыхание',
+        'Оценить безопасность, вызвать помощь и начать СЛР, если человек не дышит.',
+        'На работе: остановить сильное кровотечение',
+        'Наложить давящую повязку или турникет и распознать признаки шока.',
+        'В дороге: помочь при травме или ожоге',
+        'Зафиксировать конечность, охладить ожог и понять, когда пострадавшего нельзя перемещать.',
+        'На практике: собрать действия в цельный сценарий',
+        'Отработать алгоритм на манекене, получить обратную связь и сохранить памятку.',
+    ];
+    const normalize = (value) => value.replace(/\s+/g, ' ').trim();
+    const hero = normalize(
+        html.match(/<header class="hero">([\s\S]*?)<\/header>/)?.[1] || '',
+    );
+    const firstSection = normalize(
+        html.match(/<main>\s*(<section class="section">[\s\S]*?<\/section>)/)?.[1] || '',
+    );
+    const decisionSurfaces = normalize([
+        html.match(/<section class="section pricing-section"[\s\S]*?<\/section>/)?.[0] || '',
+        html.match(/<section class="section registration-section"[\s\S]*?<\/section>/)?.[0] || '',
+    ].join(' '));
+
+    // Act
+    const heroOccurrences = heroCopy.map(
+        (copy) => hero.split(copy).length - 1,
+    );
+    const firstSectionOccurrences = firstSectionCopy.map(
+        (copy) => firstSection.split(copy).length - 1,
+    );
+    const leakedCopy = [...heroCopy, ...firstSectionCopy].filter(
+        (copy) => decisionSurfaces.includes(copy),
+    );
+    const featureCards = firstSection.match(/class="feature-card"/g) || [];
+
+    // Assert
+    assert.deepEqual(heroOccurrences, [1, 1]);
+    assert.deepEqual(firstSectionOccurrences, Array(10).fill(1));
+    assert.equal(featureCards.length, 4);
+    assert.deepEqual(leakedCopy, []);
 });
 
 test('reciprocal value is concrete and delivered only by the success path', () => {

@@ -1,7 +1,7 @@
 {
   "$schema": "./analytics-events.schema.json",
   "schemaVersion": "2.0.0",
-  "experimentId": "rank1-reciprocal-practice-card-20260724",
+  "experimentId": "rank1-audience-outcome-20260724",
   "allowedProperties": [
     "analytics_schema_version",
     "experiment_id",
