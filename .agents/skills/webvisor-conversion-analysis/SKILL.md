@@ -1,27 +1,32 @@
 ---
 name: webvisor-conversion-analysis
 description: >-
-  Analyzes landing page Webvisor visit JSON for conversion drop-off hypotheses,
-  produces full hypotheses.md report, proposes and implements landing fixes in
-  site_dir respecting project instructions. Use with site_url, data_dir, and site_dir.
+  Runs evidence-based landing conversion analysis and controlled optimization
+  iterations: Webvisor visit analysis, one scoped experiment, deploy, exactly
+  100 simulated visits, reconciliation across server/Yandex/GA4/Amplitude and
+  leaderboard, and skill retrospective. Use with site_url, data_dir, site_dir,
+  and an iteration_id.
 ---
 
 # Webvisor Conversion Analysis
 
-Продуктовый анализ визитов лендинга по JSON Webvisor, отчёт и внедрение улучшений в код.
+Продуктовый анализ визитов и воспроизводимый цикл улучшения конверсии.
 
 ## Перед началом
 
-1. Входы: `site_url`, `data_dir`, `site_dir`, `output_dir` (optional).
-2. **`analysis.md`** — этапы 0–4.
-3. **`hypothesis-format.md`** — гипотезы per-visit.
-4. **`report-template.md`** — обязательная структура `hypotheses.md`.
-5. **`implementation.md`** — этапы 4.5–7.
+1. Входы: `site_url`, `data_dir`, `site_dir`, `iteration_id`, `output_dir`.
+2. Для one-shot анализа прочитать `analysis.md`, `hypothesis-format.md`,
+   `report-template.md`, `implementation.md`.
+3. Для deploy/simulator/leaderboard или нескольких аналитик дополнительно
+   прочитать **`experiment-loop.md`** и **`orchestration.md`**.
+4. Канонический контракт завершённой итерации:
+   `schemas/experiment-manifest.schema.json`.
 
 ## Порядок работы
 
 | Этап | Артефакт |
 |------|----------|
+| -1 — tools/auth/contracts preflight | `experiments/<id>/preflight.json` |
 | 0 — DOM + structural audit → карта | `landing-map.json` |
 | 1 — воронка | hypotheses.md |
 | 2 — группы + converted-профиль | hypotheses.md |
@@ -31,6 +36,11 @@ description: >-
 | 5 — рекомендации + gate | `recommendations.md` |
 | 6 — правки site_dir (сверху вниз) | изменённые файлы |
 | 7 — проверка + workflow | `constraints-check.md` |
+| 8 — commit/push/redeploy + SHA evidence | `experiments/<id>/deploy.json` |
+| 9 — ровно 100 визитов | `experiments/<id>/simulator.json` |
+| 10 — snapshots 5 источников | `experiments/<id>/sources/*` |
+| 11 — reconciliation + decision | `comparison.json`, `manifest.json` |
+| 12 — ретроспектива skill | `skill-review.md` |
 
 ## Критические правила
 
@@ -38,6 +48,8 @@ description: >-
 
 - **Этап 0:** DOM-аудит + `structuralAudit`; `observed` не пуст; без Y-сетки.
 - **Converted:** разобрать каждый конвертированный визит.
+- Различать `attempted`, `confirmed_success` и `persisted`; submit без
+  подтверждения успеха не считать конверсией.
 - **Доминирующий кластер (>70%):** несколько рычагов, не только секция конверсии; secondary где есть накопление.
 - **Этап 4:** `hypotheses.md` по **`report-template.md`**; рекомендации **два слоя** (топ-3 кластера + structural audit).
 - Label — продуктовый язык; milestone-id только в `funnelStage`.
@@ -47,12 +59,29 @@ description: >-
 
 - Без `site-constraints.md` правки запрещены.
 - Ограничения — только из markdown в `{site_dir}`.
-- **Внедрить:** approved из топ-3 **и** минимум один structural; порядок **сверху страницы вниз**.
-- **Запрещено:** править только секцию конверсии, пропустив structural и малые кластеры.
+- На одну измеряемую итерацию внедрять **одну гипотезу** или один явно
+  описанный coherent bundle. Остальные approved-рекомендации оставить в backlog.
+- Порядок приоритета инструкций: system/developer → прямое указание пользователя
+  → `AGENTS.md`/контракт проекта → этот skill.
 - После правок: интерактив из карты работает; workflow из site_dir зафиксирован в `constraints-check.md`.
+
+### Эксперимент и мультиагентность (-1, 8–12)
+
+- Один mutation-controller выполняет push/redeploy/run-bot; один Git writer.
+- Аналитические агенты получают только immutable, PII-redacted snapshots.
+- Не запускать мутации, пока preflight не подтвердил read-access ко всем
+  обязательным источникам и точные OpenAPI-контракты control-plane.
+- Не усреднять CR разных источников. Server/leaderboard — outcome; Yandex,
+  GA4 и Amplitude — независимые измерения и diagnostics.
+- Привязать candidate к commit SHA, remote SHA evidence, version marker,
+  panel response hash, simulator run и временному окну. Не утверждать, что
+  control-plane подтвердил SHA, если этого нет в его контракте.
+- После итерации запустить:
+  `node {skill_dir}/scripts/validate-iteration.mjs experiments/<iteration_id>`.
 
 ## Конверсия
 
-Из `inputNodes` и submit в `formEvents` → `landing-map.conversionGoal`.
+Из `inputNodes`, подтверждённого success и server-side persistence →
+`landing-map.conversionGoal`.
 
 Подробности — `analysis.md`; шаблон — `report-template.md`; внедрение — `implementation.md`.

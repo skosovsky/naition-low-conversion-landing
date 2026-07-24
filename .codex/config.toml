@@ -1,0 +1,15 @@
+[mcp_servers.yandex_metrica]
+command = "npx"
+args = ["-y", "yandex-metrica-mcp@0.3.0"]
+env = { YANDEX_METRIKA_COUNTER_ID = "110921681", npm_config_cache = "/private/tmp/naition-npm-cache" }
+startup_timeout_sec = 30
+
+[mcp_servers.google_analytics]
+command = "pipx"
+args = ["run", "analytics-mcp"]
+env_vars = ["GOOGLE_APPLICATION_CREDENTIALS", "GOOGLE_CLOUD_PROJECT"]
+startup_timeout_sec = 60
+
+[mcp_servers.amplitude]
+url = "https://mcp.amplitude.com/mcp"
+auth = "oauth"

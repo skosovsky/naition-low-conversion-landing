@@ -1,0 +1,116 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-07-24T06:11:30Z",
+  "status": "blocked_before_mutation",
+  "repository": {
+    "head": "31aff0ec2a970f6535ed5c3f01bf182daae783cc",
+    "remote": "https://github.com/skosovsky/naition-low-conversion-landing.git",
+    "pushAuthorizedByUser": true
+  },
+  "site": {
+    "url": "https://skosovsky.naition.sortedmap.ru",
+    "liveDomVerified": true,
+    "serverSnapshot": {
+      "source": "https://skosovsky.naition.sortedmap.ru/api/export.php",
+      "collectedAt": "2026-07-24T06:00:25Z",
+      "visits": 105,
+      "orders": 27,
+      "cr": 25.71,
+      "rawBodyPersisted": false,
+      "piiRedacted": true,
+      "inspectionContamination": {
+        "possibleVisits": 1,
+        "note": "The initial live DOM inspection executed api/visit.php before the side effect was identified; no active 100-visit cohort was in progress."
+      }
+    }
+  },
+  "controlPlane": {
+    "url": "https://panel.naition.sortedmap.ru",
+    "openapi": "https://panel.naition.sortedmap.ru/openapi.json",
+    "openapiTitle": "Student Deploy Panel",
+    "openapiVersion": "0.1.0",
+    "auth": "github_oauth_session",
+    "anonymousStatusProbe": 401,
+    "mutations": [
+      {"method": "POST", "path": "/api/redeploy", "requiredField": "repo_url"},
+      {"method": "POST", "path": "/api/run-bot", "requiredField": "visits"}
+    ],
+    "statusEndpoint": {"method": "GET", "path": "/api/status"},
+    "authenticatedSessionVerified": false,
+    "contractGaps": [
+      "OpenAPI does not expose deployment ID, deployed commit SHA, simulator run ID or idempotency key",
+      "Mutation and status response schemas are unspecified"
+    ],
+    "requiredEvidenceFallback": [
+      "Match local candidate SHA to remote branch SHA before redeploy",
+      "Embed and verify an iteration version marker in live HTML",
+      "Persist panel response hash and status timestamps without claiming server-attested SHA"
+    ]
+  },
+  "leaderboard": {
+    "url": "https://leaders.naition.sortedmap.ru",
+    "detail": "https://leaders.naition.sortedmap.ru/student/skosovsky",
+    "openapi": "https://leaders.naition.sortedmap.ru/openapi.json",
+    "publicReadVerified": true,
+    "latestEligibleRun": {
+      "rank": 2,
+      "startedAt": "2026-07-23T18:26:58Z",
+      "requests": 101,
+      "orders": 27,
+      "cr": 26.7
+    },
+    "cacheSeconds": 30
+  },
+  "analytics": {
+    "yandex": {
+      "counterId": "110921681",
+      "instrumentationVerified": true,
+      "mcpConfigured": true,
+      "packageVersion": "0.3.0",
+      "processStartVerified": true,
+      "readAccessVerified": false,
+      "blocker": "MCP reported not signed in"
+    },
+    "ga4": {
+      "measurementId": "G-699YWESPJ1",
+      "instrumentationVerified": true,
+      "mcpConfigured": true,
+      "processStartVerified": true,
+      "adcFilePresent": true,
+      "propertyIdKnown": false,
+      "readAccessVerified": false,
+      "blocker": "Property access and analytics.readonly scope not verified"
+    },
+    "amplitude": {
+      "instrumentationVerified": true,
+      "mcpConfigured": true,
+      "endpointReachable": true,
+      "oauthVerified": false,
+      "readAccessVerified": false,
+      "blocker": "OAuth session required"
+    }
+  },
+  "multiAgentTopology": {
+    "mutationController": 1,
+    "gitWriter": 1,
+    "sourceCollectors": ["server", "yandex", "ga4", "amplitude", "leaderboard"],
+    "fanoutInput": "immutable PII-redacted snapshots",
+    "browserPolicy": "single controller only; never share tab/focus"
+  },
+  "studentConstraint": {
+    "requestedRemoval": "purpose field from protected form fields",
+    "alreadyRemovedInCommit": "31aff0e",
+    "additionalDiffRequired": false
+  },
+  "mutationGate": {
+    "allowed": false,
+    "requiredBeforeRedeploy": [
+      "Reload project MCP configuration",
+      "Authenticate and verify read access for Yandex Metrica",
+      "Resolve GA4 property and verify report access",
+      "Authenticate and verify Amplitude read access",
+      "Acquire authenticated control-panel session",
+      "Validate the deployment evidence fallback against authenticated panel responses"
+    ]
+  }
+}

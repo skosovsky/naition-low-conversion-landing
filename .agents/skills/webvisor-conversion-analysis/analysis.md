@@ -4,7 +4,7 @@
 
 ## Контекст
 
-**Входы:** `site_url`, `data_dir`, `site_dir`, `output_dir` (см. `../README.md`).
+**Входы:** `site_url`, `data_dir`, `site_dir`, `output_dir`.
 
 **Цель:** найти системные UX-причины неконверсии. Итог анализа — полный `hypotheses.md` по `report-template.md`; внедрение — этапы 4.5–7 в `implementation.md`.
 
@@ -96,7 +96,13 @@
 | `first_viewport` | maxScrollY ≥ высота viewport |
 | `m1`, `m2`, … | maxScrollY ≥ milestone.y |
 | `interaction_start` | focus/input на полях conversionGoal |
-| `converted` | submit или целевое действие |
+| `attempted` | submit или попытка целевого действия |
+| `confirmed_success` | клиент получил подтверждённый success |
+| `persisted` | результат подтверждён server-side источником |
+| `converted` | `confirmed_success` и/или `persisted` согласно goal mapping итерации |
+
+Не считать failed/unknown submit конверсией. Если `confirmed_success` и
+`persisted` расходятся, сохранить оба статуса и отметить discrepancy.
 
 **Главный отвал** — переход с максимальным падением N.
 
@@ -139,9 +145,12 @@
 
 ## Этап 3. Разбор визитов
 
-Один агент / задача на JSON-файл (исключая `_summary.json`, `manifest.json`).
+Один агент / bounded shard на 5–10 JSON-файлов (исключая `_summary.json`,
+`manifest.json`). Shard manifest обязан покрывать каждый visitId ровно один раз.
 
-Каждый получает: `landing-map.json`, один визит, `hypothesis-format.md`.
+Каждый получает: `landing-map.json`, свои визиты, `hypothesis-format.md`,
+converted-profile и агрегаты кластера (медианы duration/scroll). Без этих
+агрегатов worker не должен делать сравнительные выводы.
 
 **На выход:** `{output_dir}/work/visits/<visitId>.json` — структура из `hypothesis-format.md`.
 
