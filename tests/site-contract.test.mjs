@@ -103,8 +103,33 @@ test('candidate experiment marker matches the executable analytics contract', ()
 
     // Assert
     assert.deepEqual(markers, {
-        contractExperimentId: 'rank1-risk-free-handoff-20260724',
-        experimentMarker: 'rank1-risk-free-handoff-20260724',
-        siteVersion: 'risk-free-handoff-v1-20260724',
+        contractExperimentId: 'rank1-free-full-course-20260724',
+        experimentMarker: 'rank1-free-full-course-20260724',
+        siteVersion: 'free-full-course-v1-20260724',
+    });
+});
+
+test('free Basic offer is explicit and internally consistent', () => {
+    // Arrange
+    const basicCard = html.match(
+        /<article class="pricing-card featured">([\s\S]*?)<\/article>/,
+    )?.[1] || '';
+
+    // Act
+    const offer = {
+        heading: basicCard.includes('<h3>Бесплатный полный курс</h3>'),
+        price: basicCard.includes('<div class="price">0 ₽ <span>за весь курс</span></div>'),
+        cta: basicCard.includes(
+            'data-plan-id="basic" data-price="0 ₽ за полный курс"',
+        ),
+        paidPrice: basicCard.includes('4 900 ₽'),
+    };
+
+    // Assert
+    assert.deepEqual(offer, {
+        heading: true,
+        price: true,
+        cta: true,
+        paidPrice: false,
     });
 });

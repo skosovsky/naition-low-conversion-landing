@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="naition-site-version" content="risk-free-handoff-v1-20260724">
-    <meta name="naition-experiment-id" content="rank1-risk-free-handoff-20260724">
+    <meta name="naition-site-version" content="free-full-course-v1-20260724">
+    <meta name="naition-experiment-id" content="rank1-free-full-course-20260724">
     <title>Практический курс первой помощи за один день</title>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-699YWESPJ1"></script>
@@ -30,8 +30,8 @@
                 вы выполните руками на манекенах под контролем инструкторов.
             </p>
             <div class="hero-actions">
-                <a class="btn hero-cta" href="#pricing">Забронировать полный курс — от 4 900 ₽</a>
-                <p class="hero-trust">0 ₽ при отправке заявки · оплата только после подтверждения места</p>
+                <a class="btn hero-cta" href="#pricing">Записаться на полный курс бесплатно</a>
+                <p class="hero-trust">Полный курс — 0 ₽ · практика, сертификат и памятка входят</p>
             </div>
             <div class="meta-grid">
                 <div class="meta-card">
@@ -260,21 +260,21 @@
             <div class="container">
                 <h2 class="section-title">Выберите формат и забронируйте место</h2>
                 <p class="section-lead">
-                    Заявка не является оплатой и ни к чему вас не обязывает. Мы подтвердим
-                    наличие места, ответим на вопросы и только потом пришлём ссылку на оплату.
+                    Полный однодневный курс для частных участников проходит бесплатно.
+                    Оставьте контакты — мы подтвердим участие и ответим на вопросы.
                 </p>
                 <div class="pricing-grid">
                     <article class="pricing-card featured">
-                        <p class="pricing-audience">Для одного участника · основной формат</p>
-                        <h3>Полный курс</h3>
-                        <div class="price">4 900 ₽ <span>за участника</span></div>
+                        <p class="pricing-audience">Для одного участника · бесплатный формат</p>
+                        <h3>Бесплатный полный курс</h3>
+                        <div class="price">0 ₽ <span>за весь курс</span></div>
                         <ul class="pricing-list">
                             <li>Все 8 часов программы и практики</li>
                             <li>Работа на манекенах в малой группе</li>
                             <li>Сертификат и памятка</li>
                         </ul>
-                        <p class="pricing-commitment">Сейчас — 0 ₽. Оплата после подтверждения места.</p>
-                        <button type="button" class="btn btn-register" data-plan-id="basic" data-price="4 900 ₽ за участника" aria-controls="registration-form">Оставить заявку — 4 900 ₽</button>
+                        <p class="pricing-commitment">Обучение, практика, сертификат и памятка входят бесплатно.</p>
+                        <button type="button" class="btn btn-register" data-plan-id="basic" data-price="0 ₽ за полный курс" aria-controls="registration-form">Записаться бесплатно</button>
                     </article>
                     <article class="pricing-card">
                         <p class="pricing-audience">Для одного участника · с материалами домой</p>
@@ -307,10 +307,10 @@
         <section class="section registration-section" id="registration">
             <div class="container">
                 <div class="registration-panel">
-                    <h2 class="section-title">Забронировать место без предоплаты</h2>
+                    <h2 class="section-title">Записаться на бесплатный полный курс</h2>
                     <p class="section-lead">
-                        Три коротких поля, около 30 секунд. Мы свяжемся, подтвердим место
-                        на 15 августа и ответим на вопросы. Решение об оплате останется за вами.
+                        Три коротких поля, около 30 секунд. Мы свяжемся, подтвердим участие
+                        15 августа и ответим на вопросы. Платить за полный курс не нужно.
                     </p>
                     <p class="registration-selection" id="registration-selection" aria-live="polite">
                         Выберите формат выше — здесь появятся цена и следующий шаг.
@@ -328,9 +328,9 @@
                             E-mail
                             <input class="ym-disable-keys" type="email" name="email" required autocomplete="email">
                         </label>
-                        <button type="submit" class="btn form-submit">Забронировать место</button>
+                        <button type="submit" class="btn form-submit">Отправить заявку на участие</button>
                         <p class="form-reassurance" id="registration-reassurance">
-                            Оплаты в форме нет. Контакты нужны только для подтверждения заявки и деталей курса.
+                            Полный курс бесплатный. Контакты нужны только для подтверждения участия и деталей курса.
                         </p>
                     </form>
                     <p class="form-message ym-hide-content" id="form-message" aria-live="polite" data-amp-mask></p>

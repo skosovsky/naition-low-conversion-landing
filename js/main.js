@@ -68,7 +68,9 @@ document.addEventListener('DOMContentLoaded', () => {
             pricingCard?.classList.add('is-selected');
 
             if (selectionMessage && planName !== 'Unknown') {
-                selectionMessage.textContent = `${planName} · ${planPrice} · 15 августа. Оставьте контакты: на этом шаге оплаты нет, мы сначала подтвердим место и детали участия.`;
+                selectionMessage.textContent = selectedPlan === 'basic'
+                    ? `${planName} · ${planPrice} · 15 августа. Полный курс бесплатный — оставьте контакты, чтобы подтвердить участие.`
+                    : `${planName} · ${planPrice} · 15 августа. Оставьте контакты: на этом шаге оплаты нет, мы сначала подтвердим место и детали участия.`;
                 selectionMessage.classList.add('has-selection');
             }
 
