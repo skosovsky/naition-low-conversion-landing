@@ -103,9 +103,9 @@ test('candidate experiment marker matches the executable analytics contract', ()
 
     // Assert
     assert.deepEqual(markers, {
-        contractExperimentId: 'rank1-evidence-only-credibility-20260724',
-        experimentMarker: 'rank1-evidence-only-credibility-20260724',
-        siteVersion: 'evidence-only-credibility-v1-20260724',
+        contractExperimentId: 'rank1-action-first-transaction-surface-20260724',
+        experimentMarker: 'rank1-action-first-transaction-surface-20260724',
+        siteVersion: 'action-first-transaction-surface-v1-20260724',
     });
 });
 
@@ -193,6 +193,48 @@ test('candidate removes unsupported authority precision without adding proof cla
     // Assert
     assert.deepEqual(survivingUnsupportedClaims, []);
     assert.deepEqual(missingSourceBoundedFacts, []);
+});
+
+test('registration presents the real form before supporting content without synthetic focus', () => {
+    // Arrange
+    const source = fs.readFileSync(
+        new URL('../js/main.js', import.meta.url),
+        'utf8',
+    );
+    const styles = fs.readFileSync(
+        new URL('../css/style.css', import.meta.url),
+        'utf8',
+    );
+    const registration = html.slice(
+        html.indexOf('<section class="section registration-section"'),
+        html.indexOf('</main>'),
+    );
+
+    // Act
+    const actionAt = registration.indexOf('class="registration-action"');
+    const supportAt = registration.indexOf('class="registration-support"');
+    const formAt = registration.indexOf('id="registration-form"');
+    const valueContractAt = registration.indexOf('class="registration-value-contract"');
+    const rewardAt = registration.indexOf('id="registration-reward"');
+    const formCount = (registration.match(/id="registration-form"/g) || []).length;
+    const forbiddenFocusManipulation = [
+        /\bautofocus\b/,
+        /\.focus\s*\(/,
+        /dispatchEvent\s*\(/,
+        /requestSubmit\s*\(/,
+        /\.submit\s*\(/,
+    ].filter((pattern) => pattern.test(source) || pattern.test(registration));
+
+    // Assert
+    assert.equal(formCount, 1);
+    assert.ok(actionAt > -1);
+    assert.ok(actionAt < formAt);
+    assert.ok(formAt < supportAt);
+    assert.ok(supportAt < valueContractAt);
+    assert.ok(valueContractAt < rewardAt);
+    assert.match(styles, /\.registration-transaction-layout\s*\{/);
+    assert.match(styles, /grid-template-columns:\s*minmax\(0,\s*1\.15fr\)/);
+    assert.deepEqual(forbiddenFocusManipulation, []);
 });
 
 test('reciprocal value is concrete and delivered only by the success path', () => {

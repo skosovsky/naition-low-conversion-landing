@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="naition-site-version" content="evidence-only-credibility-v1-20260724">
-    <meta name="naition-experiment-id" content="rank1-evidence-only-credibility-20260724">
+    <meta name="naition-site-version" content="action-first-transaction-surface-v1-20260724">
+    <meta name="naition-experiment-id" content="rank1-action-first-transaction-surface-20260724">
     <title>Практический курс первой помощи за один день</title>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-699YWESPJ1"></script>
@@ -307,62 +307,68 @@
         <section class="section registration-section" id="registration">
             <div class="container">
                 <div class="registration-panel">
-                    <h2 class="section-title">Записаться на бесплатный полный курс</h2>
-                    <p class="section-lead">
-                        Три коротких поля, около 30 секунд. Мы свяжемся, подтвердим участие
-                        15 августа и ответим на вопросы. Платить за полный курс не нужно.
-                    </p>
-                    <p class="registration-selection" id="registration-selection" aria-live="polite">
-                        Выберите формат выше — здесь появятся цена и следующий шаг.
-                    </p>
-                    <aside class="registration-value-contract" aria-labelledby="practice-card-title">
-                        <p class="value-contract-kicker">Результат сразу после заявки</p>
-                        <h3 id="practice-card-title">Карта практики первой помощи</h3>
-                        <p>
-                            После успешной отправки здесь появится ссылка на готовую к печати карту:
-                            шесть блоков курса, навыки для отработки и место для вопросов инструктору.
-                        </p>
-                        <ul class="practice-card-preview" aria-label="Что входит в карту практики">
-                            <li>Безопасность и вызов помощи</li>
-                            <li>СЛР и тренировочный AED</li>
-                            <li>Кровотечения, травмы и ожоги</li>
-                            <li>Итоговый практический сценарий</li>
-                        </ul>
-                        <p class="value-contract-data">
-                            Форма сохраняет имя, телефон и e-mail для связи по заявке.
-                            Отправка не означает автоматического подтверждения места.
-                        </p>
-                    </aside>
-                    <form class="form-grid form-grid-compact ym-disable-keys" id="registration-form" action="api/submit.php" method="post" aria-describedby="registration-reassurance" data-amp-mask>
-                        <label>
-                            Имя
-                            <input class="ym-disable-keys" type="text" name="name" required autocomplete="name">
-                        </label>
-                        <label>
-                            Телефон
-                            <input class="ym-disable-keys" type="tel" name="phone" required autocomplete="tel">
-                        </label>
-                        <label class="form-field-wide">
-                            E-mail
-                            <input class="ym-disable-keys" type="email" name="email" required autocomplete="email">
-                        </label>
-                        <button type="submit" class="btn form-submit">Отправить заявку на участие</button>
-                        <p class="form-reassurance" id="registration-reassurance">
-                            Полный курс бесплатный. Контакты нужны только для подтверждения участия и деталей курса.
-                        </p>
-                    </form>
-                    <p class="form-message ym-hide-content" id="form-message" aria-live="polite" data-amp-mask></p>
-                    <section class="registration-reward" id="registration-reward" aria-labelledby="registration-reward-title" hidden>
-                        <p class="value-contract-kicker">Готово — карта доступна</p>
-                        <h3 id="registration-reward-title">Сохраните карту перед курсом</h3>
-                        <p>
-                            Внутри — расписание шести практических блоков, перечень навыков
-                            и три строки для ваших вопросов инструктору.
-                        </p>
-                        <a class="btn reward-link" href="downloads/first-aid-practice-card.html" target="_blank" rel="noopener">
-                            Открыть и сохранить карту практики
-                        </a>
-                    </section>
+                    <div class="registration-transaction-layout">
+                        <div class="registration-action">
+                            <h2 class="section-title">Записаться на бесплатный полный курс</h2>
+                            <p class="registration-selection" id="registration-selection" aria-live="polite">
+                                Выберите формат выше — здесь появятся цена и следующий шаг.
+                            </p>
+                            <form class="form-grid form-grid-compact ym-disable-keys" id="registration-form" action="api/submit.php" method="post" aria-describedby="registration-reassurance" data-amp-mask>
+                                <label>
+                                    Имя
+                                    <input class="ym-disable-keys" type="text" name="name" required autocomplete="name">
+                                </label>
+                                <label>
+                                    Телефон
+                                    <input class="ym-disable-keys" type="tel" name="phone" required autocomplete="tel">
+                                </label>
+                                <label class="form-field-wide">
+                                    E-mail
+                                    <input class="ym-disable-keys" type="email" name="email" required autocomplete="email">
+                                </label>
+                                <button type="submit" class="btn form-submit">Отправить заявку на участие</button>
+                                <p class="form-reassurance" id="registration-reassurance">
+                                    Полный курс бесплатный. Контакты нужны только для подтверждения участия и деталей курса.
+                                </p>
+                            </form>
+                            <p class="form-message ym-hide-content" id="form-message" aria-live="polite" data-amp-mask></p>
+                        </div>
+                        <div class="registration-support">
+                            <p class="section-lead">
+                                Три коротких поля, около 30 секунд. Мы свяжемся, подтвердим участие
+                                15 августа и ответим на вопросы. Платить за полный курс не нужно.
+                            </p>
+                            <aside class="registration-value-contract" aria-labelledby="practice-card-title">
+                                <p class="value-contract-kicker">Результат сразу после заявки</p>
+                                <h3 id="practice-card-title">Карта практики первой помощи</h3>
+                                <p>
+                                    После успешной отправки здесь появится ссылка на готовую к печати карту:
+                                    шесть блоков курса, навыки для отработки и место для вопросов инструктору.
+                                </p>
+                                <ul class="practice-card-preview" aria-label="Что входит в карту практики">
+                                    <li>Безопасность и вызов помощи</li>
+                                    <li>СЛР и тренировочный AED</li>
+                                    <li>Кровотечения, травмы и ожоги</li>
+                                    <li>Итоговый практический сценарий</li>
+                                </ul>
+                                <p class="value-contract-data">
+                                    Форма сохраняет имя, телефон и e-mail для связи по заявке.
+                                    Отправка не означает автоматического подтверждения места.
+                                </p>
+                            </aside>
+                            <section class="registration-reward" id="registration-reward" aria-labelledby="registration-reward-title" hidden>
+                                <p class="value-contract-kicker">Готово — карта доступна</p>
+                                <h3 id="registration-reward-title">Сохраните карту перед курсом</h3>
+                                <p>
+                                    Внутри — расписание шести практических блоков, перечень навыков
+                                    и три строки для ваших вопросов инструктору.
+                                </p>
+                                <a class="btn reward-link" href="downloads/first-aid-practice-card.html" target="_blank" rel="noopener">
+                                    Открыть и сохранить карту практики
+                                </a>
+                            </section>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
