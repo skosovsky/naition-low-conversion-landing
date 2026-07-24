@@ -49,6 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
         button.addEventListener('click', () => {
             const pricingCard = button.closest('.pricing-card');
             const planName = pricingCard?.querySelector('h3')?.textContent?.trim() || 'Unknown';
+            const planPrice = button.dataset.price || 'стоимость уточняется';
             selectedPlan = button.dataset.planId || 'unknown';
 
             trackEvent('pricing_plan_selected', {
@@ -67,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
             pricingCard?.classList.add('is-selected');
 
             if (selectionMessage && planName !== 'Unknown') {
-                selectionMessage.textContent = `Вы выбрали тариф «${planName}». Оставьте контакты — подтвердим место и детали участия.`;
+                selectionMessage.textContent = `${planName} · ${planPrice} · 15 августа. Оставьте контакты: на этом шаге оплаты нет, мы сначала подтвердим место и детали участия.`;
                 selectionMessage.classList.add('has-selection');
             }
 

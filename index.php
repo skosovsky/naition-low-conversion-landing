@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="naition-site-version" content="measurement-v2-20260724">
-    <meta name="naition-experiment-id" content="analytics-restoration-20260724">
-    <title>Первая помощь: практический курс для каждого</title>
+    <meta name="naition-site-version" content="risk-free-handoff-v1-20260724">
+    <meta name="naition-experiment-id" content="rank1-risk-free-handoff-20260724">
+    <title>Практический курс первой помощи за один день</title>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-699YWESPJ1"></script>
     <script>
@@ -22,17 +22,16 @@
 <body>
     <header class="hero">
         <div class="container hero-content">
-            <span class="hero-badge">Офлайн-курс · 15 августа 2026</span>
-            <h1>Первая помощь: практический курс для каждого</h1>
+            <span class="hero-badge">Офлайн · Москва · 15 августа 2026</span>
+            <h1>Первая помощь за один день: отработайте действия до автоматизма</h1>
             <p class="hero-text">
-                Научитесь действовать уверенно в экстренной ситуации: остановить кровотечение,
-                провести сердечно-легочную реанимацию, помочь при травмах и ожогах до приезда
-                медиков. Курс построен на практике с инструкторами, которые каждый день работают
-                с реальными вызовами.
+                Не лекция, а восемь часов практики: сердечно-лёгочная реанимация,
+                остановка кровотечения, помощь при травмах и ожогах. Каждый алгоритм
+                вы выполните руками на манекенах под контролем инструкторов.
             </p>
             <div class="hero-actions">
-                <a class="btn hero-cta" href="#pricing">Выбрать формат участия</a>
-                <p class="hero-trust">До 14 человек · практика на манекенах · инструкторы экстренной помощи</p>
+                <a class="btn hero-cta" href="#pricing">Забронировать полный курс — от 4 900 ₽</a>
+                <p class="hero-trust">0 ₽ при отправке заявки · оплата только после подтверждения места</p>
             </div>
             <div class="meta-grid">
                 <div class="meta-card">
@@ -45,13 +44,12 @@
                 </div>
                 <div class="meta-card">
                     <strong>Место</strong>
-                    Москва, ул. Примерная, 10, учебный центр «Спаси-Себя»
+                    Москва, учебный класс рядом с метро. Точный адрес и схема проезда — в подтверждении
                 </div>
             </div>
             <div class="hero-note">
-                На курсе вы отработаете навыки на манекенах и разберёте сценарии, которые
-                помогают сохранить спокойствие и принимать правильные решения под давлением времени.
-                После занятия вы получите сертификат и памятку по алгоритмам первой помощи.
+                Полный курс включает практику на манекенах, разбор реальных сценариев,
+                именной сертификат и памятку. В группе не больше 14 человек.
             </div>
         </div>
     </header>
@@ -260,40 +258,47 @@
 
         <section class="section pricing-section" id="pricing">
             <div class="container">
-                <h2 class="section-title">Тарифы</h2>
+                <h2 class="section-title">Выберите формат и забронируйте место</h2>
                 <p class="section-lead">
-                    Выберите формат участия. Во все тарифы входят материалы, сертификат и доступ к памятке после курса.
+                    Заявка не является оплатой и ни к чему вас не обязывает. Мы подтвердим
+                    наличие места, ответим на вопросы и только потом пришлём ссылку на оплату.
                 </p>
                 <div class="pricing-grid">
-                    <article class="pricing-card">
-                        <h3>Базовый</h3>
-                        <div class="price">4 900 ₽</div>
-                        <ul class="pricing-list">
-                            <li>Участие в полном однодневном курсе</li>
-                            <li>Сертификат и памятка</li>
-                            <li>Кофе-брейки</li>
-                        </ul>
-                        <button type="button" class="btn btn-register" data-plan-id="basic">Выбрать Базовый</button>
-                    </article>
                     <article class="pricing-card featured">
-                        <h3>Расширенный</h3>
-                        <div class="price">7 900 ₽</div>
+                        <p class="pricing-audience">Для одного участника · основной формат</p>
+                        <h3>Полный курс</h3>
+                        <div class="price">4 900 ₽ <span>за участника</span></div>
                         <ul class="pricing-list">
-                            <li>Всё из базового тарифа</li>
+                            <li>Все 8 часов программы и практики</li>
+                            <li>Работа на манекенах в малой группе</li>
+                            <li>Сертификат и памятка</li>
+                        </ul>
+                        <p class="pricing-commitment">Сейчас — 0 ₽. Оплата после подтверждения места.</p>
+                        <button type="button" class="btn btn-register" data-plan-id="basic" data-price="4 900 ₽ за участника" aria-controls="registration-form">Оставить заявку — 4 900 ₽</button>
+                    </article>
+                    <article class="pricing-card">
+                        <p class="pricing-audience">Для одного участника · с материалами домой</p>
+                        <h3>Курс + набор первой помощи</h3>
+                        <div class="price">7 900 ₽ <span>за участника</span></div>
+                        <ul class="pricing-list">
+                            <li>Всё из полного курса</li>
                             <li>Набор перевязочных материалов</li>
                             <li>Дополнительный практический блок</li>
                         </ul>
-                        <button type="button" class="btn btn-register" data-plan-id="advanced">Выбрать Расширенный</button>
+                        <p class="pricing-commitment">Сейчас — 0 ₽. Оплата после подтверждения места.</p>
+                        <button type="button" class="btn btn-register" data-plan-id="advanced" data-price="7 900 ₽ за участника" aria-controls="registration-form">Оставить заявку — 7 900 ₽</button>
                     </article>
-                    <article class="pricing-card">
-                        <h3>Корпоративный</h3>
-                        <div class="price">12 900 ₽</div>
+                    <article class="pricing-card pricing-card-corporate">
+                        <p class="pricing-audience">Для компании или команды</p>
+                        <h3>Корпоративный курс</h3>
+                        <div class="price">По запросу</div>
                         <ul class="pricing-list">
                             <li>Индивидуальный разбор рисков профессии</li>
                             <li>Консультация для HR или руководителя</li>
                             <li>Отчёт о прохождении для работодателя</li>
                         </ul>
-                        <button type="button" class="btn btn-register" data-plan-id="corporate">Выбрать Корпоративный</button>
+                        <p class="pricing-commitment">Уточним размер группы и подготовим расчёт.</p>
+                        <button type="button" class="btn btn-register" data-plan-id="corporate" data-price="стоимость по запросу" aria-controls="registration-form">Обсудить курс для команды</button>
                     </article>
                 </div>
             </div>
@@ -302,15 +307,15 @@
         <section class="section registration-section" id="registration">
             <div class="container">
                 <div class="registration-panel">
-                    <h2 class="section-title">Записаться на курс</h2>
+                    <h2 class="section-title">Забронировать место без предоплаты</h2>
                     <p class="section-lead">
-                        Укажите имя и контакты — мы свяжемся с вами, чтобы подтвердить место
-                        и ответить на вопросы.
+                        Три коротких поля, около 30 секунд. Мы свяжемся, подтвердим место
+                        на 15 августа и ответим на вопросы. Решение об оплате останется за вами.
                     </p>
                     <p class="registration-selection" id="registration-selection" aria-live="polite">
-                        Выберите тариф выше — здесь появится выбранный формат.
+                        Выберите формат выше — здесь появятся цена и следующий шаг.
                     </p>
-                    <form class="form-grid form-grid-compact ym-disable-keys" id="registration-form" action="api/submit.php" method="post" data-amp-mask>
+                    <form class="form-grid form-grid-compact ym-disable-keys" id="registration-form" action="api/submit.php" method="post" aria-describedby="registration-reassurance" data-amp-mask>
                         <label>
                             Имя
                             <input class="ym-disable-keys" type="text" name="name" required autocomplete="name">
@@ -323,7 +328,10 @@
                             E-mail
                             <input class="ym-disable-keys" type="email" name="email" required autocomplete="email">
                         </label>
-                        <button type="submit" class="btn form-submit">Отправить заявку</button>
+                        <button type="submit" class="btn form-submit">Забронировать место</button>
+                        <p class="form-reassurance" id="registration-reassurance">
+                            Оплаты в форме нет. Контакты нужны только для подтверждения заявки и деталей курса.
+                        </p>
                     </form>
                     <p class="form-message ym-hide-content" id="form-message" aria-live="polite" data-amp-mask></p>
                 </div>

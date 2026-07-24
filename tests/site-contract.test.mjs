@@ -3,6 +3,12 @@ import fs from 'node:fs';
 import test from 'node:test';
 
 const html = fs.readFileSync(new URL('../index.php', import.meta.url), 'utf8');
+const analyticsContract = JSON.parse(
+    fs.readFileSync(
+        new URL('../contracts/analytics-events.json', import.meta.url),
+        'utf8',
+    ),
+);
 
 test('simulator-facing registration contract remains intact', () => {
     // Arrange
@@ -76,5 +82,29 @@ test('dynamic form messages keep the Yandex content mask in every state', () => 
     assert.equal(classAssignments.length, 3);
     classAssignments.forEach((className) => {
         assert.match(className, /\bym-hide-content\b/);
+    });
+});
+
+test('candidate experiment marker matches the executable analytics contract', () => {
+    // Arrange
+    const experimentMarker = html.match(
+        /<meta name="naition-experiment-id" content="([^"]+)">/,
+    )?.[1];
+    const siteVersion = html.match(
+        /<meta name="naition-site-version" content="([^"]+)">/,
+    )?.[1];
+
+    // Act
+    const markers = {
+        contractExperimentId: analyticsContract.experimentId,
+        experimentMarker,
+        siteVersion,
+    };
+
+    // Assert
+    assert.deepEqual(markers, {
+        contractExperimentId: 'rank1-risk-free-handoff-20260724',
+        experimentMarker: 'rank1-risk-free-handoff-20260724',
+        siteVersion: 'risk-free-handoff-v1-20260724',
     });
 });
