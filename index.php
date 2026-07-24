@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="naition-site-version" content="action-first-transaction-surface-v1-20260724">
-    <meta name="naition-experiment-id" content="rank1-action-first-transaction-surface-20260724">
+    <meta name="naition-site-version" content="fear-to-rehearsal-v1-iter7-20260724">
+    <meta name="naition-experiment-id" content="rank1-fear-to-rehearsal-iter7-20260724">
     <title>Практический курс первой помощи за один день</title>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-699YWESPJ1"></script>
@@ -29,6 +29,28 @@
                 вызвать помощь, начать сердечно-лёгочную реанимацию и остановить опасное
                 кровотечение. Каждый алгоритм проходит под контролем инструктора.
             </p>
+            <section class="hero-practice-loop" aria-labelledby="practice-loop-title">
+                <p class="practice-loop-kicker">Как навык отрабатывается на курсе</p>
+                <h2 id="practice-loop-title">Сначала увидеть алгоритм — потом повторить руками</h2>
+                <ol class="practice-loop-steps">
+                    <li>
+                        <strong>Разобрать</strong>
+                        <span>Коротко пройти порядок действий и расставить приоритеты.</span>
+                    </li>
+                    <li>
+                        <strong>Увидеть</strong>
+                        <span>Посмотреть демонстрацию алгоритма целиком перед практикой.</span>
+                    </li>
+                    <li>
+                        <strong>Повторить</strong>
+                        <span>Выполнить действия на манекене и в паре.</span>
+                    </li>
+                    <li>
+                        <strong>Собрать сценарий</strong>
+                        <span>Пройти последовательность целиком и получить индивидуальную обратную связь.</span>
+                    </li>
+                </ol>
+            </section>
             <div class="hero-actions">
                 <a class="btn hero-cta" href="#pricing">Записаться на полный курс бесплатно</a>
                 <p class="hero-trust">Полный курс — 0 ₽ · практика, сертификат и памятка входят</p>
@@ -48,8 +70,8 @@
                 </div>
             </div>
             <div class="hero-note">
-                Полный курс включает практику на манекенах, разбор реальных сценариев,
-                именной сертификат и памятку. В группе не больше 14 человек.
+                Страх крови, ответственности или растерянности можно спокойно обсудить
+                на разборе кейсов до итоговой практики.
             </div>
         </div>
     </header>

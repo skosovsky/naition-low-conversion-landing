@@ -93,6 +93,44 @@ img {
     max-width: 680px;
 }
 
+.hero-practice-loop {
+    margin: 28px 0;
+    padding: 22px;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.practice-loop-kicker {
+    margin: 0 0 6px;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.hero-practice-loop h2 {
+    margin: 0 0 16px;
+    font-size: clamp(1.2rem, 2vw, 1.55rem);
+}
+
+.practice-loop-steps {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.practice-loop-steps li {
+    display: grid;
+    gap: 6px;
+    padding: 14px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
 .hero-actions {
     display: flex;
     align-items: center;
@@ -615,6 +653,10 @@ img {
     }
 
     .practice-card-preview {
+        grid-template-columns: 1fr;
+    }
+
+    .practice-loop-steps {
         grid-template-columns: 1fr;
     }
 

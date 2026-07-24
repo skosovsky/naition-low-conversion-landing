@@ -103,9 +103,9 @@ test('candidate experiment marker matches the executable analytics contract', ()
 
     // Assert
     assert.deepEqual(markers, {
-        contractExperimentId: 'rank1-action-first-transaction-surface-20260724',
-        experimentMarker: 'rank1-action-first-transaction-surface-20260724',
-        siteVersion: 'action-first-transaction-surface-v1-20260724',
+        contractExperimentId: 'rank1-fear-to-rehearsal-iter7-20260724',
+        experimentMarker: 'rank1-fear-to-rehearsal-iter7-20260724',
+        siteVersion: 'fear-to-rehearsal-v1-iter7-20260724',
     });
 });
 
@@ -156,6 +156,46 @@ test('hero and first section expose the audience-to-outcome hierarchy', () => {
     assert.deepEqual(firstSectionOccurrences, Array(10).fill(1));
     assert.equal(featureCards.length, 4);
     assert.deepEqual(leakedCopy, []);
+});
+
+test('hero makes the mastery path explicit without adding another interaction', () => {
+    // Arrange
+    const bridge = html.match(
+        /<section class="hero-practice-loop"[\s\S]*?<\/section>/,
+    )?.[0] || '';
+    const expectedSteps = [
+        ['Разобрать', 'Коротко пройти порядок действий и расставить приоритеты.'],
+        ['Увидеть', 'Посмотреть демонстрацию алгоритма целиком перед практикой.'],
+        ['Повторить', 'Выполнить действия на манекене и в паре.'],
+        ['Собрать сценарий', 'Пройти последовательность целиком и получить индивидуальную обратную связь.'],
+    ];
+
+    // Act
+    const listItems = bridge.match(/<li>/g) || [];
+    const missingSteps = expectedSteps.filter(
+        ([label, detail]) => !bridge.includes(label) || !bridge.includes(detail),
+    );
+    const interactiveDescendants = bridge.match(
+        /<(?:a|button|input|select|textarea)\b/g,
+    ) || [];
+    const protectedSelectors = [
+        'btn-register',
+        'pricing-section',
+        'program-module',
+        'program-list',
+    ].filter((selector) => bridge.includes(selector));
+
+    // Assert
+    assert.match(bridge, /aria-labelledby="practice-loop-title"/);
+    assert.match(bridge, /<ol class="practice-loop-steps">/);
+    assert.equal(listItems.length, 4);
+    assert.deepEqual(missingSteps, []);
+    assert.deepEqual(interactiveDescendants, []);
+    assert.deepEqual(protectedSelectors, []);
+    assert.match(
+        html,
+        /Страх крови, ответственности или растерянности можно спокойно обсудить\s+на разборе кейсов до итоговой практики\./,
+    );
 });
 
 test('candidate removes unsupported authority precision without adding proof claims', () => {
