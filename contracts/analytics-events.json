@@ -1,0 +1,83 @@
+{
+  "$schema": "./analytics-events.schema.json",
+  "schemaVersion": "2.0.0",
+  "experimentId": "analytics-restoration-20260724",
+  "allowedProperties": [
+    "analytics_schema_version",
+    "experiment_id",
+    "site_version",
+    "selected_plan",
+    "form_surface",
+    "failure_type",
+    "response_status",
+    "content_type",
+    "item_id"
+  ],
+  "events": {
+    "landing_viewed": {
+      "trigger": "DOMContentLoaded on the landing page",
+      "requiredProperties": [],
+      "providers": {
+        "ga4": "landing_viewed",
+        "yandex": "landing_viewed",
+        "amplitude": "Landing Viewed"
+      }
+    },
+    "pricing_plan_selected": {
+      "trigger": "A pricing CTA is activated",
+      "requiredProperties": [
+        "selected_plan"
+      ],
+      "providers": {
+        "ga4": "select_content",
+        "yandex": "pricing_plan_selected",
+        "amplitude": "Pricing Plan Selected"
+      }
+    },
+    "registration_form_opened": {
+      "trigger": "The registration form receives focus for the first time",
+      "requiredProperties": [
+        "form_surface"
+      ],
+      "providers": {
+        "ga4": "registration_form_opened",
+        "yandex": "registration_form_opened",
+        "amplitude": "Registration Form Opened"
+      }
+    },
+    "registration_attempted": {
+      "trigger": "A valid browser submit event starts the API request",
+      "requiredProperties": [
+        "form_surface"
+      ],
+      "providers": {
+        "ga4": "registration_attempted",
+        "yandex": "registration_attempted",
+        "amplitude": "Registration Form Submitted"
+      }
+    },
+    "registration_completed": {
+      "trigger": "The API response has both a successful HTTP status and data.ok=true",
+      "requiredProperties": [
+        "form_surface"
+      ],
+      "providers": {
+        "ga4": "generate_lead",
+        "yandex": "registration_completed",
+        "amplitude": "Registration Completed"
+      }
+    },
+    "registration_failed": {
+      "trigger": "The API request fails at transport, HTTP, JSON, or application level",
+      "requiredProperties": [
+        "form_surface",
+        "failure_type"
+      ],
+      "providers": {
+        "ga4": "registration_failed",
+        "yandex": "registration_failed",
+        "amplitude": "Registration Failed"
+      }
+    }
+  }
+}

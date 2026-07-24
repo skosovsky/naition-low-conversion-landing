@@ -1,0 +1,101 @@
+{
+  "schemaVersion": "1.0.0",
+  "iterationId": "analytics-restoration-20260724",
+  "checkedAt": "2026-07-24T06:32:24Z",
+  "status": "blocked_before_external_mutation",
+  "urls": {
+    "site": "https://skosovsky.naition.sortedmap.ru",
+    "controlPanel": "https://panel.naition.sortedmap.ru",
+    "leaderboard": "https://leaders.naition.sortedmap.ru/student/skosovsky"
+  },
+  "git": {
+    "branch": "main",
+    "baselineSha": "87dd4127f1678853cc28ee34f4509075fa264ff4",
+    "remoteBaselineSha": "87dd4127f1678853cc28ee34f4509075fa264ff4",
+    "remote": "https://github.com/skosovsky/naition-low-conversion-landing.git",
+    "pushAuthorizedByUser": true,
+    "candidateSha": null
+  },
+  "baseline": {
+    "server": {
+      "visits": 105,
+      "orders": 27,
+      "conversionRate": 25.7143,
+      "generatedAt": "2026-07-24T06:27:47Z"
+    },
+    "leaderboardEligibleRun": {
+      "startedAt": "2026-07-23T18:26:58Z",
+      "requests": 101,
+      "orders": 27,
+      "conversionRate": 26.7
+    }
+  },
+  "controlPlaneContract": {
+    "title": "Student Deploy Panel",
+    "version": "0.1.0",
+    "redeploy": {
+      "method": "POST",
+      "path": "/api/redeploy",
+      "contentType": "application/x-www-form-urlencoded",
+      "requiredFields": [
+        "repo_url"
+      ],
+      "responseSchema": {}
+    },
+    "runBot": {
+      "method": "POST",
+      "path": "/api/run-bot",
+      "contentType": "application/x-www-form-urlencoded",
+      "requiredFields": [
+        "visits"
+      ],
+      "responseSchema": {}
+    },
+    "status": {
+      "method": "GET",
+      "path": "/api/status",
+      "responseSchema": {}
+    },
+    "serverAttestedDeploySha": false,
+    "serverIssuedSimulatorRunId": false
+  },
+  "sources": {
+    "server": {
+      "status": "ok",
+      "goal": "persisted order / visits",
+      "access": "public aggregate collector with PII redaction"
+    },
+    "leaderboard": {
+      "status": "ok",
+      "goal": "eligible run orders / requests",
+      "access": "public"
+    },
+    "yandex": {
+      "status": "blocked",
+      "counterId": "110921681",
+      "goal": "registration_completed",
+      "reason": "MCP configured but no OAuth token is present in this session"
+    },
+    "ga4": {
+      "status": "blocked",
+      "measurementId": "G-699YWESPJ1",
+      "goal": "generate_lead",
+      "reason": "MCP configured but GOOGLE_APPLICATION_CREDENTIALS and property access are absent"
+    },
+    "amplitude": {
+      "status": "blocked",
+      "goal": "Registration Completed",
+      "reason": "remote MCP configured but OAuth is not connected in this session"
+    },
+    "controlPanel": {
+      "status": "blocked",
+      "reason": "GitHub OAuth login awaits user authentication"
+    }
+  },
+  "ownership": {
+    "mutationController": "/root",
+    "gitWriter": "/root",
+    "sourceCollectors": "read-only subagents over PII-redacted immutable snapshots"
+  },
+  "nextAllowedMutation": null
+}

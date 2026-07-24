@@ -1,6 +1,15 @@
-import * as amplitude from '@amplitude/unified';
+import * as amplitude from '@amplitude/analytics-browser';
+import analyticsContract from '../contracts/analytics-events.json';
+import {createAnalyticsDispatcher} from './analytics.js';
+import {
+    RegistrationRequestError,
+    submitRegistrationRequest,
+} from './registration.js';
 
 const AMPLITUDE_INITIALIZED_KEY = '__naitionAmplitudeInitialized';
+const SITE_VERSION = document
+    .querySelector('meta[name="naition-site-version"]')
+    ?.getAttribute('content') || 'unknown';
 
 function initializeAmplitude() {
     if (typeof window === 'undefined' || window[AMPLITUDE_INITIALIZED_KEY]) {
@@ -8,18 +17,13 @@ function initializeAmplitude() {
     }
 
     window[AMPLITUDE_INITIALIZED_KEY] = true;
-    amplitude.initAll('663d1cc85176e9b1f2c6e4204bcb23d5', {
-        analytics: { autocapture: true },
-        sessionReplay: { sampleRate: 1 },
+    amplitude.init('663d1cc85176e9b1f2c6e4204bcb23d5', {
+        autocapture: false,
+        fetchRemoteConfig: false,
+        trackingOptions: {
+            ipAddress: false,
+        },
     });
-}
-
-function trackEvent(eventName, eventProperties) {
-    if (typeof window === 'undefined' || !window[AMPLITUDE_INITIALIZED_KEY]) {
-        return;
-    }
-
-    amplitude.track(eventName, eventProperties);
 }
 
 initializeAmplitude();
@@ -30,13 +34,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const message = document.getElementById('form-message');
     const selectionMessage = document.getElementById('registration-selection');
     const registerButtons = document.querySelectorAll('.btn-register');
+    const trackEvent = createAnalyticsDispatcher({
+        contract: analyticsContract,
+        siteVersion: SITE_VERSION,
+        amplitudeClient: amplitude,
+        windowObject: window,
+    });
+    let selectedPlan = 'not_selected';
+    let formOpenedTracked = false;
+
+    trackEvent('landing_viewed');
 
     registerButtons.forEach((button) => {
         button.addEventListener('click', () => {
             const pricingCard = button.closest('.pricing-card');
             const planName = pricingCard?.querySelector('h3')?.textContent?.trim() || 'Unknown';
+            selectedPlan = button.dataset.planId || 'unknown';
 
-            trackEvent('Pricing Plan Selected', { plan: planName });
+            trackEvent('pricing_plan_selected', {
+                selected_plan: selectedPlan,
+            });
 
             if (!registrationSection) {
                 return;
@@ -62,14 +79,28 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
+    form.addEventListener('focusin', () => {
+        if (formOpenedTracked) {
+            return;
+        }
+
+        formOpenedTracked = true;
+        trackEvent('registration_form_opened', {
+            form_surface: 'registration',
+            selected_plan: selectedPlan,
+        });
+    });
+
     form.addEventListener('submit', async (event) => {
         event.preventDefault();
 
         const submitButton = form.querySelector('button[type="submit"]');
         const formData = new FormData(form);
-        let responseStatus = null;
 
-        trackEvent('Registration Form Submitted');
+        trackEvent('registration_attempted', {
+            form_surface: 'registration',
+            selected_plan: selectedPlan,
+        });
 
         if (submitButton instanceof HTMLButtonElement) {
             submitButton.disabled = true;
@@ -77,38 +108,45 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (message) {
             message.textContent = '';
-            message.className = 'form-message';
+            message.className = 'form-message ym-hide-content';
         }
 
         try {
-            const response = await fetch(form.action, {
-                method: 'POST',
-                body: formData,
+            const {responseStatus} = await submitRegistrationRequest({
+                action: form.action,
+                formData,
+                fetchImpl: fetch,
             });
-            responseStatus = response.status;
-
-            const data = await response.json();
-
-            if (!response.ok || !data.ok) {
-                throw new Error(data.error || 'Не удалось отправить заявку.');
-            }
 
             if (message) {
                 message.textContent = 'Заявка успешно отправлена. Мы свяжемся с вами в ближайшее время.';
-                message.className = 'form-message success';
+                message.className = 'form-message ym-hide-content success';
             }
 
-            trackEvent('Registration Completed');
+            trackEvent('registration_completed', {
+                form_surface: 'registration',
+                selected_plan: selectedPlan,
+                response_status: responseStatus,
+            });
             form.reset();
         } catch (error) {
-            trackEvent('Registration Failed', {
-                failure_type: responseStatus === null ? 'network' : 'server',
+            const failureType = error instanceof RegistrationRequestError
+                ? error.failureType
+                : 'unknown';
+            const responseStatus = error instanceof RegistrationRequestError
+                ? error.responseStatus
+                : null;
+
+            trackEvent('registration_failed', {
+                form_surface: 'registration',
+                selected_plan: selectedPlan,
+                failure_type: failureType,
                 response_status: responseStatus,
             });
 
             if (message) {
                 message.textContent = error instanceof Error ? error.message : 'Не удалось отправить заявку.';
-                message.className = 'form-message error';
+                message.className = 'form-message ym-hide-content error';
             }
         } finally {
             if (submitButton instanceof HTMLButtonElement) {

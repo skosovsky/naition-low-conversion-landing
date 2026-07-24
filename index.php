@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="naition-site-version" content="measurement-v2-20260724">
+    <meta name="naition-experiment-id" content="analytics-restoration-20260724">
     <title>Первая помощь: практический курс для каждого</title>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-699YWESPJ1"></script>
@@ -271,7 +273,7 @@
                             <li>Сертификат и памятка</li>
                             <li>Кофе-брейки</li>
                         </ul>
-                        <button type="button" class="btn btn-register">Выбрать Базовый</button>
+                        <button type="button" class="btn btn-register" data-plan-id="basic">Выбрать Базовый</button>
                     </article>
                     <article class="pricing-card featured">
                         <h3>Расширенный</h3>
@@ -281,7 +283,7 @@
                             <li>Набор перевязочных материалов</li>
                             <li>Дополнительный практический блок</li>
                         </ul>
-                        <button type="button" class="btn btn-register">Выбрать Расширенный</button>
+                        <button type="button" class="btn btn-register" data-plan-id="advanced">Выбрать Расширенный</button>
                     </article>
                     <article class="pricing-card">
                         <h3>Корпоративный</h3>
@@ -291,7 +293,7 @@
                             <li>Консультация для HR или руководителя</li>
                             <li>Отчёт о прохождении для работодателя</li>
                         </ul>
-                        <button type="button" class="btn btn-register">Выбрать Корпоративный</button>
+                        <button type="button" class="btn btn-register" data-plan-id="corporate">Выбрать Корпоративный</button>
                     </article>
                 </div>
             </div>
@@ -308,22 +310,22 @@
                     <p class="registration-selection" id="registration-selection" aria-live="polite">
                         Выберите тариф выше — здесь появится выбранный формат.
                     </p>
-                    <form class="form-grid form-grid-compact" id="registration-form" action="api/submit.php" method="post">
+                    <form class="form-grid form-grid-compact ym-disable-keys" id="registration-form" action="api/submit.php" method="post" data-amp-mask>
                         <label>
                             Имя
-                            <input type="text" name="name" required autocomplete="name">
+                            <input class="ym-disable-keys" type="text" name="name" required autocomplete="name">
                         </label>
                         <label>
                             Телефон
-                            <input type="tel" name="phone" required autocomplete="tel">
+                            <input class="ym-disable-keys" type="tel" name="phone" required autocomplete="tel">
                         </label>
                         <label class="form-field-wide">
                             E-mail
-                            <input type="email" name="email" required autocomplete="email">
+                            <input class="ym-disable-keys" type="email" name="email" required autocomplete="email">
                         </label>
                         <button type="submit" class="btn form-submit">Отправить заявку</button>
                     </form>
-                    <p class="form-message" id="form-message" aria-live="polite"></p>
+                    <p class="form-message ym-hide-content" id="form-message" aria-live="polite" data-amp-mask></p>
                 </div>
             </div>
         </section>

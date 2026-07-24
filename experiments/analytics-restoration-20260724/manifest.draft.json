@@ -1,0 +1,44 @@
+{
+  "schemaVersion": "1.0.0",
+  "iterationId": "analytics-restoration-20260724",
+  "status": "planned",
+  "comparisonType": "before_after",
+  "hypothesis": {
+    "id": "measurement-contract-v2",
+    "statement": "A single privacy-safe event contract across GA4, Yandex Metrica, and Amplitude will make the next 100-visit cohort diagnosable without changing the landing conversion mechanics.",
+    "changeSet": [
+      "Add a provider-neutral event contract and schema",
+      "Emit semantic funnel events to all three providers",
+      "Use stable plan and deploy identifiers",
+      "Disable Amplitude Session Replay and mask form data for replay tooling",
+      "Add contract tests and rebuild the browser bundle"
+    ],
+    "expectedMetric": "Server and leaderboard conversion stay comparable while client analytics expose landing → plan → form → attempt → completion/failure."
+  },
+  "baseline": {
+    "commitSha": "87dd4127f1678853cc28ee34f4509075fa264ff4",
+    "server": {
+      "visits": 105,
+      "orders": 27,
+      "conversionRate": 25.7143
+    },
+    "leaderboard": {
+      "requests": 101,
+      "orders": 27,
+      "conversionRate": 26.7
+    }
+  },
+  "candidate": {
+    "commitSha": null,
+    "versionMarker": "measurement-v2-20260724"
+  },
+  "simulator": {
+    "requestedVisits": 100,
+    "evidenceId": "analytics-restoration-20260724:100",
+    "status": "not_started"
+  },
+  "skill": {
+    "path": ".agents/skills/webvisor-conversion-analysis",
+    "versionHash": "sha256:f41e5bf419fb2f886f971559decfc3171017cf8f2e6c7260bcf385cad96a82aa"
+  }
+}
