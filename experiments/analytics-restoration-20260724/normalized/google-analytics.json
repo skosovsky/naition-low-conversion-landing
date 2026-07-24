@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "analytics-normalized.v1",
+  "normalizedAt": "2026-07-24T08:35:07Z",
+  "provider": "google_analytics",
+  "status": "unavailable",
+  "sourceFiles": [
+    {
+      "path": "experiments/analytics-restoration-20260724/raw/2026-07-24T07-52-53Z-ga4-mcp-smoke.json",
+      "sha256": "7415efe4e4729ad561c5c4b50bd1f1b5088fa3279c83a4c037641995a9e1f92d"
+    },
+    {
+      "path": "experiments/analytics-restoration-20260724/raw/2026-07-24T08-22-11Z-ga4-mcp-data-api.json",
+      "sha256": "06cb62b160557332627b1d8b774f14e4d1d56ddce93e1cd9bd9ecbee17a7f06e"
+    }
+  ],
+  "context": {
+    "propertyId": "546448545",
+    "measurementId": "G-699YWESPJ1"
+  },
+  "smoke": {
+    "serverStarted": true,
+    "toolDiscoverySucceeded": true,
+    "adminApiSucceeded": false,
+    "dataApiSucceeded": false
+  },
+  "blocker": {
+    "code": "ACCESS_TOKEN_SCOPE_INSUFFICIENT",
+    "observedReason": "ACCESS_TOKEN_SCOPE_INSUFFICIENT",
+    "remediationScopeRequested": "https://www.googleapis.com/auth/analytics.readonly",
+    "services": [
+      "analyticsadmin.googleapis.com",
+      "analyticsdata.googleapis.com"
+    ],
+    "reproducedAcrossAdminAndDataApi": true,
+    "scopeIntrospectionPerformed": false
+  },
+  "sampling": "not observable because query failed before a report response",
+  "freshness": "not observable because query failed before a report response",
+  "events": null
+}

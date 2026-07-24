@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "1.0.0",
+  "iterationId": "analytics-restoration-20260724",
+  "evidenceId": "analytics-restoration-20260724:100",
+  "candidateSha": "20ba87b240c8e87d88e6e087e6b6112fa567431e",
+  "versionMarker": "measurement-v2-20260724",
+  "requestedAt": "2026-07-24T07:12:53Z",
+  "startedAt": "2026-07-24T07:13:23Z",
+  "completedAt": "2026-07-24T07:21:58Z",
+  "requestedVisits": 100,
+  "status": "completed",
+  "attempts": 1,
+  "controlPanel": {
+    "url": "https://panel.naition.sortedmap.ru",
+    "buttonClicks": 1,
+    "terminalStatus": "bot_completed",
+    "successfulVisits": 100,
+    "failedVisits": 0,
+    "conversions": 22,
+    "conversionRate": 22.0,
+    "durationSeconds": 514.4,
+    "visibleStateSha256": "7a7f01fff43ef0d684eda40e089373c14c90c5e4b85ee1474d2039f8f6765eaa",
+    "terminalLogSha256": "73f5750beffc70309933a291be2eef68db1890802a6128b87acd12706633bb0e"
+  }
+}

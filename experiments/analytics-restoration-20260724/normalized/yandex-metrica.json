@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "analytics-normalized.v1",
+  "normalizedAt": "2026-07-24T08:35:07Z",
+  "provider": "yandex_metrica",
+  "status": "unavailable",
+  "sourceFiles": [
+    {
+      "path": "experiments/analytics-restoration-20260724/raw/2026-07-24T07-52-53Z-yandex-metrica-mcp-smoke.json",
+      "sha256": "cfe24dc56211158425510522c977620e0840dc2cb1fa65efb8664c0d5dabba51"
+    }
+  ],
+  "context": {
+    "counterId": "110921681",
+    "package": "yandex-metrica-mcp@0.3.0",
+    "implementation": "community BoxLab MCP, not an official Yandex MCP server"
+  },
+  "smoke": {
+    "serverStarted": true,
+    "toolDiscoverySucceeded": true,
+    "counterAccessSucceeded": false,
+    "oauthSucceeded": false
+  },
+  "blocker": {
+    "code": "redirect_uri_mismatch",
+    "httpStatus": 400,
+    "message": "redirect_uri does not match the Callback URL defined for the client",
+    "embeddedClientId": "6f14d1c1384440b1b2915f6d956da84b",
+    "requestedRedirectUri": "https://oauth.yandex.com/verification_code",
+    "safeAttribution": "observed OAuth redirect_uri mismatch in the configured community MCP login flow; counter access remains unverified",
+    "rootCause": "not proven from the saved authorization evidence",
+    "reproducibility": "single saved reproduction"
+  },
+  "sampling": "not observable because counter access failed before a report response",
+  "freshness": "not observable because counter access failed before a report response",
+  "events": null
+}

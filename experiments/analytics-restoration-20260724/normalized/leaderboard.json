@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "analytics-normalized.v1",
+  "normalizedAt": "2026-07-24T08:35:07Z",
+  "provider": "leaderboard",
+  "status": "available",
+  "sourceFiles": [
+    {
+      "path": "experiments/analytics-restoration-20260724/leaderboard.json",
+      "sha256": "ca051280c0f626f391db3ba4adbd704ab10e75809d131aa75240e5d20d97008a"
+    }
+  ],
+  "window": {
+    "start": "2026-07-24T07:13:23Z",
+    "end": "2026-07-24T07:21:58Z"
+  },
+  "metric": {
+    "name": "orders / leaderboard requests",
+    "numerator": 22,
+    "denominator": 101,
+    "denominatorSemantics": "leaderboard requests in candidate run",
+    "cr": 21.782178217821784
+  },
+  "displayedConversionRate": 21.8,
+  "freshness": "collected after the documented 30-second cache window",
+  "sampling": "not sampled",
+  "baseline": {
+    "numerator": 27,
+    "denominator": 101,
+    "conversionRate": 26.73267326732673
+  }
+}

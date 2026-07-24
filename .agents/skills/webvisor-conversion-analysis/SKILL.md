@@ -26,7 +26,7 @@ description: >-
 
 | Этап | Артефакт |
 |------|----------|
-| -1 — tools/auth/contracts preflight | `experiments/<id>/preflight.json` |
+| -1 — MCP inventory/auth/contracts preflight | `experiments/<id>/preflight.json`, `raw/*-mcp-smoke.json` |
 | 0 — DOM + structural audit → карта | `landing-map.json` |
 | 1 — воронка | hypotheses.md |
 | 2 — группы + converted-профиль | hypotheses.md |
@@ -38,7 +38,7 @@ description: >-
 | 7 — проверка + workflow | `constraints-check.md` |
 | 8 — commit/push/redeploy + SHA evidence | `experiments/<id>/deploy.json` |
 | 9 — ровно 100 визитов | `experiments/<id>/simulator.json` |
-| 10 — snapshots 5 источников | `experiments/<id>/sources/*` |
+| 10 — immutable raw → checksums → normalized snapshots | `experiments/<id>/{raw,normalized}/*` |
 | 11 — reconciliation + decision | `comparison.json`, `manifest.json` |
 | 12 — ретроспектива skill | `skill-review.md` |
 
@@ -68,11 +68,33 @@ description: >-
 ### Эксперимент и мультиагентность (-1, 8–12)
 
 - Один mutation-controller выполняет push/redeploy/run-bot; один Git writer.
-- Аналитические агенты получают только immutable, PII-redacted snapshots.
+- Vendor MCP — первичный канал аналитики. Сначала получить tool inventory и
+  выполнить минимальный read-only smoke по нужному property/project/counter.
+  Не считать наличие server в config доказательством auth или resource access.
+- Проверить provenance каждого MCP: официальный vendor endpoint/package или
+  community implementation. Не называть community MCP vendor MCP.
+- Если project MCP отсутствует в registry, не подменять его браузером:
+  зафиксировать blocker и запросить перезапуск task. Если tool доступен, но
+  smoke не прошёл, сохранить точный error envelope как evidence.
+- До интерпретации сохранить PII-redacted raw tool envelope, параметры, UTC,
+  requested window, freshness/sampling status и SHA-256. Повторный запрос
+  сохранять новым файлом. После `checksums.sha256` raw считать immutable.
+- Нормализовать только после фиксации raw. Аналитические агенты получают только
+  immutable raw/normalized snapshots; им запрещены MCP, сеть, browser и live UI.
+- UI допустим только для write-настройки, если MCP write capability явно
+  отсутствует или завершилась документированной ошибкой. После UI fallback
+  всё равно выполнить MCP read-only verification; если он недоступен —
+  пометить настройку unverified.
 - Не запускать мутации, пока preflight не подтвердил read-access ко всем
-  обязательным источникам и точные OpenAPI-контракты control-plane.
+  обязательным источникам и точные OpenAPI-контракты control-plane. Если
+  эксперимент уже выполнен, недоступный источник не подменять: завершить
+  manifest со `status=unavailable` и decision `inconclusive`.
 - Не усреднять CR разных источников. Server/leaderboard — outcome; Yandex,
   GA4 и Amplitude — независимые измерения и diagnostics.
+- Различать requested simulator visits, successful visits, server visits,
+  leaderboard requests, users, sessions, event totals и goal reaches. `100`
+  успешных simulator visits и `101` server visits допустимы только с явным
+  discrepancy; лишний technical probe остаётся гипотезой без trace evidence.
 - Привязать candidate к commit SHA, remote SHA evidence, version marker,
   panel response hash, simulator run и временному окну. Не утверждать, что
   control-plane подтвердил SHA, если этого нет в его контракте.

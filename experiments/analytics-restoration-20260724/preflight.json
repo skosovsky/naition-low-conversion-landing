@@ -1,8 +1,8 @@
 {
   "schemaVersion": "1.0.0",
   "iterationId": "analytics-restoration-20260724",
-  "checkedAt": "2026-07-24T06:32:24Z",
-  "status": "blocked_before_external_mutation",
+  "checkedAt": "2026-07-24T07:09:30Z",
+  "status": "allowed_at_time_using_browser_evidence",
   "urls": {
     "site": "https://skosovsky.naition.sortedmap.ru",
     "controlPanel": "https://panel.naition.sortedmap.ru",
@@ -14,7 +14,7 @@
     "remoteBaselineSha": "87dd4127f1678853cc28ee34f4509075fa264ff4",
     "remote": "https://github.com/skosovsky/naition-low-conversion-landing.git",
     "pushAuthorizedByUser": true,
-    "candidateSha": null
+    "candidateSha": "20ba87b240c8e87d88e6e087e6b6112fa567431e"
   },
   "baseline": {
     "server": {
@@ -63,33 +63,72 @@
     "server": {
       "status": "ok",
       "goal": "persisted order / visits",
-      "access": "public aggregate collector with PII redaction"
+      "access": "public aggregate collector with PII redaction",
+      "freshness": "immediate"
     },
     "leaderboard": {
       "status": "ok",
       "goal": "eligible run orders / requests",
-      "access": "public"
+      "access": "public",
+      "freshness": "approximately 30 seconds"
     },
     "yandex": {
-      "status": "blocked",
+      "status": "browser_configured_mcp_unavailable",
       "counterId": "110921681",
       "goal": "registration_completed",
-      "reason": "MCP configured but no OAuth token is present in this session"
+      "access": "provider UI was authenticated before the run; post-run MCP smoke failed with redirect_uri_mismatch",
+      "freshness": "goal reports may lag several minutes",
+      "configuredGoals": {
+        "landing_viewed": "588475613",
+        "pricing_plan_selected": "588475731",
+        "registration_form_opened": "588475750",
+        "registration_attempted": "588476034",
+        "registration_completed": "588476540",
+        "registration_failed": "588476561"
+      },
+      "matchMode": "exact"
     },
     "ga4": {
-      "status": "blocked",
+      "status": "browser_configured_mcp_unavailable",
+      "accountId": "120216935",
+      "propertyId": "546448545",
       "measurementId": "G-699YWESPJ1",
       "goal": "generate_lead",
-      "reason": "MCP configured but GOOGLE_APPLICATION_CREDENTIALS and property access are absent"
+      "access": "provider UI was authenticated before the run; post-run MCP Admin and Data API calls failed with ACCESS_TOKEN_SCOPE_INSUFFICIENT",
+      "freshness": "Realtime up to 30 minutes; standard reports may take 24 hours",
+      "customDimensions": [
+        "analytics_schema_version",
+        "experiment_id",
+        "failure_type",
+        "form_surface",
+        "selected_plan",
+        "site_version"
+      ]
     },
     "amplitude": {
-      "status": "blocked",
+      "status": "ok",
+      "projectId": "843298",
+      "projectSlug": "floral-resonance-823301",
       "goal": "Registration Completed",
-      "reason": "remote MCP configured but OAuth is not connected in this session"
+      "access": "official remote MCP authenticated; project 843298 read access confirmed post-run",
+      "freshness": "Live Events is near real time; aggregate charts may lag",
+      "trackingPlan": {
+        "live": [
+          "Pricing Plan Selected",
+          "Registration Form Submitted",
+          "Registration Completed"
+        ],
+        "planned": [
+          "Landing Viewed",
+          "Registration Form Opened",
+          "Registration Failed"
+        ]
+      }
     },
     "controlPanel": {
-      "status": "blocked",
-      "reason": "GitHub OAuth login awaits user authentication"
+      "status": "ok",
+      "access": "GitHub-authenticated Chrome session",
+      "contractVerified": true
     }
   },
   "ownership": {
@@ -97,5 +136,19 @@
     "gitWriter": "/root",
     "sourceCollectors": "read-only subagents over PII-redacted immutable snapshots"
   },
-  "nextAllowedMutation": null
+  "mcpValidation": {
+    "performedAfterExternalMutation": true,
+    "reason": "the MCP-first requirement was clarified after the already completed redeploy and one 100-visit run",
+    "rawEvidence": [
+      "raw/2026-07-24T07-52-53Z-amplitude-mcp-smoke.json",
+      "raw/2026-07-24T07-52-53Z-ga4-mcp-smoke.json",
+      "raw/2026-07-24T07-52-53Z-yandex-metrica-mcp-smoke.json",
+      "raw/2026-07-24T08-22-11Z-ga4-mcp-data-api.json",
+      "raw/2026-07-24T08-22-11Z-amplitude-mcp-query.jsonl"
+    ],
+    "amplitude": "available",
+    "ga4": "unavailable_access_token_scope_insufficient",
+    "yandex": "unavailable_redirect_uri_mismatch"
+  },
+  "nextAllowedMutation": "unsigned_git_commit_and_push_only"
 }

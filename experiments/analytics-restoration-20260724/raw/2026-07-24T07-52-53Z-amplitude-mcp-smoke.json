@@ -1,0 +1,37 @@
+{
+  "schemaVersion": "mcp-smoke.v1",
+  "collectedAt": "2026-07-24T07:52:53Z",
+  "provider": "amplitude",
+  "transport": "MCP",
+  "source": {
+    "server": "amplitude",
+    "configuredEndpoint": "https://mcp.amplitude.com/mcp",
+    "authentication": "OAuth"
+  },
+  "callableTools": [
+    "invite_users",
+    "create_properties",
+    "get_amplitude_context",
+    "get_org_projects",
+    "get_deployments",
+    "set_project_context",
+    "update_ai_visibility_page_view_config",
+    "get_from_url",
+    "get_experiments",
+    "create_flags"
+  ],
+  "smokeCall": {
+    "tool": "get_amplitude_context",
+    "arguments": {},
+    "readOnly": true,
+    "result": "accessible project list returned; project 843298 present"
+  },
+  "authenticationStatus": "authenticated",
+  "resourceAccess": "confirmed",
+  "observedIdentifiers": {
+    "organizationId": "451009",
+    "projectId": "843298",
+    "projectName": "default"
+  },
+  "error": null
+}

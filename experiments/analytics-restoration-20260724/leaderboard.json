@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "1.0.0",
+  "iterationId": "analytics-restoration-20260724",
+  "source": "leaderboard",
+  "collectedAt": "2026-07-24T07:23:30Z",
+  "cacheTtlSeconds": 30,
+  "candidateRun": {
+    "reportedAt": "2026-07-24T07:21:06Z",
+    "requests": 101,
+    "orders": 22,
+    "conversionRate": 21.8
+  },
+  "baselineRun": {
+    "reportedAt": "2026-07-23T18:26:58Z",
+    "requests": 101,
+    "orders": 27,
+    "conversionRate": 26.7
+  },
+  "delta": {
+    "orders": -5,
+    "conversionRatePercentagePoints": -4.9
+  },
+  "notes": [
+    "The leaderboard candidate denominator is 101 requests for the one 100-visit simulator run.",
+    "The 101-request shape matches the previous eligible run and the server's extra control-plane or eligibility probe."
+  ]
+}

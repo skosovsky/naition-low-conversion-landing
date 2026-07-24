@@ -10,10 +10,15 @@
 2. `site_url`, `control_panel_url`, `leaderboard_url`.
 3. OpenAPI control-plane: методы redeploy, status, run-bot и их параметры.
 4. Read-access: server export, Yandex Metrica, GA4, Amplitude, leaderboard.
+   Для трёх клиентских аналитик сохранить MCP tool inventory и минимальный
+   read-only smoke. Browser/UI не является подтверждением MCP access.
 5. Goal mapping каждого источника и допустимую freshness/lag.
 6. Наличие exclusive mutation-controller и Git writer.
 
 Если обязательный источник недоступен, остановиться **до** redeploy/run-bot.
+Если итерация уже была запущена до обнаружения blocker, не повторять мутацию:
+зафиксировать источник как `unavailable` и завершить решение как
+`inconclusive`.
 
 ## Append-only layout
 
@@ -23,12 +28,16 @@ experiments/<iteration-id>/
 ├── manifest.json
 ├── deploy.json
 ├── simulator.json
-├── sources/
+├── raw/
+│   ├── <timestamp>-<provider>-mcp-*.json[l]
+│   └── checksums.sha256
+├── normalized/
 │   ├── server.json
-│   ├── yandex.json
-│   ├── ga4.json
+│   ├── yandex-metrica.json
+│   ├── google-analytics.json
 │   ├── amplitude.json
 │   └── leaderboard.json
+├── audits/
 ├── comparison.json
 ├── decision.md
 └── skill-review.md
@@ -55,8 +64,11 @@ experiments/<iteration-id>/
    freshness, не расширяя cohort.
 8. Снять leaderboard detail после его cache window и найти новый run около 100
    запросов. Не смешивать малые посторонние runs.
-9. Сверить источники, но не усреднять их.
-10. Решение: `promote`, `revert`, `inconclusive`.
+9. Сначала сохранить raw MCP responses, затем проверить checksums и только
+   после этого построить normalized snapshots. Лишь затем запускать файловых
+   аудиторов.
+10. Сверить источники, но не усреднять их.
+11. Решение: `promote`, `revert`, `inconclusive`.
 
 Последовательный baseline/candidate — `before_after`. Использовать `randomized_ab`
 только при реальном случайном распределении вариантов.
@@ -66,9 +78,25 @@ experiments/<iteration-id>/
 - Outcome: server-side persisted order и leaderboard.
 - Diagnostics: Yandex, GA4, Amplitude.
 - Для каждого snapshot хранить metric/goal mapping, numerator, denominator,
-  window, collectedAt, freshness и artifact provenance.
+  denominator semantics, window, collectedAt, freshness, sampling/thresholding
+  status и artifact provenance.
 - Расхождения оформлять как discrepancy с возможной причиной: lag, другое goal
   mapping, bot filtering, cache или неполный cohort.
+- `100` requested/successful simulator visits не обязаны равняться server или
+  leaderboard denominator. Не удалять лишний visit из evidence; хранить оба
+  числа и отделять подтверждённый факт от гипотезы о technical probe.
+
+## MCP-specific preflight
+
+- **GA4:** проверить оба Admin/Data API вызова. Для ADC заранее проверить scope
+  `analytics.readonly`; `authorized_user` credential без подтверждённого scope
+  не считать рабочим.
+- **Amplitude:** сначала подтвердить project ID. Не использовать
+  `set_project_context` как read-only selector: это изменение AI context.
+  Сохранять полный response shape; formula totals не выдавать за ordered funnel.
+- **Yandex Metrica:** зафиксировать package/endpoint provenance. Для community
+  package сохранить точный OAuth redirect URI и provider error. Не приписывать
+  ownership/root cause без authorization trace и client registration evidence.
 
 ## Privacy
 

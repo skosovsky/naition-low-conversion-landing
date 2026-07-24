@@ -1,0 +1,144 @@
+{
+  "schemaVersion": "analytics-normalized.v1",
+  "normalizedAt": "2026-07-24T08:35:07Z",
+  "provider": "amplitude",
+  "status": "available",
+  "sourceFiles": [
+    {
+      "path": "experiments/analytics-restoration-20260724/raw/2026-07-24T07-52-53Z-amplitude-mcp-smoke.json",
+      "sha256": "a8e326c3a6ecd4ad39417a830fd831197891ed77251b1a0941728b5818d96b07"
+    },
+    {
+      "path": "experiments/analytics-restoration-20260724/raw/2026-07-24T08-22-11Z-amplitude-mcp-query.jsonl",
+      "sha256": "98c004521f72019f7bbafa0a4e1eadf764ed2db73e6bcadc5f005bda2a37e88d"
+    }
+  ],
+  "context": {
+    "organizationId": "451009",
+    "projectId": "843298",
+    "projectName": "default"
+  },
+  "query": {
+    "tool": "query_dataset",
+    "requestId": "req_1784881327433_4x6fw4tkk",
+    "chartEditId": "brs6ahuj",
+    "type": "eventsSegmentation",
+    "readOnly": true,
+    "savedObjectCreated": false,
+    "requestedWindow": {
+      "start": "2026-07-24T07:10:00Z",
+      "end": "2026-07-24T07:25:00Z",
+      "startEpochSeconds": 1784877000,
+      "endEpochSeconds": 1784877900,
+      "intervalMilliseconds": 300000
+    },
+    "rawInterval": -300000,
+    "countGroup": "User",
+    "metric": "formula",
+    "formula": "TOTALS(A); UNIQUES(A); TOTALS(B); UNIQUES(B); TOTALS(C); UNIQUES(C); TOTALS(D); UNIQUES(D); TOTALS(E); UNIQUES(E)",
+    "semantics": "independent aggregate event sets; not an ordered funnel",
+    "filters": {
+      "experiment_id": "analytics-restoration-20260724",
+      "site_version": "measurement-v2-20260724"
+    }
+  },
+  "events": [
+    {
+      "name": "Landing Viewed",
+      "eventTotal": 101,
+      "uniqueUsers": 101,
+      "nonzeroBuckets": [
+        {
+          "time": "2026-07-24T07:10:00",
+          "eventTotal": 22,
+          "uniqueUsers": 22
+        },
+        {
+          "time": "2026-07-24T07:15:00",
+          "eventTotal": 62,
+          "uniqueUsers": 62
+        },
+        {
+          "time": "2026-07-24T07:20:00",
+          "eventTotal": 17,
+          "uniqueUsers": 17
+        }
+      ]
+    },
+    {
+      "name": "Pricing Plan Selected",
+      "eventTotal": 100,
+      "uniqueUsers": 100,
+      "nonzeroBuckets": [
+        {
+          "time": "2026-07-24T07:10:00",
+          "eventTotal": 16,
+          "uniqueUsers": 16
+        },
+        {
+          "time": "2026-07-24T07:15:00",
+          "eventTotal": 60,
+          "uniqueUsers": 60
+        },
+        {
+          "time": "2026-07-24T07:20:00",
+          "eventTotal": 24,
+          "uniqueUsers": 24
+        }
+      ]
+    },
+    {
+      "name": "Registration Form Opened",
+      "eventTotal": 22,
+      "uniqueUsers": 22,
+      "nonzeroBuckets": [
+        {
+          "time": "2026-07-24T07:10:00",
+          "eventTotal": 6,
+          "uniqueUsers": 6
+        },
+        {
+          "time": "2026-07-24T07:15:00",
+          "eventTotal": 9,
+          "uniqueUsers": 9
+        },
+        {
+          "time": "2026-07-24T07:20:00",
+          "eventTotal": 7,
+          "uniqueUsers": 7
+        }
+      ]
+    },
+    {
+      "name": "Registration Form Submitted",
+      "eventTotal": 22,
+      "uniqueUsers": 22,
+      "nonzeroBuckets": null
+    },
+    {
+      "name": "Registration Completed",
+      "eventTotal": 22,
+      "uniqueUsers": 22,
+      "nonzeroBuckets": null
+    }
+  ],
+  "observedResponseShape": {
+    "format": "CSV matrix embedded in MCP JSON",
+    "headerRange": "2026-07-24T00:00:00 through 2026-07-24T23:55:00",
+    "requestedRangeWasEchoedInArguments": true,
+    "submittedAndCompletedBucketCells": "null",
+    "submittedAndCompletedTotalCells": 22
+  },
+  "coverage": {
+    "queriedEvents": 5,
+    "contractEvents": 6,
+    "missingEvents": [
+      "Registration Failed"
+    ],
+    "requiredPropertyCompleteness": "not queried",
+    "trackingPlanStatus": "not queried",
+    "autocaptureAndSessionReplayAbsence": "not queried",
+    "sampling": "not reported by MCP response",
+    "freshness": "query completed approximately one hour after the cohort; ingestion completeness was not attested"
+  }
+}

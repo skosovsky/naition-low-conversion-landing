@@ -1,0 +1,98 @@
+{
+  "schemaVersion": "conversion-comparison.v1",
+  "iterationId": "analytics-restoration-20260724",
+  "comparisonType": "before_after",
+  "outcomeSource": "leaderboard counts reconciled with server persistence",
+  "baseline": {
+    "numerator": 27,
+    "denominator": 101,
+    "denominatorSemantics": "leaderboard requests",
+    "conversionRatePct": 26.73267326732673,
+    "wilson95Pct": [
+      19.070960286947725,
+      36.09944603066935
+    ]
+  },
+  "candidate": {
+    "numerator": 22,
+    "denominator": 101,
+    "denominatorSemantics": "server visits and leaderboard requests",
+    "conversionRatePct": 21.782178217821784,
+    "wilson95Pct": [
+      14.847681268900093,
+      30.784513626933374
+    ]
+  },
+  "effect": {
+    "ordersDelta": -5,
+    "absoluteDifferencePercentagePoints": -4.950495049504952,
+    "relativeLiftPct": -18.518518518518523,
+    "newcombeWilson95DifferencePercentagePoints": [
+      -16.604836726952943,
+      6.870836881028619
+    ]
+  },
+  "tests": {
+    "fisherExactTwoSided": {
+      "oddsRatio": 0.7632439969977483,
+      "pValue": 0.5117077271,
+      "alpha": 0.05
+    }
+  },
+  "minimumDetectableEffect": {
+    "method": "exact Fisher rejection region with joint binomial power",
+    "alpha": 0.05,
+    "power": 0.8,
+    "groupSize": 101,
+    "baselineRatePct": 26.73267326732673,
+    "detectableDecreaseRatePct": 10.724388,
+    "detectableDecreasePercentagePoints": -16.008285,
+    "detectableIncreaseRatePct": 46.563088,
+    "detectableIncreasePercentagePoints": 19.830415,
+    "powerAtObservedEffectPct": 9.805246
+  },
+  "reconciliation": {
+    "simulator": {
+      "numerator": 22,
+      "denominator": 100,
+      "denominatorSemantics": "successful simulator visits"
+    },
+    "server": {
+      "numerator": 22,
+      "denominator": 101,
+      "denominatorSemantics": "persisted visits"
+    },
+    "leaderboard": {
+      "numerator": 22,
+      "denominator": 101,
+      "denominatorSemantics": "leaderboard requests"
+    },
+    "amplitude": {
+      "numerator": 22,
+      "denominator": 101,
+      "denominatorSemantics": "Registration Completed unique users / Landing Viewed unique users"
+    },
+    "ga4": {
+      "status": "unavailable",
+      "blocker": "ACCESS_TOKEN_SCOPE_INSUFFICIENT"
+    },
+    "yandex": {
+      "status": "unavailable",
+      "blocker": "redirect_uri_mismatch"
+    }
+  },
+  "extraVisit": {
+    "observed": true,
+    "deltaFromSuccessfulSimulatorVisits": 1,
+    "hypothesis": "view-only control-plane or eligibility probe",
+    "confidence": "aggregate-consistent but identity-unproven",
+    "treatment": "retained in the canonical 101 denominator"
+  },
+  "decision": "inconclusive",
+  "decisionReasons": [
+    "The 95% difference interval includes zero and Fisher p-value is 0.5117.",
+    "The study has approximately 9.8% power at the observed effect.",
+    "GA4 and Yandex Metrica could not be read through their configured MCPs.",
+    "The Amplitude query is aggregate event segmentation, not an ordered user-level funnel."
+  ]
+}

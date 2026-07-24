@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "mcp-smoke.v1",
+  "collectedAt": "2026-07-24T07:52:53Z",
+  "provider": "google_analytics",
+  "transport": "MCP",
+  "source": {
+    "server": "google_analytics",
+    "command": "pipx run analytics-mcp"
+  },
+  "callableTools": [
+    "get_account_summaries",
+    "get_property_details",
+    "get_custom_dimensions_and_metrics",
+    "list_google_ads_links",
+    "list_property_annotations",
+    "run_report",
+    "run_realtime_report",
+    "run_conversions_report",
+    "run_funnel_report"
+  ],
+  "smokeCall": {
+    "tool": "get_property_details",
+    "arguments": {
+      "property_id": 546448545
+    },
+    "readOnly": true,
+    "result": "cancelled by the nested Codex approval wrapper before the MCP response was returned"
+  },
+  "authenticationStatus": "not_verified",
+  "resourceAccess": "not_verified",
+  "observedIdentifiers": {
+    "propertyId": "546448545",
+    "measurementId": "G-699YWESPJ1"
+  },
+  "error": {
+    "code": "orchestration_cancelled",
+    "message": "user cancelled MCP tool call",
+    "attribution": "nested Codex approval wrapper; not yet attributable to Google Analytics authentication"
+  }
+}

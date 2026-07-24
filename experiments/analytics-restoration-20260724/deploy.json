@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "1.0.0",
+  "iterationId": "analytics-restoration-20260724",
+  "evidenceId": "analytics-restoration-20260724:deploy:20ba87b",
+  "requestedAt": "2026-07-24T07:10:38Z",
+  "candidateSha": "20ba87b240c8e87d88e6e087e6b6112fa567431e",
+  "versionMarker": "measurement-v2-20260724",
+  "completedAt": "2026-07-24T07:12:30Z",
+  "status": "succeeded",
+  "attempts": 1,
+  "controlPanel": {
+    "url": "https://panel.naition.sortedmap.ru",
+    "repository": "https://github.com/skosovsky/naition-low-conversion-landing.git",
+    "terminalStatus": "deployed",
+    "terminalMessage": "Сайт успешно развёрнут",
+    "visibleStateSha256": "8de81729c12b17e4e572da37f0b4591562c793d4f2f120a4f048dbe0e9c93fcc"
+  },
+  "verification": {
+    "remoteMainSha": "20ba87b240c8e87d88e6e087e6b6112fa567431e",
+    "liveVersionMarker": "measurement-v2-20260724",
+    "databaseReset": {
+      "visits": 0,
+      "orders": 0,
+      "generatedAt": "2026-07-24T07:12:18Z"
+    }
+  }
+}

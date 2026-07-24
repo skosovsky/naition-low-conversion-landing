@@ -1,0 +1,61 @@
+{
+  "schemaVersion": "mcp-smoke.v1",
+  "collectedAt": "2026-07-24T07:52:53Z",
+  "provider": "yandex_metrica",
+  "transport": "MCP",
+  "source": {
+    "server": "yandex_metrica",
+    "package": "yandex-metrica-mcp",
+    "packageVersion": "0.3.0",
+    "corePackage": "@boxlab/yandex-mcp-core",
+    "corePackageVersion": "0.1.1",
+    "provenance": "community BoxLab implementation; no official Yandex Metrica MCP server is published by Yandex"
+  },
+  "callableTools": [
+    "describe_counter",
+    "get_metadata",
+    "logs_status",
+    "run_report",
+    "logs_clean",
+    "logs_request",
+    "login",
+    "submit_code",
+    "run_drilldown",
+    "run_timeseries",
+    "logs_download",
+    "run_comparison"
+  ],
+  "smokeCall": {
+    "tool": "describe_counter",
+    "arguments": {
+      "counterId": 110921681,
+      "include": [
+        "settings"
+      ],
+      "fullResponse": false
+    },
+    "readOnly": true,
+    "result": "failed before resource access: Not signed in. Use the login tool to sign in."
+  },
+  "oauthReproduction": {
+    "tool": "login",
+    "mode": "oob",
+    "embeddedClientId": "6f14d1c1384440b1b2915f6d956da84b",
+    "requestedRedirectUri": "https://oauth.yandex.com/verification_code",
+    "providerResponse": {
+      "status": 400,
+      "message": "redirect_uri does not match the Callback URL defined for the client"
+    },
+    "loopbackRedirectUriInPackage": "http://127.0.0.1:53682/callback",
+    "diagnosis": "The package's embedded OAuth client is not registered for the redirect URI it sends. Retrying login cannot fix the client registration."
+  },
+  "authenticationStatus": "blocked_upstream_oauth_client_configuration",
+  "resourceAccess": "not_verified",
+  "observedIdentifiers": {
+    "counterId": "110921681"
+  },
+  "error": {
+    "code": "redirect_uri_mismatch",
+    "attribution": "OAuth application registration for the MCP package's embedded client_id"
+  }
+}

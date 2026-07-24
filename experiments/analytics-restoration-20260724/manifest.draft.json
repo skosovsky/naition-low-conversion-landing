@@ -29,7 +29,7 @@
     }
   },
   "candidate": {
-    "commitSha": null,
+    "commitSha": "20ba87b240c8e87d88e6e087e6b6112fa567431e",
     "versionMarker": "measurement-v2-20260724"
   },
   "simulator": {

@@ -1,0 +1,169 @@
+{
+  "schemaVersion": "2.0.0",
+  "iterationId": "analytics-restoration-20260724",
+  "status": "completed",
+  "comparisonType": "before_after",
+  "hypothesis": {
+    "id": "measurement-contract-v2",
+    "statement": "A single privacy-safe event contract across GA4, Yandex Metrica, and Amplitude will make the 100-visit cohort diagnosable without changing the landing conversion mechanics.",
+    "changeSet": [
+      "Add a provider-neutral event contract and schema",
+      "Emit semantic funnel events to all three providers",
+      "Use stable plan and deploy identifiers",
+      "Disable Amplitude Session Replay and mask form data",
+      "Add contract tests and rebuild the browser bundle"
+    ],
+    "expectedMetric": "Server and leaderboard conversion stay comparable while client analytics expose the landing-to-registration path."
+  },
+  "baseline": {
+    "commitSha": "87dd4127f1678853cc28ee34f4509075fa264ff4",
+    "metric": {
+      "name": "leaderboard orders / requests",
+      "numerator": 27,
+      "denominator": 101,
+      "denominatorSemantics": "leaderboard requests in the previous eligible run",
+      "cr": 26.73267326732673
+    }
+  },
+  "candidate": {
+    "commitSha": "20ba87b240c8e87d88e6e087e6b6112fa567431e",
+    "metric": {
+      "name": "leaderboard orders / requests",
+      "numerator": 22,
+      "denominator": 101,
+      "denominatorSemantics": "leaderboard requests in the candidate run",
+      "cr": 21.782178217821784
+    },
+    "deploy": {
+      "evidenceId": "analytics-restoration-20260724:deploy:20ba87b",
+      "remoteSha": "20ba87b240c8e87d88e6e087e6b6112fa567431e",
+      "versionMarker": "measurement-v2-20260724",
+      "panelResponseSha256": "8de81729c12b17e4e572da37f0b4591562c793d4f2f120a4f048dbe0e9c93fcc",
+      "deployedAt": "2026-07-24T07:12:30Z",
+      "status": "succeeded"
+    }
+  },
+  "simulator": {
+    "evidenceId": "analytics-restoration-20260724:100",
+    "panelResponseSha256": "73f5750beffc70309933a291be2eef68db1890802a6128b87acd12706633bb0e",
+    "requestedVisits": 100,
+    "successfulVisits": 100,
+    "failedVisits": 0,
+    "attempts": 1,
+    "startedAt": "2026-07-24T07:13:23Z",
+    "endedAt": "2026-07-24T07:21:58Z"
+  },
+  "cohort": {
+    "start": "2026-07-24T07:13:23Z",
+    "end": "2026-07-24T07:21:58Z"
+  },
+  "analytics": {
+    "server": {
+      "status": "available",
+      "goal": "persisted orders / persisted visits",
+      "collectedAt": "2026-07-24T07:22:38Z",
+      "window": {
+        "start": "2026-07-24T07:13:23Z",
+        "end": "2026-07-24T07:21:58Z"
+      },
+      "freshness": "40 seconds after simulator completion",
+      "sampling": "not sampled",
+      "metric": {
+        "name": "persisted orders / persisted visits",
+        "numerator": 22,
+        "denominator": 101,
+        "denominatorSemantics": "persisted server visits",
+        "cr": 21.782178217821784
+      },
+      "artifact": "normalized/server.json"
+    },
+    "yandex": {
+      "status": "unavailable",
+      "goal": "registration_completed JavaScript goal",
+      "collectedAt": "2026-07-24T07:52:53Z",
+      "requestedWindow": {
+        "start": "2026-07-24T07:10:00Z",
+        "end": "2026-07-24T07:25:00Z"
+      },
+      "blocker": "Observed redirect_uri_mismatch in the configured community MCP login flow; counter access and root cause remain unverified.",
+      "artifact": "normalized/yandex-metrica.json"
+    },
+    "ga4": {
+      "status": "unavailable",
+      "goal": "generate_lead",
+      "collectedAt": "2026-07-24T07:57:58Z",
+      "requestedWindow": {
+        "start": "2026-07-24T00:00:00Z",
+        "end": "2026-07-24T23:59:59Z"
+      },
+      "blocker": "Admin and Data API calls returned ACCESS_TOKEN_SCOPE_INSUFFICIENT; property data were not read.",
+      "artifact": "normalized/google-analytics.json"
+    },
+    "amplitude": {
+      "status": "available",
+      "goal": "Registration Completed unique users / Landing Viewed unique users",
+      "collectedAt": "2026-07-24T08:22:11Z",
+      "window": {
+        "start": "2026-07-24T07:10:00Z",
+        "end": "2026-07-24T07:25:00Z"
+      },
+      "freshness": "queried approximately one hour after the cohort; ingestion completeness not attested",
+      "sampling": "not reported by the MCP response",
+      "metric": {
+        "name": "Registration Completed unique users / Landing Viewed unique users",
+        "numerator": 22,
+        "denominator": 101,
+        "denominatorSemantics": "independent Amplitude event-set unique users",
+        "cr": 21.782178217821784
+      },
+      "artifact": "normalized/amplitude.json"
+    },
+    "leaderboard": {
+      "status": "available",
+      "goal": "orders / requests in the candidate run",
+      "collectedAt": "2026-07-24T07:23:30Z",
+      "window": {
+        "start": "2026-07-24T07:13:23Z",
+        "end": "2026-07-24T07:21:58Z"
+      },
+      "freshness": "collected after the documented 30-second cache window",
+      "sampling": "not sampled",
+      "metric": {
+        "name": "leaderboard orders / requests",
+        "numerator": 22,
+        "denominator": 101,
+        "denominatorSemantics": "leaderboard requests in the candidate run",
+        "cr": 21.782178217821784
+      },
+      "artifact": "normalized/leaderboard.json"
+    }
+  },
+  "skill": {
+    "path": ".agents/skills/webvisor-conversion-analysis",
+    "versionHash": "sha256:43c96818ab58292f4baaebcd9a36cd3435f65167dd9761e68a06d6b701b3ee61",
+    "previousVersionHash": "sha256:f41e5bf419fb2f886f971559decfc3171017cf8f2e6c7260bcf385cad96a82aa"
+  },
+  "comparison": {
+    "baselineCr": 26.73267326732673,
+    "candidateCr": 21.782178217821784,
+    "deltaPp": -4.950495049504952,
+    "relativeLiftPct": -18.518518518518523,
+    "differenceCi95Pp": [
+      -16.604836726952943,
+      6.870836881028619
+    ],
+    "fisherExactTwoSidedP": 0.5117077271
+  },
+  "discrepancies": [
+    "Simulator attests 100 successful visits, while server, leaderboard, and Amplitude Landing Viewed use denominator 101.",
+    "The extra view is consistent with a technical probe but is not identity-proven and remains in the canonical denominator.",
+    "Amplitude returned independent event-set totals, not an ordered user-level funnel.",
+    "GA4 and Yandex Metrica provider data are unavailable through their configured MCPs."
+  ],
+  "processDeviations": [
+    "The MCP-first requirement was clarified after the already completed redeploy and one simulator run; post-run MCP smoke is recorded instead.",
+    "GA4 raw data filename timestamp differs from its internal collectedAt; the manifest uses the internal collectedAt.",
+    "Amplitude raw JSONL has no top-level collectedAt; the immutable filename and MCP request ID provide capture-time evidence."
+  ],
+  "decision": "inconclusive"
+}

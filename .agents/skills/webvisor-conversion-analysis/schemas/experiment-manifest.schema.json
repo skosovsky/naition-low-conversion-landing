@@ -17,10 +17,12 @@
     "analytics",
     "skill",
     "comparison",
+    "discrepancies",
+    "processDeviations",
     "decision"
   ],
   "properties": {
-    "schemaVersion": {"const": "1.0.0"},
+    "schemaVersion": {"const": "2.0.0"},
     "iterationId": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]{2,63}$"},
     "status": {"const": "completed"},
     "comparisonType": {"enum": ["before_after", "randomized_ab"]},
@@ -45,7 +47,7 @@
       "additionalProperties": false,
       "required": ["commitSha", "metric", "deploy"],
       "properties": {
-        "commitSha": {"type": "string", "pattern": "^[0-9a-f]{7,40}$"},
+        "commitSha": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
         "metric": {"$ref": "#/$defs/metric"},
         "deploy": {
           "type": "object",
@@ -60,7 +62,7 @@
           ],
           "properties": {
             "evidenceId": {"type": "string", "minLength": 1},
-            "remoteSha": {"type": "string", "pattern": "^[0-9a-f]{7,40}$"},
+            "remoteSha": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
             "versionMarker": {"type": "string", "minLength": 1},
             "panelResponseSha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
             "deployedAt": {"type": "string", "format": "date-time"},
@@ -76,7 +78,9 @@
         "evidenceId",
         "panelResponseSha256",
         "requestedVisits",
-        "observedVisits",
+        "successfulVisits",
+        "failedVisits",
+        "attempts",
         "startedAt",
         "endedAt"
       ],
@@ -84,7 +88,9 @@
         "evidenceId": {"type": "string", "minLength": 1},
         "panelResponseSha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
         "requestedVisits": {"const": 100},
-        "observedVisits": {"const": 100},
+        "successfulVisits": {"const": 100},
+        "failedVisits": {"const": 0},
+        "attempts": {"const": 1},
         "startedAt": {"type": "string", "format": "date-time"},
         "endedAt": {"type": "string", "format": "date-time"}
       }
@@ -105,22 +111,45 @@
     "skill": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["path", "versionHash"],
+      "required": ["path", "versionHash", "previousVersionHash"],
       "properties": {
         "path": {"type": "string", "minLength": 1},
-        "versionHash": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
+        "versionHash": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+        "previousVersionHash": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
       }
     },
     "comparison": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["baselineCr", "candidateCr", "deltaPp", "relativeLiftPct"],
+      "required": [
+        "baselineCr",
+        "candidateCr",
+        "deltaPp",
+        "relativeLiftPct",
+        "differenceCi95Pp",
+        "fisherExactTwoSidedP"
+      ],
       "properties": {
         "baselineCr": {"type": "number", "minimum": 0, "maximum": 100},
         "candidateCr": {"type": "number", "minimum": 0, "maximum": 100},
         "deltaPp": {"type": "number"},
-        "relativeLiftPct": {"type": ["number", "null"]}
+        "relativeLiftPct": {"type": ["number", "null"]},
+        "differenceCi95Pp": {
+          "type": "array",
+          "prefixItems": [{"type": "number"}, {"type": "number"}],
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "fisherExactTwoSidedP": {"type": "number", "minimum": 0, "maximum": 1}
       }
+    },
+    "discrepancies": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1}
+    },
+    "processDeviations": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1}
     },
     "decision": {"enum": ["promote", "revert", "inconclusive"]}
   },
@@ -128,11 +157,12 @@
     "metric": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["name", "numerator", "denominator", "cr"],
+      "required": ["name", "numerator", "denominator", "denominatorSemantics", "cr"],
       "properties": {
         "name": {"type": "string", "minLength": 1},
         "numerator": {"type": "integer", "minimum": 0},
         "denominator": {"type": "integer", "minimum": 1},
+        "denominatorSemantics": {"type": "string", "minLength": 1},
         "cr": {"type": "number", "minimum": 0, "maximum": 100}
       }
     },
@@ -141,9 +171,8 @@
       "additionalProperties": false,
       "required": ["commitSha", "metric"],
       "properties": {
-        "commitSha": {"type": "string", "pattern": "^[0-9a-f]{7,40}$"},
-        "metric": {"$ref": "#/$defs/metric"},
-        "deploy": {"type": "object"}
+        "commitSha": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "metric": {"$ref": "#/$defs/metric"}
       }
     },
     "window": {
@@ -156,17 +185,58 @@
       }
     },
     "source": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["status", "goal", "collectedAt", "window", "metric", "artifact"],
-      "properties": {
-        "status": {"const": "ok"},
-        "goal": {"type": "string", "minLength": 1},
-        "collectedAt": {"type": "string", "format": "date-time"},
-        "window": {"$ref": "#/$defs/window"},
-        "metric": {"$ref": "#/$defs/metric"},
-        "artifact": {"type": "string", "pattern": "^sources/[a-z0-9._-]+\\.json$"}
-      }
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "status",
+            "goal",
+            "collectedAt",
+            "window",
+            "freshness",
+            "sampling",
+            "metric",
+            "artifact"
+          ],
+          "properties": {
+            "status": {"const": "available"},
+            "goal": {"type": "string", "minLength": 1},
+            "collectedAt": {"type": "string", "format": "date-time"},
+            "window": {"$ref": "#/$defs/window"},
+            "freshness": {"type": "string", "minLength": 1},
+            "sampling": {"type": "string", "minLength": 1},
+            "metric": {"$ref": "#/$defs/metric"},
+            "artifact": {
+              "type": "string",
+              "pattern": "^normalized/[a-z0-9._-]+\\.json$"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "status",
+            "goal",
+            "collectedAt",
+            "requestedWindow",
+            "blocker",
+            "artifact"
+          ],
+          "properties": {
+            "status": {"enum": ["unavailable", "stale"]},
+            "goal": {"type": "string", "minLength": 1},
+            "collectedAt": {"type": "string", "format": "date-time"},
+            "requestedWindow": {"$ref": "#/$defs/window"},
+            "blocker": {"type": "string", "minLength": 1},
+            "artifact": {
+              "type": "string",
+              "pattern": "^normalized/[a-z0-9._-]+\\.json$"
+            }
+          }
+        }
+      ]
     }
   }
 }

@@ -1,0 +1,97 @@
+{
+  "schemaVersion": "mcp-query.v1",
+  "collectedAt": "2026-07-24T07:57:58Z",
+  "provider": "google_analytics",
+  "transport": "MCP",
+  "source": {
+    "server": "google_analytics",
+    "command": "pipx run analytics-mcp",
+    "propertyId": "546448545",
+    "measurementId": "G-699YWESPJ1"
+  },
+  "calls": [
+    {
+      "tool": "get_property_details",
+      "arguments": {
+        "property_id": 546448545
+      },
+      "readOnly": true,
+      "success": false,
+      "result": null,
+      "error": {
+        "httpStatus": 403,
+        "reason": "ACCESS_TOKEN_SCOPE_INSUFFICIENT",
+        "service": "analyticsadmin.googleapis.com",
+        "method": "google.analytics.admin.v1beta.AnalyticsAdminService.GetProperty",
+        "message": "Request had insufficient authentication scopes"
+      }
+    },
+    {
+      "tool": "run_report",
+      "arguments": {
+        "property_id": 546448545,
+        "date_ranges": [
+          {
+            "start_date": "2026-07-24",
+            "end_date": "2026-07-24"
+          }
+        ],
+        "dimensions": [
+          "dateHourMinute",
+          "eventName",
+          "hostName"
+        ],
+        "metrics": [
+          "eventCount",
+          "totalUsers"
+        ],
+        "order_bys": [
+          {
+            "dimension": {
+              "dimension_name": "dateHourMinute",
+              "order_type": 1
+            },
+            "desc": false
+          }
+        ],
+        "limit": 10000
+      },
+      "readOnly": true,
+      "success": false,
+      "result": [
+        {
+          "type": "text",
+          "text": "{\"error\": \"Failed to execute tool 'run_report': 403 Request had insufficient authentication scopes. [reason: \\\"ACCESS_TOKEN_SCOPE_INSUFFICIENT\\\"\\ndomain: \\\"googleapis.com\\\"\\nmetadata {\\n  key: \\\"service\\\"\\n  value: \\\"analyticsdata.googleapis.com\\\"\\n}\\nmetadata {\\n  key: \\\"method\\\"\\n  value: \\\"google.analytics.data.v1beta.BetaAnalyticsData.RunReport\\\"\\n}\\n]\"}"
+        }
+      ],
+      "error": {
+        "httpStatus": 403,
+        "reason": "ACCESS_TOKEN_SCOPE_INSUFFICIENT",
+        "service": "analyticsdata.googleapis.com",
+        "method": "google.analytics.data.v1beta.BetaAnalyticsData.RunReport",
+        "message": "Request had insufficient authentication scopes"
+      }
+    }
+  ],
+  "authenticationDiagnosis": {
+    "credentialType": "authorized_user",
+    "storedScopes": null,
+    "hasClientId": true,
+    "hasRefreshToken": true,
+    "attemptedRemediation": {
+      "command": "gcloud auth application-default login",
+      "requestedScopes": [
+        "https://www.googleapis.com/auth/analytics.readonly",
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "outcome": "cancelled after the OAuth callback did not return",
+      "credentialFileChanged": false,
+      "providerWarning": "The default gcloud client ID will soon block analytics.readonly; use a private client ID or service-account impersonation."
+    }
+  },
+  "resourceAccess": "not_verified",
+  "error": {
+    "code": "missing_analytics_readonly_scope",
+    "reproducible": true
+  }
+}

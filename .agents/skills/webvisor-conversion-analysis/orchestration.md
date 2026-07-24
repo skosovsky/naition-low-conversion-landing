@@ -15,9 +15,9 @@ Mutation-controller и git-writer могут быть одним агентом.
 
 ## Ownership и idempotency
 
-- До запуска создать `manifest.draft.json` со статусом `planned`. После полной
-  проверки сформировать immutable `manifest.json` со статусом `completed` по
-  JSON Schema.
+- До запуска создать `manifest.draft.json` со статусом `planned`; draft не
+  обязан проходить final schema. После полной проверки сформировать
+  `manifest.json` со статусом `completed` по JSON Schema.
 - Client evidence key для redeploy: `<iterationId>:<candidateSha>`.
 - Simulator key: `<iterationId>:100`.
 - Если deploy/simulator evidence уже записан, повторный вызов запрещён; сначала проверить
@@ -26,10 +26,16 @@ Mutation-controller и git-writer могут быть одним агентом.
 
 ## Fan-out данных
 
-1. Один ingestion path снимает raw snapshot.
-2. До fan-out удалить PII и секреты, вычислить checksum.
-3. Раздать immutable shards с явным списком visit IDs.
-4. Aggregator проверяет missing/duplicate IDs и checksum входов.
+1. Один ingestion-agent владеет analytics auth и по очереди снимает raw MCP
+   snapshots для согласованного requested window.
+2. Сохранить полный tool envelope до анализа. До fan-out удалить PII и секреты,
+   вычислить checksum и закрыть raw-набор от перезаписи.
+3. Построить отдельные normalized snapshots со ссылками на raw SHA-256.
+4. Только после этого запустить независимых file-only auditors. В prompt явно
+   запретить MCP, browser, UI, сеть и изменения чужих artifacts.
+5. Раздать immutable shards с явным списком visit IDs.
+6. Aggregator проверяет missing/duplicate IDs, checksum входов и то, что
+   normalized timestamp не предшествует raw collection.
 
 Оптимальный shard Webvisor — 5–10 визитов. Один worker на визит создаёт лишний
 overhead; один worker на весь архив скрывает пропуски.
@@ -49,4 +55,14 @@ overhead; один worker на весь архив скрывает пропус
 ```
 
 Collector не меняет cohort и goal самостоятельно. Если источник не может
-ответить в этом окне, вернуть `unavailable`/`stale`, а не подменять период.
+ответить в этом окне, вернуть `unavailable`/`stale`, точный blocker и raw
+evidence, а не подменять период. Финальный validator принимает такой источник
+только вместе с decision `inconclusive`.
+
+## Hash contract
+
+`skill.versionHash` считать как SHA-256 от строк:
+`<file-sha256><two spaces><relative-path>\n`, отсортированных по
+`relative-path` bytewise в C/POSIX-порядке, для всех файлов skill кроме
+временных и системных файлов. Validator обязан пересчитать hash, а не
+проверять только формат.
