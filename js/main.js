@@ -70,8 +70,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (selectionMessage && planName !== 'Unknown') {
                 selectionMessage.textContent = selectedPlan === 'basic'
-                    ? `${planName} · ${planPrice}. Если 15 августа не подходит, сохраним заявку для ближайшей даты в Москве и свяжемся после её назначения. После заявки держим место 24 часа без оплаты и подтверждаем её до 15 минут с 10:00 до 20:00 МСК.`
-                    : `${planName} · ${planPrice} · 15 августа. После заявки держим место 24 часа без оплаты; отмена или перенос — одним сообщением.`;
+                    ? `${planName} · ${planPrice}. Если 15 августа не подходит, сохраним заявку для ближайшей даты в Москве и свяжемся после её назначения.`
+                    : `${planName} · ${planPrice} · 15 августа. Оставьте контакты: на этом шаге оплаты нет, мы сначала подтвердим место и детали участия.`;
                 selectionMessage.classList.add('has-selection');
             }
 

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="naition-site-version" content="confirmation-contract-v1-c27-20260725">
-    <meta name="naition-experiment-id" content="rank1-confirmation-contract-c27-20260725">
+    <meta name="naition-site-version" content="instant-registration-route-v1-c25-20260725">
+    <meta name="naition-experiment-id" content="rank1-instant-registration-route-c25-20260725">
     <title>Практический курс первой помощи за один день</title>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-699YWESPJ1"></script>
@@ -53,7 +53,7 @@
             </section>
             <div class="hero-actions">
                 <a class="btn hero-cta" href="#pricing">Записаться на полный курс бесплатно</a>
-                <p class="hero-trust">Полный курс — 0 ₽ · место держим 24 часа без оплаты после заявки</p>
+                <p class="hero-trust">Полный курс — 0 ₽ · практика, сертификат и памятка входят</p>
             </div>
             <div class="meta-grid">
                 <div class="meta-card">
@@ -284,26 +284,15 @@
 
         <section class="section pricing-section" id="pricing">
             <div class="container">
-                <h2 class="section-title">Выберите формат — место закрепим без оплаты</h2>
+                <h2 class="section-title">Выберите формат и забронируйте место</h2>
                 <p class="section-lead">
                     Полный однодневный курс для частных участников проходит бесплатно.
                     Оставьте контакты — мы подтвердим участие и ответим на вопросы.
                 </p>
                 <p class="next-cohort-policy next-cohort-policy-pricing">
                     Если 15 августа не подходит, заявка остаётся действующей для ближайшей
-                    подходящей даты в Москве. Сохраним заявку и свяжемся после её назначения;
-                    полный курс останется бесплатным.
+                    подходящей даты в Москве. Мы сообщим новую дату; полный курс останется бесплатным.
                 </p>
-                <aside class="confirmation-contract confirmation-contract-pricing" aria-labelledby="confirmation-contract-pricing-title">
-                    <p class="confirmation-contract-kicker">Что произойдёт после заявки</p>
-                    <h3 id="confirmation-contract-pricing-title">Никакой оплаты и неопределённого ожидания</h3>
-                    <ul class="confirmation-contract-list">
-                        <li><strong>До 15 минут</strong><span>подтвердим получение заявки с 10:00 до 20:00 МСК</span></li>
-                        <li><strong>24 часа</strong><span>держим место за вами без оплаты</span></li>
-                        <li><strong>Один контакт</strong><span>только по курсу, без рекламных рассылок</span></li>
-                        <li><strong>Без риска</strong><span>отмена или перенос даты одним сообщением</span></li>
-                    </ul>
-                </aside>
                 <div class="pricing-grid">
                     <article class="pricing-card featured">
                         <p class="pricing-audience">Для одного участника · бесплатный формат</p>
@@ -350,7 +339,7 @@
                 <div class="registration-panel">
                     <div class="registration-transaction-layout">
                         <div class="registration-action">
-                            <h2 class="section-title">Закрепить место без оплаты</h2>
+                            <h2 class="section-title">Записаться на бесплатный полный курс</h2>
                             <p class="registration-selection" id="registration-selection" aria-live="polite">
                                 Выберите формат выше — здесь появятся цена и следующий шаг.
                             </p>
@@ -367,24 +356,15 @@
                                     E-mail
                                     <input class="ym-disable-keys" type="email" name="email" required autocomplete="email">
                                 </label>
-                                <button type="submit" class="btn form-submit">Закрепить место на 24 часа</button>
+                                <button type="submit" class="btn form-submit">Отправить заявку на участие</button>
                                 <p class="form-reassurance" id="registration-reassurance">
-                                    Оплаты и рекламных рассылок не будет. Подтвердим получение заявки
-                                    до 15 минут с 10:00 до 20:00 МСК; отмена или перенос — одним сообщением.
+                                    Полный курс бесплатный. Если 15 августа не подходит, сохраним заявку
+                                    для ближайшей даты в Москве и свяжемся после её назначения.
                                 </p>
                             </form>
                             <p class="form-message ym-hide-content" id="form-message" aria-live="polite" data-amp-mask></p>
                         </div>
                         <div class="registration-support">
-                            <aside class="confirmation-contract confirmation-contract-registration" aria-labelledby="confirmation-contract-registration-title">
-                                <p class="confirmation-contract-kicker">После отправки</p>
-                                <h3 id="confirmation-contract-registration-title">Вы контролируете следующий шаг</h3>
-                                <ul class="confirmation-contract-steps">
-                                    <li>Мы подтверждаем получение заявки.</li>
-                                    <li>Место остаётся за вами 24 часа без оплаты.</li>
-                                    <li>Вы подтверждаете удобную дату или переносите её.</li>
-                                </ul>
-                            </aside>
                             <p class="section-lead">
                                 Три коротких поля, около 30 секунд. Мы свяжемся, уточним подходящую
                                 дату и ответим на вопросы. Платить за полный курс не нужно.
