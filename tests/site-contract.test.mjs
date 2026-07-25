@@ -104,10 +104,10 @@ test('candidate experiment marker matches the executable analytics contract', ()
     // Assert
     assert.deepEqual(markers, {
         contractExperimentId:
-            'rank1-date-flexible-open-enrollment-c24-20260725',
+            'rank1-instant-registration-route-c25-20260725',
         experimentMarker:
-            'rank1-date-flexible-open-enrollment-c24-20260725',
-        siteVersion: 'date-flexible-open-enrollment-v1-c24-20260725',
+            'rank1-instant-registration-route-c25-20260725',
+        siteVersion: 'instant-registration-route-v1-c25-20260725',
     });
 });
 
@@ -152,6 +152,28 @@ test('date-flexible enrollment is explicit without changing the form contract', 
     assert.equal((html.match(/class="next-cohort-policy/g) || []).length, 2);
     assert.equal(source.split(dynamicPolicy).length - 1, 1);
     assert.equal(source.includes('Выберите 15 августа или'), false);
+});
+
+test('pricing selection uses an immediate route to the registration section', () => {
+    // Arrange
+    const source = fs.readFileSync(
+        new URL('../js/main.js', import.meta.url),
+        'utf8',
+    );
+    const stylesheet = fs.readFileSync(
+        new URL('../css/style.css', import.meta.url),
+        'utf8',
+    );
+
+    // Act
+    const usesImmediateRoute = source.includes(
+        "registrationSection.scrollIntoView({ behavior: 'auto', block: 'start' });",
+    );
+
+    // Assert
+    assert.equal(usesImmediateRoute, true);
+    assert.equal(source.includes("behavior: 'smooth'"), false);
+    assert.match(stylesheet, /html\s*\{[\s\S]*?scroll-behavior:\s*auto;/);
 });
 
 test('losing C23 injury order is restored to the direct control', () => {

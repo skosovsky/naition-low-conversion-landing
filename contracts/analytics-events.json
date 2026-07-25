@@ -1,7 +1,7 @@
 {
   "$schema": "./analytics-events.schema.json",
   "schemaVersion": "2.0.0",
-  "experimentId": "rank1-date-flexible-open-enrollment-c24-20260725",
+  "experimentId": "rank1-instant-registration-route-c25-20260725",
   "allowedProperties": [
     "analytics_schema_version",
     "experiment_id",

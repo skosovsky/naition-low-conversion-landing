@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 selectionMessage.classList.add('has-selection');
             }
 
-            registrationSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            registrationSection.scrollIntoView({ behavior: 'auto', block: 'start' });
         });
     });
 
