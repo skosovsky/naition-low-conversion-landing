@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="naition-site-version" content="structured-program-evidence-salience-v1-c22-20260725">
-    <meta name="naition-experiment-id" content="rank1-structured-program-evidence-salience-c22-20260725">
+    <meta name="naition-site-version" content="hero-detail-topic-order-v1-c23-20260725">
+    <meta name="naition-experiment-id" content="rank1-hero-detail-topic-order-c23-20260725">
     <title>Практический курс первой помощи за один день</title>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-699YWESPJ1"></script>
@@ -174,8 +174,16 @@
                 </p>
                 <div class="injury-grid">
                     <article class="injury-card">
+                        <h3>Остановка дыхания</h3>
+                        <p>СЛР, работа в паре, использование автоматического дефibrиллятора, действия до приезда скорой.</p>
+                    </article>
+                    <article class="injury-card">
                         <h3>Кровотечения</h3>
                         <p>Артериальные, венозные и капиллярные кровотечения, давящая повязка, турникет, контроль после остановки крови.</p>
+                    </article>
+                    <article class="injury-card">
+                        <h3>Обмороки и шок</h3>
+                        <p>Признаки шока, положение тела, контроль дыхания, согревание, что нельзя давать пострадавшему.</p>
                     </article>
                     <article class="injury-card">
                         <h3>Переломы и вывихи</h3>
@@ -184,14 +192,6 @@
                     <article class="injury-card">
                         <h3>Ожоги</h3>
                         <p>Термические и химические ожоги, охлаждение, стерильная повязка, когда нельзя снимать одежду с места ожога.</p>
-                    </article>
-                    <article class="injury-card">
-                        <h3>Обмороки и шок</h3>
-                        <p>Признаки шока, положение тела, контроль дыхания, согревание, что нельзя давать пострадавшему.</p>
-                    </article>
-                    <article class="injury-card">
-                        <h3>Остановка дыхания</h3>
-                        <p>СЛР, работа в паре, использование автоматического дефibrиллятора, действия до приезда скорой.</p>
                     </article>
                     <article class="injury-card">
                         <h3>Травмы головы и позвоночника</h3>

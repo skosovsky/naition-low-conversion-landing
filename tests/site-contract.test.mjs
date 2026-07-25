@@ -3,10 +3,6 @@ import fs from 'node:fs';
 import test from 'node:test';
 
 const html = fs.readFileSync(new URL('../index.php', import.meta.url), 'utf8');
-const css = fs.readFileSync(
-    new URL('../css/style.css', import.meta.url),
-    'utf8',
-);
 const analyticsContract = JSON.parse(
     fs.readFileSync(
         new URL('../contracts/analytics-events.json', import.meta.url),
@@ -108,60 +104,53 @@ test('candidate experiment marker matches the executable analytics contract', ()
     // Assert
     assert.deepEqual(markers, {
         contractExperimentId:
-            'rank1-structured-program-evidence-salience-c22-20260725',
+            'rank1-hero-detail-topic-order-c23-20260725',
         experimentMarker:
-            'rank1-structured-program-evidence-salience-c22-20260725',
-        siteVersion:
-            'structured-program-evidence-salience-v1-c22-20260725',
+            'rank1-hero-detail-topic-order-c23-20260725',
+        siteVersion: 'hero-detail-topic-order-v1-c23-20260725',
     });
 });
 
-test('program salience is an isolated six-step CSS counter treatment', () => {
+test('injury cards preserve their copy and follow the hero topic order', () => {
     // Arrange
-    const treatment = `.program-list {
-    counter-reset: course-module;
-}
-
-.program-module {
-    counter-increment: course-module;
-}
-
-.program-module h3 {
-    display: grid;
-    grid-template-columns: 40px minmax(0, 1fr);
-    gap: 12px;
-    align-items: start;
-}
-
-.program-module h3::before {
-    content: counter(course-module, decimal-leading-zero);
-    display: grid;
-    min-height: 40px;
-    place-items: center;
-    border-radius: 12px;
-    background: var(--heading);
-    color: var(--white);
-    font-size: 0.82rem;
-    font-weight: 800;
-    line-height: 1;
-    letter-spacing: 0.08em;
-}`;
-    const program = html.match(
-        /<h2 class="section-title">Программа курса<\/h2>[\s\S]*?<div class="program-list">([\s\S]*?)<\/div>/,
+    const expectedCards = [
+        [
+            'Остановка дыхания',
+            'СЛР, работа в паре, использование автоматического дефibrиллятора, действия до приезда скорой.',
+        ],
+        [
+            'Кровотечения',
+            'Артериальные, венозные и капиллярные кровотечения, давящая повязка, турникет, контроль после остановки крови.',
+        ],
+        [
+            'Обмороки и шок',
+            'Признаки шока, положение тела, контроль дыхания, согревание, что нельзя давать пострадавшему.',
+        ],
+        [
+            'Переломы и вывихи',
+            'Признаки перелома, иммобилизация, транспортная шина, ошибки при перемещении пострадавшего.',
+        ],
+        [
+            'Ожоги',
+            'Термические и химические ожоги, охлаждение, стерильная повязка, когда нельзя снимать одежду с места ожога.',
+        ],
+        [
+            'Травмы головы и позвоночника',
+            'Подозрение на травму шеи и спины, когда нельзя менять положение, фиксация головы и ожидание медиков.',
+        ],
+    ];
+    const injuryGrid = html.match(
+        /<div class="injury-grid">([\s\S]*?)<\/div>/,
     )?.[1] || '';
 
     // Act
-    const treatmentOccurrences = css.split(treatment).length - 1;
-    const modules = program.match(/class="program-module"/g) || [];
-    const forbiddenCss = treatment.match(
-        /\b(?:display:\s*none|visibility|opacity|order:|position:\s*(?:fixed|sticky|absolute)|animation|transition)\b/g,
-    ) || [];
+    const cards = [...injuryGrid.matchAll(
+        /<article class="injury-card">\s*<h3>([^<]+)<\/h3>\s*<p>([^<]+)<\/p>\s*<\/article>/g,
+    )].map((match) => [match[1], match[2]]);
 
     // Assert
-    assert.equal(treatmentOccurrences, 1);
-    assert.equal(modules.length, 6);
-    assert.deepEqual(forbiddenCss, []);
-    assert.equal(html.includes('pricing-fit-rule'), false);
+    assert.deepEqual(cards, expectedCards);
+    assert.equal(new Set(cards.map(([heading]) => heading)).size, 6);
 });
 
 test('hero and first section expose the audience-to-outcome hierarchy', () => {

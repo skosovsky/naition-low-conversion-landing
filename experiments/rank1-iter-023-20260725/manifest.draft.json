@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "2.0.0",
+  "iterationId": "rank1-iter-023-20260725",
+  "status": "planned",
+  "comparisonType": "before_after",
+  "hypothesis": {
+    "id": "hero-to-detail-topic-order-continuity",
+    "statement": "Matching the later injury taxonomy to the hero's topic sequence may reduce information reorientation and increase completed registrations.",
+    "changeSet": [
+      "Reorder the six existing byte-identical injury cards inside the existing injury grid."
+    ],
+    "expectedMetric": "Server-side persisted orders divided by the exact post-redeploy cohort; hard gate is at least 40% and leaderboard rank 1."
+  },
+  "baseline": {
+    "commitSha": "d416b9e016ea8f2f7c30233cc60001c1a1132653",
+    "metric": {
+      "name": "server persisted orders / visits",
+      "numerator": 30,
+      "denominator": 101,
+      "denominatorSemantics": "best valid direct-control simulator cohort",
+      "cr": 29.7029702970297
+    }
+  },
+  "candidate": {
+    "commitSha": null,
+    "versionMarker": "hero-detail-topic-order-v1-c23-20260725",
+    "experimentMarker": "rank1-hero-detail-topic-order-c23-20260725"
+  },
+  "mutation": {
+    "redeployEvidenceKey": null,
+    "simulatorEvidenceKey": "rank1-iter-023-20260725:100",
+    "redeployInvocations": 0,
+    "simulatorInvocations": 0
+  }
+}

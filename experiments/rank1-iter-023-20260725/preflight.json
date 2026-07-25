@@ -1,0 +1,44 @@
+{
+  "schemaVersion": "rank1-preflight.v1",
+  "iterationId": "rank1-iter-023-20260725",
+  "status": "pass_low_capacity",
+  "candidate": {
+    "mechanismId": "hero-to-detail-topic-order-continuity",
+    "versionMarker": "hero-detail-topic-order-v1-c23-20260725",
+    "experimentMarker": "rank1-hero-detail-topic-order-c23-20260725"
+  },
+  "directControl": {
+    "commitSha": "d416b9e016ea8f2f7c30233cc60001c1a1132653",
+    "orders": 30,
+    "visits": 101,
+    "conversionRatePct": 29.7029702970297,
+    "leaderboardRank": 2
+  },
+  "capacity": {
+    "hardPassOrders": 41,
+    "additionalOrdersRequired": 11,
+    "planningRangeOrders": [
+      27,
+      33
+    ],
+    "credibleHardPassForecast": false
+  },
+  "novelty": {
+    "causallyDistinct": true,
+    "closedFamilyRepeated": false,
+    "notes": "One source-order permutation in the unprotected injury taxonomy; no programme salience, copy, styling or interaction change."
+  },
+  "truthAndSafety": {
+    "newProductClaims": false,
+    "conversionSemanticsChanged": false,
+    "protectedSimulatorContractChanged": false,
+    "metricGaming": false
+  },
+  "reviews": {
+    "highImpact": "HARD_NO_GO for high-capacity candidates without an owner-backed product fact",
+    "contrarian": "HARD_NO_GO for further semantic/harness-facing optimization",
+    "statistics": "No unblocked mechanism has credible +11 capacity",
+    "structural": "CONDITIONAL_ELIGIBLE_WEAK as a causally new truth-safe reserve"
+  },
+  "activationRule": "Proceed only as a low-capacity causally new iteration after C22 is closed and exact C7 runtime is restored."
+}
