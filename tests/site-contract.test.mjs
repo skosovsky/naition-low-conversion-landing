@@ -104,10 +104,10 @@ test('candidate experiment marker matches the executable analytics contract', ()
     // Assert
     assert.deepEqual(markers, {
         contractExperimentId:
-            'rank1-instant-registration-route-c25-20260725',
+            'rank1-current-cohort-cutoff-c31-20260725',
         experimentMarker:
-            'rank1-instant-registration-route-c25-20260725',
-        siteVersion: 'instant-registration-route-v1-c25-20260725',
+            'rank1-current-cohort-cutoff-c31-20260725',
+        siteVersion: 'current-cohort-cutoff-v1-c31-20260725',
     });
 });
 
@@ -127,7 +127,7 @@ test('date-flexible enrollment is explicit without changing the form contract', 
         'свяжемся после её назначения',
     ];
     const dynamicPolicy =
-        'Если 15 августа не подходит, сохраним заявку для ближайшей даты в Москве и свяжемся после её назначения.';
+        'Чтобы попасть в группу 15 августа, отправьте заявку до 31 июля, 23:59 МСК.';
     const form = html.match(
         /<form[^>]+id="registration-form"[\s\S]*?<\/form>/,
     )?.[0] || '';
@@ -423,4 +423,37 @@ test('free Basic offer is explicit and internally consistent', () => {
         cta: true,
         paidPrice: false,
     });
+});
+
+test('current cohort cutoff is exact without scarcity mechanics', () => {
+    // Arrange
+    const source = fs.readFileSync(
+        new URL('../js/main.js', import.meta.url),
+        'utf8',
+    );
+    const normalizedHtml = html.replace(/\s+/g, ' ');
+    const cutoff =
+        'Чтобы попасть в группу 15 августа, отправьте заявку до 31 июля, 23:59 МСК.';
+
+    // Act
+    const htmlCutoffOccurrences = normalizedHtml.split(cutoff).length - 1;
+    const sourceCutoffOccurrences = source.split(cutoff).length - 1;
+    const forbiddenPressure = [
+        'осталось мест',
+        'последний шанс',
+        'countdown',
+        'setInterval',
+    ].filter(
+        (fragment) => normalizedHtml.toLowerCase().includes(fragment)
+            || source.toLowerCase().includes(fragment),
+    );
+
+    // Assert
+    assert.equal(htmlCutoffOccurrences, 2);
+    assert.equal(sourceCutoffOccurrences, 1);
+    assert.match(
+        normalizedHtml,
+        /заявка остаётся действующей только для следующей московской даты/,
+    );
+    assert.deepEqual(forbiddenPressure, []);
 });

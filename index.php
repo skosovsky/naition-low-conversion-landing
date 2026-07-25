@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="naition-site-version" content="instant-registration-route-v1-c25-20260725">
-    <meta name="naition-experiment-id" content="rank1-instant-registration-route-c25-20260725">
+    <meta name="naition-site-version" content="current-cohort-cutoff-v1-c31-20260725">
+    <meta name="naition-experiment-id" content="rank1-current-cohort-cutoff-c31-20260725">
     <title>Практический курс первой помощи за один день</title>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-699YWESPJ1"></script>
@@ -22,7 +22,7 @@
 <body>
     <header class="hero">
         <div class="container hero-content">
-            <span class="hero-badge">Офлайн · Москва · 15 августа 2026</span>
+            <span class="hero-badge">Офлайн · Москва · 15 августа 2026 · заявки до 31 июля, 23:59 МСК</span>
             <h1>Первая помощь в первые минуты: дома, на работе и в дороге</h1>
             <p class="hero-text">
                 За один день вы руками отработаете четыре действия: оценить сознание и дыхание,
@@ -290,8 +290,9 @@
                     Оставьте контакты — мы подтвердим участие и ответим на вопросы.
                 </p>
                 <p class="next-cohort-policy next-cohort-policy-pricing">
-                    Если 15 августа не подходит, заявка остаётся действующей для ближайшей
-                    подходящей даты в Москве. Мы сообщим новую дату; полный курс останется бесплатным.
+                    Чтобы попасть в группу 15 августа, отправьте заявку до 31 июля, 23:59 МСК.
+                    После дедлайна заявка остаётся действующей только для следующей московской даты;
+                    полный курс останется бесплатным, а мы свяжемся после её назначения.
                 </p>
                 <div class="pricing-grid">
                     <article class="pricing-card featured">
@@ -303,7 +304,7 @@
                             <li>Работа на манекенах в малой группе</li>
                             <li>Сертификат и памятка</li>
                         </ul>
-                        <p class="pricing-commitment">Обучение, практика, сертификат и памятка входят бесплатно.</p>
+                        <p class="pricing-commitment">Заявки на группу 15 августа принимаем до 31 июля, 23:59 МСК.</p>
                         <button type="button" class="btn btn-register" data-plan-id="basic" data-price="0 ₽ за полный курс" aria-controls="registration-form">Записаться бесплатно</button>
                     </article>
                     <article class="pricing-card">
@@ -358,8 +359,10 @@
                                 </label>
                                 <button type="submit" class="btn form-submit">Отправить заявку на участие</button>
                                 <p class="form-reassurance" id="registration-reassurance">
-                                    Полный курс бесплатный. Если 15 августа не подходит, сохраним заявку
-                                    для ближайшей даты в Москве и свяжемся после её назначения.
+                                    Чтобы попасть в группу 15 августа, отправьте заявку до 31 июля,
+                                    23:59 МСК. После дедлайна заявка остаётся действующей только для
+                                    следующей московской даты; полный курс останется бесплатным,
+                                    а мы свяжемся после её назначения.
                                 </p>
                             </form>
                             <p class="form-message ym-hide-content" id="form-message" aria-live="polite" data-amp-mask></p>
