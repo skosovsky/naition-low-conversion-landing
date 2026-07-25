@@ -104,10 +104,10 @@ test('candidate experiment marker matches the executable analytics contract', ()
     // Assert
     assert.deepEqual(markers, {
         contractExperimentId:
-            'rank1-instant-registration-route-c25-20260725',
+            'rank1-focus-ready-registration-c26-20260725',
         experimentMarker:
-            'rank1-instant-registration-route-c25-20260725',
-        siteVersion: 'instant-registration-route-v1-c25-20260725',
+            'rank1-focus-ready-registration-c26-20260725',
+        siteVersion: 'focus-ready-registration-v1-c26-20260725',
     });
 });
 
@@ -325,7 +325,7 @@ test('candidate removes unsupported authority precision without adding proof cla
     assert.deepEqual(missingSourceBoundedFacts, []);
 });
 
-test('registration presents the real form before supporting content without synthetic focus', () => {
+test('registration presents the real form before supporting content and focuses only after a plan choice', () => {
     // Arrange
     const source = fs.readFileSync(
         new URL('../js/main.js', import.meta.url),
@@ -347,9 +347,8 @@ test('registration presents the real form before supporting content without synt
     const valueContractAt = registration.indexOf('class="registration-value-contract"');
     const rewardAt = registration.indexOf('id="registration-reward"');
     const formCount = (registration.match(/id="registration-form"/g) || []).length;
-    const forbiddenFocusManipulation = [
+    const forbiddenAutomation = [
         /\bautofocus\b/,
-        /\.focus\s*\(/,
         /dispatchEvent\s*\(/,
         /requestSubmit\s*\(/,
         /\.submit\s*\(/,
@@ -364,7 +363,9 @@ test('registration presents the real form before supporting content without synt
     assert.ok(valueContractAt < rewardAt);
     assert.match(styles, /\.registration-transaction-layout\s*\{/);
     assert.match(styles, /grid-template-columns:\s*minmax\(0,\s*1\.15fr\)/);
-    assert.deepEqual(forbiddenFocusManipulation, []);
+    assert.deepEqual(forbiddenAutomation, []);
+    assert.match(source, /const nameField = form\?\.querySelector\('input\[name="name"\]'\);/);
+    assert.match(source, /nameField\?\.focus\(\{ preventScroll: true \}\);/);
 });
 
 test('reciprocal value is concrete and delivered only by the success path', () => {

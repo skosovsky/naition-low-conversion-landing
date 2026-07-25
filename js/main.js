@@ -76,6 +76,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             registrationSection.scrollIntoView({ behavior: 'auto', block: 'start' });
+            const nameField = form?.querySelector('input[name="name"]');
+            nameField?.focus({ preventScroll: true });
         });
     });
 
