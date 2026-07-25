@@ -1,0 +1,187 @@
+{
+  "schemaVersion": "rank1-amplitude-mcp.v1",
+  "provider": "amplitude",
+  "transport": "official vendor MCP",
+  "vendorOfficial": true,
+  "collectedAt": "2026-07-25T08:48:09Z",
+  "project": {
+    "organizationId": "451009",
+    "organizationName": "floral-resonance-823301",
+    "projectId": "843298",
+    "projectName": "default",
+    "projectUrl": "https://app.amplitude.com/analytics/floral-resonance-823301/home/project/843298",
+    "sessionTimeout": "30 minutes",
+    "configuredTimeZone": ""
+  },
+  "requestedWindow": {
+    "start": "2026-07-25T08:29:28Z",
+    "end": "2026-07-25T08:38:09Z",
+    "startEpochSeconds": 1784968168,
+    "endEpochSeconds": 1784968689
+  },
+  "experimentId": "rank1-structured-program-evidence-salience-c22-20260725",
+  "siteVersion": "structured-program-evidence-salience-v1-c22-20260725",
+  "piiRedacted": true,
+  "authMaterialPersisted": false,
+  "discovery": {
+    "contextCalls": [
+      "get_amplitude_context without projectId",
+      "get_amplitude_context with projectId 843298"
+    ],
+    "eventsCall": {
+      "tool": "get_events",
+      "limit": 500,
+      "returnedCount": 20,
+      "hasMore": false
+    },
+    "queryableContractEvents": [
+      "Landing Viewed",
+      "Registration Form Opened",
+      "Registration Form Submitted",
+      "Registration Completed"
+    ],
+    "eventProperties": {
+      "Landing Viewed": [
+        "analytics_schema_version",
+        "experiment_id",
+        "site_version"
+      ],
+      "Registration Form Opened": [
+        "analytics_schema_version",
+        "experiment_id",
+        "form_surface",
+        "selected_plan",
+        "site_version"
+      ],
+      "Registration Form Submitted": [
+        "analytics_schema_version",
+        "experiment_id",
+        "form_surface",
+        "selected_plan",
+        "site_version"
+      ],
+      "Registration Completed": [
+        "analytics_schema_version",
+        "experiment_id",
+        "form_surface",
+        "response_status",
+        "selected_plan",
+        "site_version"
+      ]
+    }
+  },
+  "filters": [
+    {
+      "property": "experiment_id",
+      "operator": "is",
+      "values": [
+        "rank1-structured-program-evidence-salience-c22-20260725"
+      ]
+    },
+    {
+      "property": "site_version",
+      "operator": "is",
+      "values": [
+        "structured-program-evidence-salience-v1-c22-20260725"
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "name": "C22 exact cohort: Landing Viewed → Registration Completed",
+      "validation": {
+        "tool": "verify_chart_definition",
+        "valid": true,
+        "errors": [],
+        "warnings": [],
+        "coercionsApplied": [],
+        "validationSource": "local+nylon"
+      },
+      "tool": "query_dataset",
+      "chartType": "funnels",
+      "chartEditId": "76kg4fj8",
+      "mode": "ordered",
+      "metric": "CONVERSION",
+      "countGroup": "User",
+      "conversionSeconds": 3600,
+      "funnelPathsToCollect": "UNIQUES",
+      "steps": [
+        "Landing Viewed",
+        "Registration Completed"
+      ],
+      "response": {
+        "isCsvResponse": true,
+        "segment": "All Users",
+        "date": "Total",
+        "conversion": 0.297029702970297,
+        "stepCounts": [
+          101,
+          30
+        ],
+        "averageTimeSeconds": 48,
+        "medianTimeSeconds": 48
+      }
+    },
+    {
+      "name": "C22 exact diagnostic funnel",
+      "validation": {
+        "tool": "verify_chart_definition",
+        "valid": true,
+        "errors": [],
+        "warnings": [],
+        "coercionsApplied": [],
+        "validationSource": "local+nylon"
+      },
+      "tool": "query_dataset",
+      "chartType": "funnels",
+      "chartEditId": "qw0hvrfy",
+      "mode": "ordered",
+      "metric": "CONVERSION",
+      "countGroup": "User",
+      "conversionSeconds": 3600,
+      "funnelPathsToCollect": "UNIQUES",
+      "steps": [
+        "Landing Viewed",
+        "Registration Form Opened",
+        "Registration Form Submitted",
+        "Registration Completed"
+      ],
+      "response": {
+        "isCsvResponse": true,
+        "segment": "All Users",
+        "date": "Total",
+        "conversion": 0.297029702970297,
+        "stepCounts": [
+          101,
+          30,
+          30,
+          30
+        ],
+        "averageSecondsBetweenSteps": [
+          43,
+          4,
+          0
+        ],
+        "medianSecondsBetweenSteps": [
+          44,
+          4,
+          0
+        ]
+      }
+    }
+  ],
+  "interpretation": {
+    "status": "available_exact_cohort",
+    "serverAgreement": true,
+    "primaryDropoff": {
+      "from": "Landing Viewed",
+      "to": "Registration Form Opened",
+      "lostUsers": 71,
+      "stepConversionRatePct": 29.7029702970297
+    },
+    "postOpenDropoff": {
+      "lostUsers": 0,
+      "formOpenedToCompletedRatePct": 100
+    }
+  }
+}

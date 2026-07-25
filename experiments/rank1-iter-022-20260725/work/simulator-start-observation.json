@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "rank1-simulator-start-observation.v1",
+  "iterationId": "rank1-iter-022-20260725",
+  "observedAt": "2026-07-25T08:29:28Z",
+  "clickedAt": "2026-07-25T08:29:27.585Z",
+  "controlPanelUrl": "https://panel.naition.sortedmap.ru/",
+  "panelAccount": "skosovsky",
+  "status": "running_bot",
+  "message": "Симуляция 100 визитов…",
+  "requestedVisits": 100,
+  "parallelism": 10,
+  "attempts": 1,
+  "simulatorEvidenceKey": "rank1-iter-022-20260725:100",
+  "productionVersionMarker": "structured-program-evidence-salience-v1-c22-20260725",
+  "candidateSha": "84d5713d8df4220a26821c939d0f568cc9c41102"
+}

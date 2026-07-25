@@ -1,0 +1,133 @@
+{
+  "schemaVersion": "rank1-result.v1",
+  "iterationId": "rank1-iter-022-20260725",
+  "hypothesis": {
+    "mechanismId": "structured-program-evidence-salience",
+    "candidateSha": "84d5713d8df4220a26821c939d0f568cc9c41102",
+    "versionMarker": "structured-program-evidence-salience-v1-c22-20260725",
+    "experimentMarker": "rank1-structured-program-evidence-salience-c22-20260725"
+  },
+  "baseline": {
+    "commitSha": "d416b9e016ea8f2f7c30233cc60001c1a1132653",
+    "serverVisits": 101,
+    "serverOrders": 30,
+    "serverConversionRatePct": 29.7029702970297,
+    "leaderboardRank": 2
+  },
+  "candidate": {
+    "successfulSimulatorVisits": 100,
+    "simulatorErrors": 0,
+    "simulatorConversions": 30,
+    "serverVisits": 101,
+    "serverOrders": 30,
+    "serverConversionRatePct": 29.7029702970297,
+    "leaderboardRequests": 101,
+    "leaderboardOrders": 30,
+    "leaderboardConversionRatePct": 29.7,
+    "leaderboardRank": 2
+  },
+  "delta": {
+    "serverOrders": 0,
+    "serverConversionRatePp": 0,
+    "rank": 0
+  },
+  "evidence": {
+    "deploy": {
+      "valid": true,
+      "redeployInvocations": 1,
+      "terminalStatus": "deployed",
+      "candidateShaMatched": true,
+      "liveMarkersMatched": true,
+      "serverResetBeforeCohort": {
+        "visits": 0,
+        "orders": 0
+      },
+      "artifact": "deploy.json"
+    },
+    "simulator": {
+      "valid": true,
+      "invocations": 1,
+      "requestedVisits": 100,
+      "successfulVisits": 100,
+      "errors": 0,
+      "artifact": "simulator.json"
+    },
+    "server": {
+      "available": true,
+      "authoritative": true,
+      "artifact": "work/incoming/server/redacted-export.json",
+      "sha256": "b1a59f3e2ea657111f8091754de0244373f8c712942916a2095bf302234e2a3c"
+    },
+    "leaderboard": {
+      "available": true,
+      "authoritative": true,
+      "cacheMature": true,
+      "serverAgreement": true,
+      "artifact": "work/incoming/leaderboard/summary.json",
+      "sha256": "78dcbab6500f3c68f41ecc4344f5f3b2a1986525901dc7755f04cf28ef6306fe"
+    },
+    "yandexMetrica": {
+      "available": true,
+      "transport": "authenticated user Chrome UI network response",
+      "exactCohortVisits": 101,
+      "landingViewedGoalVisits": 101,
+      "pricingPlanSelectedGoalVisits": 99,
+      "registrationFormOpenedGoalVisits": 30,
+      "registrationAttemptedGoalVisits": 30,
+      "registrationCompletedGoalVisits": 30,
+      "serverAgreement": true,
+      "webvisorRowsPersistedLocally": 101,
+      "artifact": "work/incoming/yandex/2026-07-25T0851Z-webvisor-exact-cohort.json",
+      "sha256": "9da903484551e7f3b940d86eacb418b983d6f0c121fa7661a557702c2ff3798f"
+    },
+    "googleAnalytics": {
+      "available": true,
+      "transport": "official googleanalytics/google-analytics-mcp",
+      "maturity": "standard_immature",
+      "exactCohortRows": 0,
+      "zeroInterpretationAllowed": false,
+      "propertyEventLivenessRows": 5,
+      "matureRetryScheduled": true,
+      "bigQueryUsed": false,
+      "process": {
+        "exitCode": 0,
+        "exitSignal": null,
+        "closeObserved": true,
+        "forcedTermination": null
+      },
+      "artifact": "work/incoming/ga4/2026-07-25T0843Z-standard-immature-attempt2.json"
+    },
+    "amplitude": {
+      "available": true,
+      "transport": "official vendor MCP",
+      "exactCohortVisits": 101,
+      "exactCohortCompleted": 30,
+      "exactCohortConversionRatePct": 29.7029702970297,
+      "diagnosticFunnel": [
+        {
+          "event": "Landing Viewed",
+          "users": 101
+        },
+        {
+          "event": "Registration Form Opened",
+          "users": 30
+        },
+        {
+          "event": "Registration Form Submitted",
+          "users": 30
+        },
+        {
+          "event": "Registration Completed",
+          "users": 30
+        }
+      ],
+      "serverAgreement": true,
+      "artifact": "work/incoming/amplitude/2026-07-25T0848Z-exact-cohort.json",
+      "sha256": "c7fab130798ac7f3b4681adaf82740719bb03c3764a2487e3c37d0cbe4aa8281"
+    }
+  },
+  "outcomeAuthority": "server_and_public_leaderboard",
+  "classification": "no_effect",
+  "decision": "rejected_for_rank1_gate",
+  "targetMet": false
+}

@@ -1,0 +1,313 @@
+{
+  "schemaVersion": "rank1-ga4-mcp.v2",
+  "provider": "google-analytics",
+  "transport": "official vendor MCP stdio",
+  "provenance": "https://github.com/googleanalytics/google-analytics-mcp",
+  "vendorOfficial": true,
+  "collectedAt": "2026-07-25T08:42:46.960Z",
+  "requestedWindow": {
+    "start": "2026-07-25T08:29:28Z",
+    "end": "2026-07-25T08:38:09Z",
+    "reportDate": "2026-07-25",
+    "propertyTimeZone": "Europe/Moscow"
+  },
+  "propertyId": "546448545",
+  "experimentId": "rank1-structured-program-evidence-salience-c22-20260725",
+  "siteVersion": "structured-program-evidence-salience-v1-c22-20260725",
+  "granularity": "aggregate_report",
+  "transportStatus": "available",
+  "dataStatus": "uninterpreted",
+  "maturity": "standard_immature",
+  "piiRedacted": true,
+  "authMaterialPersisted": false,
+  "bigQueryUsed": false,
+  "server": {
+    "protocolVersion": "2025-03-26",
+    "serverInfo": {
+      "name": "Google Analytics MCP Server",
+      "version": "1.0.0"
+    }
+  },
+  "callableTools": [
+    "get_account_summaries",
+    "list_google_ads_links",
+    "get_property_details",
+    "list_property_annotations",
+    "get_custom_dimensions_and_metrics",
+    "run_report",
+    "run_realtime_report",
+    "run_funnel_report",
+    "run_conversions_report"
+  ],
+  "calls": [
+    {
+      "label": "property-liveness",
+      "name": "get_property_details",
+      "arguments": {
+        "property_id": 546448545
+      },
+      "startedAt": "2026-07-25T08:42:37.656Z",
+      "completedAt": "2026-07-25T08:42:42.015Z",
+      "status": "success",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"name\": \"properties/546448545\",\n  \"parent\": \"accounts/120216935\",\n  \"create_time\": \"2026-07-21T17:14:54.274Z\",\n  \"update_time\": \"2026-07-21T17:14:54.274Z\",\n  \"display_name\": \"https://skosovsky.naition.sortedmap.ru\",\n  \"industry_category\": \"ARTS_AND_ENTERTAINMENT\",\n  \"time_zone\": \"Europe/Moscow\",\n  \"currency_code\": \"USD\",\n  \"service_level\": \"GOOGLE_ANALYTICS_STANDARD\",\n  \"account\": \"accounts/120216935\",\n  \"property_type\": \"PROPERTY_TYPE_ORDINARY\"\n}"
+          }
+        ],
+        "isError": false
+      }
+    },
+    {
+      "label": "dimension-contract",
+      "name": "get_custom_dimensions_and_metrics",
+      "arguments": {
+        "property_id": 546448545
+      },
+      "startedAt": "2026-07-25T08:42:42.015Z",
+      "completedAt": "2026-07-25T08:42:42.857Z",
+      "status": "success",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"custom_dimensions\": [\n    {\n      \"api_name\": \"customEvent:analytics_schema_version\",\n      \"ui_name\": \"Analytics Schema Version\",\n      \"description\": \"An event scoped custom dimension for your Analytics property.\",\n      \"custom_definition\": true,\n      \"category\": \"Event-scoped Custom Dimension\",\n      \"deprecated_api_names\": []\n    },\n    {\n      \"api_name\": \"customEvent:experiment_id\",\n      \"ui_name\": \"Experiment ID\",\n      \"description\": \"An event scoped custom dimension for your Analytics property.\",\n      \"custom_definition\": true,\n      \"category\": \"Event-scoped Custom Dimension\",\n      \"deprecated_api_names\": []\n    },\n    {\n      \"api_name\": \"customEvent:failure_type\",\n      \"ui_name\": \"Failure Type\",\n      \"description\": \"An event scoped custom dimension for your Analytics property.\",\n      \"custom_definition\": true,\n      \"category\": \"Event-scoped Custom Dimension\",\n      \"deprecated_api_names\": []\n    },\n    {\n      \"api_name\": \"customEvent:form_surface\",\n      \"ui_name\": \"Form Surface\",\n      \"description\": \"An event scoped custom dimension for your Analytics property.\",\n      \"custom_definition\": true,\n      \"category\": \"Event-scoped Custom Dimension\",\n      \"deprecated_api_names\": []\n    },\n    {\n      \"api_name\": \"customEvent:selected_plan\",\n      \"ui_name\": \"Selected Plan\",\n      \"description\": \"An event scoped custom dimension for your Analytics property.\",\n      \"custom_definition\": true,\n      \"category\": \"Event-scoped Custom Dimension\",\n      \"deprecated_api_names\": []\n    },\n    {\n      \"api_name\": \"customEvent:site_version\",\n      \"ui_name\": \"Site Version\",\n      \"description\": \"An event scoped custom dimension for your Analytics property.\",\n      \"custom_definition\": true,\n      \"category\": \"Event-scoped Custom Dimension\",\n      \"deprecated_api_names\": []\n    }\n  ],\n  \"custom_metrics\": []\n}"
+          }
+        ],
+        "isError": false
+      }
+    },
+    {
+      "label": "exact-cohort",
+      "name": "run_report",
+      "arguments": {
+        "property_id": 546448545,
+        "date_ranges": [
+          {
+            "start_date": "2026-07-25",
+            "end_date": "2026-07-25",
+            "name": "cohort-day"
+          }
+        ],
+        "metrics": [
+          "eventCount",
+          "totalUsers",
+          "sessions"
+        ],
+        "limit": 250000,
+        "offset": 0,
+        "return_property_quota": true,
+        "dimensions": [
+          "dateHourMinute",
+          "eventName",
+          "customEvent:experiment_id",
+          "customEvent:site_version"
+        ],
+        "dimension_filter": {
+          "and_group": {
+            "expressions": [
+              {
+                "filter": {
+                  "field_name": "customEvent:experiment_id",
+                  "string_filter": {
+                    "match_type": 1,
+                    "value": "rank1-structured-program-evidence-salience-c22-20260725",
+                    "case_sensitive": true
+                  }
+                }
+              },
+              {
+                "filter": {
+                  "field_name": "customEvent:site_version",
+                  "string_filter": {
+                    "match_type": 1,
+                    "value": "structured-program-evidence-salience-v1-c22-20260725",
+                    "case_sensitive": true
+                  }
+                }
+              }
+            ]
+          }
+        }
+      },
+      "startedAt": "2026-07-25T08:42:42.857Z",
+      "completedAt": "2026-07-25T08:42:43.845Z",
+      "status": "success",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"dimension_headers\": [\n    {\n      \"name\": \"dateHourMinute\"\n    },\n    {\n      \"name\": \"eventName\"\n    },\n    {\n      \"name\": \"customEvent:experiment_id\"\n    },\n    {\n      \"name\": \"customEvent:site_version\"\n    }\n  ],\n  \"metric_headers\": [\n    {\n      \"name\": \"eventCount\",\n      \"type_\": \"TYPE_INTEGER\"\n    },\n    {\n      \"name\": \"totalUsers\",\n      \"type_\": \"TYPE_INTEGER\"\n    },\n    {\n      \"name\": \"sessions\",\n      \"type_\": \"TYPE_INTEGER\"\n    }\n  ],\n  \"metadata\": {\n    \"currency_code\": \"USD\",\n    \"time_zone\": \"Europe/Moscow\",\n    \"data_loss_from_other_row\": false,\n    \"sampling_metadatas\": []\n  },\n  \"property_quota\": {\n    \"tokens_per_day\": {\n      \"consumed\": 1,\n      \"remaining\": 199998\n    },\n    \"tokens_per_hour\": {\n      \"consumed\": 1,\n      \"remaining\": 39998\n    },\n    \"concurrent_requests\": {\n      \"consumed\": 0,\n      \"remaining\": 10\n    },\n    \"server_errors_per_project_per_hour\": {\n      \"consumed\": 0,\n      \"remaining\": 10\n    },\n    \"potentially_thresholded_requests_per_hour\": {\n      \"consumed\": 0,\n      \"remaining\": 120\n    },\n    \"tokens_per_project_per_hour\": {\n      \"consumed\": 1,\n      \"remaining\": 13998\n    }\n  },\n  \"kind\": \"analyticsData#runReport\",\n  \"rows\": [],\n  \"totals\": [],\n  \"maximums\": [],\n  \"minimums\": [],\n  \"row_count\": 0\n}"
+          }
+        ],
+        "isError": false
+      }
+    },
+    {
+      "label": "experiment-id-marginal",
+      "name": "run_report",
+      "arguments": {
+        "property_id": 546448545,
+        "date_ranges": [
+          {
+            "start_date": "2026-07-25",
+            "end_date": "2026-07-25",
+            "name": "cohort-day"
+          }
+        ],
+        "metrics": [
+          "eventCount",
+          "totalUsers",
+          "sessions"
+        ],
+        "limit": 250000,
+        "offset": 0,
+        "return_property_quota": true,
+        "dimensions": [
+          "eventName",
+          "customEvent:experiment_id"
+        ],
+        "dimension_filter": {
+          "filter": {
+            "field_name": "customEvent:experiment_id",
+            "string_filter": {
+              "match_type": 1,
+              "value": "rank1-structured-program-evidence-salience-c22-20260725",
+              "case_sensitive": true
+            }
+          }
+        }
+      },
+      "startedAt": "2026-07-25T08:42:43.845Z",
+      "completedAt": "2026-07-25T08:42:44.574Z",
+      "status": "success",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"dimension_headers\": [\n    {\n      \"name\": \"eventName\"\n    },\n    {\n      \"name\": \"customEvent:experiment_id\"\n    }\n  ],\n  \"metric_headers\": [\n    {\n      \"name\": \"eventCount\",\n      \"type_\": \"TYPE_INTEGER\"\n    },\n    {\n      \"name\": \"totalUsers\",\n      \"type_\": \"TYPE_INTEGER\"\n    },\n    {\n      \"name\": \"sessions\",\n      \"type_\": \"TYPE_INTEGER\"\n    }\n  ],\n  \"metadata\": {\n    \"currency_code\": \"USD\",\n    \"time_zone\": \"Europe/Moscow\",\n    \"data_loss_from_other_row\": false,\n    \"sampling_metadatas\": []\n  },\n  \"property_quota\": {\n    \"tokens_per_day\": {\n      \"consumed\": 1,\n      \"remaining\": 199997\n    },\n    \"tokens_per_hour\": {\n      \"consumed\": 1,\n      \"remaining\": 39997\n    },\n    \"concurrent_requests\": {\n      \"consumed\": 0,\n      \"remaining\": 10\n    },\n    \"server_errors_per_project_per_hour\": {\n      \"consumed\": 0,\n      \"remaining\": 10\n    },\n    \"potentially_thresholded_requests_per_hour\": {\n      \"consumed\": 0,\n      \"remaining\": 120\n    },\n    \"tokens_per_project_per_hour\": {\n      \"consumed\": 1,\n      \"remaining\": 13997\n    }\n  },\n  \"kind\": \"analyticsData#runReport\",\n  \"rows\": [],\n  \"totals\": [],\n  \"maximums\": [],\n  \"minimums\": [],\n  \"row_count\": 0\n}"
+          }
+        ],
+        "isError": false
+      }
+    },
+    {
+      "label": "site-version-marginal",
+      "name": "run_report",
+      "arguments": {
+        "property_id": 546448545,
+        "date_ranges": [
+          {
+            "start_date": "2026-07-25",
+            "end_date": "2026-07-25",
+            "name": "cohort-day"
+          }
+        ],
+        "metrics": [
+          "eventCount",
+          "totalUsers",
+          "sessions"
+        ],
+        "limit": 250000,
+        "offset": 0,
+        "return_property_quota": true,
+        "dimensions": [
+          "eventName",
+          "customEvent:site_version"
+        ],
+        "dimension_filter": {
+          "filter": {
+            "field_name": "customEvent:site_version",
+            "string_filter": {
+              "match_type": 1,
+              "value": "structured-program-evidence-salience-v1-c22-20260725",
+              "case_sensitive": true
+            }
+          }
+        }
+      },
+      "startedAt": "2026-07-25T08:42:44.574Z",
+      "completedAt": "2026-07-25T08:42:45.229Z",
+      "status": "success",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"dimension_headers\": [\n    {\n      \"name\": \"eventName\"\n    },\n    {\n      \"name\": \"customEvent:site_version\"\n    }\n  ],\n  \"metric_headers\": [\n    {\n      \"name\": \"eventCount\",\n      \"type_\": \"TYPE_INTEGER\"\n    },\n    {\n      \"name\": \"totalUsers\",\n      \"type_\": \"TYPE_INTEGER\"\n    },\n    {\n      \"name\": \"sessions\",\n      \"type_\": \"TYPE_INTEGER\"\n    }\n  ],\n  \"metadata\": {\n    \"currency_code\": \"USD\",\n    \"time_zone\": \"Europe/Moscow\",\n    \"data_loss_from_other_row\": false,\n    \"sampling_metadatas\": []\n  },\n  \"property_quota\": {\n    \"tokens_per_day\": {\n      \"consumed\": 1,\n      \"remaining\": 199996\n    },\n    \"tokens_per_hour\": {\n      \"consumed\": 1,\n      \"remaining\": 39996\n    },\n    \"concurrent_requests\": {\n      \"consumed\": 0,\n      \"remaining\": 10\n    },\n    \"server_errors_per_project_per_hour\": {\n      \"consumed\": 0,\n      \"remaining\": 10\n    },\n    \"potentially_thresholded_requests_per_hour\": {\n      \"consumed\": 0,\n      \"remaining\": 120\n    },\n    \"tokens_per_project_per_hour\": {\n      \"consumed\": 1,\n      \"remaining\": 13996\n    }\n  },\n  \"kind\": \"analyticsData#runReport\",\n  \"rows\": [],\n  \"totals\": [],\n  \"maximums\": [],\n  \"minimums\": [],\n  \"row_count\": 0\n}"
+          }
+        ],
+        "isError": false
+      }
+    },
+    {
+      "label": "property-event-liveness",
+      "name": "run_report",
+      "arguments": {
+        "property_id": 546448545,
+        "date_ranges": [
+          {
+            "start_date": "2026-07-25",
+            "end_date": "2026-07-25",
+            "name": "cohort-day"
+          }
+        ],
+        "metrics": [
+          "eventCount",
+          "totalUsers",
+          "sessions"
+        ],
+        "limit": 250000,
+        "offset": 0,
+        "return_property_quota": true,
+        "dimensions": [
+          "eventName"
+        ],
+        "dimension_filter": {
+          "filter": {
+            "field_name": "eventName",
+            "in_list_filter": {
+              "values": [
+                "landing_viewed",
+                "select_content",
+                "registration_form_opened",
+                "registration_attempted",
+                "generate_lead",
+                "registration_failed"
+              ],
+              "case_sensitive": true
+            }
+          }
+        }
+      },
+      "startedAt": "2026-07-25T08:42:45.229Z",
+      "completedAt": "2026-07-25T08:42:46.559Z",
+      "status": "success",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"dimension_headers\": [\n    {\n      \"name\": \"eventName\"\n    }\n  ],\n  \"metric_headers\": [\n    {\n      \"name\": \"eventCount\",\n      \"type_\": \"TYPE_INTEGER\"\n    },\n    {\n      \"name\": \"totalUsers\",\n      \"type_\": \"TYPE_INTEGER\"\n    },\n    {\n      \"name\": \"sessions\",\n      \"type_\": \"TYPE_INTEGER\"\n    }\n  ],\n  \"rows\": [\n    {\n      \"dimension_values\": [\n        {\n          \"value\": \"landing_viewed\"\n        }\n      ],\n      \"metric_values\": [\n        {\n          \"value\": \"486\"\n        },\n        {\n          \"value\": \"485\"\n        },\n        {\n          \"value\": \"486\"\n        }\n      ]\n    },\n    {\n      \"dimension_values\": [\n        {\n          \"value\": \"select_content\"\n        }\n      ],\n      \"metric_values\": [\n        {\n          \"value\": \"468\"\n        },\n        {\n          \"value\": \"468\"\n        },\n        {\n          \"value\": \"469\"\n        }\n      ]\n    },\n    {\n      \"dimension_values\": [\n        {\n          \"value\": \"generate_lead\"\n        }\n      ],\n      \"metric_values\": [\n        {\n          \"value\": \"123\"\n        },\n        {\n          \"value\": \"123\"\n        },\n        {\n          \"value\": \"123\"\n        }\n      ]\n    },\n    {\n      \"dimension_values\": [\n        {\n          \"value\": \"registration_attempted\"\n        }\n      ],\n      \"metric_values\": [\n        {\n          \"value\": \"123\"\n        },\n        {\n          \"value\": \"123\"\n        },\n        {\n          \"value\": \"123\"\n        }\n      ]\n    },\n    {\n      \"dimension_values\": [\n        {\n          \"value\": \"registration_form_opened\"\n        }\n      ],\n      \"metric_values\": [\n        {\n          \"value\": \"118\"\n        },\n        {\n          \"value\": \"118\"\n        },\n        {\n          \"value\": \"118\"\n        }\n      ]\n    }\n  ],\n  \"row_count\": 5,\n  \"metadata\": {\n    \"currency_code\": \"USD\",\n    \"time_zone\": \"Europe/Moscow\",\n    \"data_loss_from_other_row\": false,\n    \"sampling_metadatas\": []\n  },\n  \"property_quota\": {\n    \"tokens_per_day\": {\n      \"consumed\": 1,\n      \"remaining\": 199995\n    },\n    \"tokens_per_hour\": {\n      \"consumed\": 1,\n      \"remaining\": 39995\n    },\n    \"concurrent_requests\": {\n      \"consumed\": 0,\n      \"remaining\": 10\n    },\n    \"server_errors_per_project_per_hour\": {\n      \"consumed\": 0,\n      \"remaining\": 10\n    },\n    \"potentially_thresholded_requests_per_hour\": {\n      \"consumed\": 0,\n      \"remaining\": 120\n    },\n    \"tokens_per_project_per_hour\": {\n      \"consumed\": 1,\n      \"remaining\": 13995\n    }\n  },\n  \"kind\": \"analyticsData#runReport\",\n  \"totals\": [],\n  \"maximums\": [],\n  \"minimums\": []\n}"
+          }
+        ],
+        "isError": false
+      }
+    }
+  ],
+  "process": {
+    "spawnedAt": "2026-07-25T08:42:34.762Z",
+    "error": null,
+    "exitCode": 0,
+    "exitSignal": null,
+    "closedAt": "2026-07-25T08:42:46.960Z",
+    "forcedTermination": null
+  },
+  "collectionError": null,
+  "stderrSummary": [
+    "/Users/skosovsky/.cache/uv/archive-v0/9fo0q0MWRtfwil91/lib/python3.14/site-packages/google/adk/features/_feature_decorator.py:72: UserWarning: [EXPERIMENTAL] feature FeatureName.PLUGGABLE_AUTH is enabled.",
+    "  check_feature_enabled()",
+    "/Users/skosovsky/.cache/uv/archive-v0/9fo0q0MWRtfwil91/lib/python3.14/site-packages/google/adk/tools/function_tool.py:96: UserWarning: [EXPERIMENTAL] feature FeatureName.JSON_SCHEMA_FOR_FUNC_DECL is enabled.",
+    "  build_function_declaration(",
+    "Starting MCP Stdio Server: Google Analytics MCP Server"
+  ]
+}

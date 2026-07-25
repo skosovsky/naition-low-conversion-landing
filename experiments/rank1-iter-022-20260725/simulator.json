@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "rank1-simulator-evidence.v1",
+  "iterationId": "rank1-iter-022-20260725",
+  "candidate": {
+    "commitSha": "84d5713d8df4220a26821c939d0f568cc9c41102",
+    "versionMarker": "structured-program-evidence-salience-v1-c22-20260725",
+    "experimentMarker": "rank1-structured-program-evidence-salience-c22-20260725"
+  },
+  "invocation": {
+    "control": "authenticated panel Run visits simulator button",
+    "attempts": 1,
+    "requestedVisits": 100,
+    "parallelism": 10,
+    "clickedAt": "2026-07-25T08:29:27.585Z",
+    "startObservationSha256": "d290d9975dd99bc5473f662fbac6c391d2bc0f6f06a96d6de20cc73e69a15fda"
+  },
+  "terminalObservation": {
+    "observedAt": "2026-07-25T08:38:29.127Z",
+    "status": "bot_completed",
+    "startedAt": "2026-07-25T08:29:28Z",
+    "finishedAt": "2026-07-25T08:38:09Z",
+    "successfulVisits": 100,
+    "errors": 0,
+    "conversions": 30,
+    "conversionPercent": 30,
+    "elapsedSeconds": 520.9,
+    "panelResponseClaimed": false,
+    "evidenceSha256": "9940f1cb0310edb7898202900557410d26767469caa3371f1402158797031927"
+  },
+  "valid": true
+}

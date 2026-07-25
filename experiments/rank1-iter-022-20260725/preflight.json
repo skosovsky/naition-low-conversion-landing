@@ -1,0 +1,125 @@
+{
+  "schemaVersion": "1.0.0",
+  "iterationId": "rank1-iter-022-20260725",
+  "status": "ready_for_authoritative_iteration",
+  "checkedAt": "2026-07-25T04:01:09Z",
+  "site": {
+    "url": "https://skosovsky.naition.sortedmap.ru",
+    "candidateSha": "84d5713d8df4220a26821c939d0f568cc9c41102",
+    "remoteMainSha": "84d5713d8df4220a26821c939d0f568cc9c41102",
+    "shaProvenance": {
+      "localCommand": "git rev-parse HEAD",
+      "remoteCommand": "git ls-remote origin refs/heads/main",
+      "observedAt": "2026-07-25T04:00:00Z"
+    },
+    "versionMarker": "structured-program-evidence-salience-v1-c22-20260725",
+    "experimentMarker": "rank1-structured-program-evidence-salience-c22-20260725",
+    "tests": {
+      "command": "npm test",
+      "passed": 22,
+      "failed": 0
+    }
+  },
+  "controlPlane": {
+    "url": "https://panel.naition.sortedmap.ru",
+    "openapi": "https://panel.naition.sortedmap.ru/openapi.json",
+    "contract": {
+      "redeploy": {
+        "method": "POST",
+        "path": "/api/redeploy",
+        "contentType": "application/x-www-form-urlencoded",
+        "requiredField": "repo_url"
+      },
+      "status": {
+        "method": "GET",
+        "path": "/api/status"
+      },
+      "runBot": {
+        "method": "POST",
+        "path": "/api/run-bot",
+        "contentType": "application/x-www-form-urlencoded",
+        "requiredField": "visits",
+        "requiredValue": 100
+      },
+      "verifiedAt": "2026-07-25T04:03:00Z"
+    },
+    "redeployEvidenceKey": "rank1-iter-022-20260725:84d5713d8df4220a26821c939d0f568cc9c41102",
+    "simulatorEvidenceKey": "rank1-iter-022-20260725:100",
+    "mutationController": "Ann",
+    "gitWriter": "Ann",
+    "redeployAlreadyRecorded": false,
+    "simulatorAlreadyRecorded": false
+  },
+  "baselineObservation": {
+    "productionVersionMarker": "plan-fit-rule-v1-c21-20260725",
+    "productionExperimentMarker": "rank1-plan-fit-rule-c21-20260725",
+    "serverVisits": 101,
+    "serverOrders": 27,
+    "leaderboardOrders": 27,
+    "leaderboardRequests": 101,
+    "leaderboardRank": 2
+  },
+  "sources": {
+    "server": {
+      "status": "available",
+      "role": "authoritative outcome",
+      "url": "https://skosovsky.naition.sortedmap.ru/api/export.php",
+      "privacy": "collector stores only aggregate counts, timestamps and non-PII IDs"
+    },
+    "leaderboard": {
+      "status": "available",
+      "role": "authoritative outcome",
+      "url": "https://leaders.naition.sortedmap.ru/student/skosovsky",
+      "cache": "30 seconds"
+    },
+    "yandex": {
+      "status": "authorized_browser_fallback_recovery_pending",
+      "role": "diagnostic",
+      "primary": "vendor MCP",
+      "fallback": "already-authorized Chrome vendor tab; raw response must be saved locally before file-only analysis",
+      "evidence": "experiments/rank1-iter-021-20260725/raw/yandex/availability.json",
+      "currentBlocker": "Chrome extension instance is visible but the browser-control channel did not answer two lightweight calls; no data availability is inferred"
+    },
+    "ga4": {
+      "status": "official_mcp_available",
+      "role": "diagnostic",
+      "primary": "googleanalytics/google-analytics-mcp",
+      "property": "546448545",
+      "toolInventoryEvidence": "experiments/analytics-restoration-20260724/raw/2026-07-24T07-52-53Z-ga4-mcp-smoke.json",
+      "latestLifecycleEvidence": "experiments/rank1-iter-021-20260725/work/incoming/ga4/2026-07-25T0330Z-standard-immature.json",
+      "latestLifecycle": {
+        "spawnedAt": "2026-07-25T03:31:38.586Z",
+        "exitCode": 0,
+        "exitSignal": null,
+        "closedAt": "2026-07-25T03:31:53.159Z",
+        "forcedTermination": null
+      },
+      "maturity": "exact-cohort standard report is decision-grade only from cohort.end + 04:15; empty immature rows mean not observed, not zero",
+      "bigQuery": "forbidden"
+    },
+    "amplitude": {
+      "status": "authorized_browser_fallback_recovery_pending",
+      "role": "diagnostic",
+      "primary": "vendor MCP",
+      "fallback": "already-authorized Chrome vendor tab; fresh read-only dataset request required before replay",
+      "evidence": "experiments/rank1-iter-021-20260725/raw/amplitude/availability.json",
+      "currentBlocker": "Chrome extension instance is visible but the browser-control channel did not answer two lightweight calls; no data availability is inferred"
+    }
+  },
+  "comparisonContract": {
+    "requestedVisits": 100,
+    "attempts": 1,
+    "success": "rank 1 and at least 40% on the exact post-redeploy cohort",
+    "authoritativeSources": [
+      "server",
+      "leaderboard"
+    ],
+    "diagnosticSources": [
+      "yandex",
+      "ga4",
+      "amplitude"
+    ],
+    "noAveraging": true,
+    "objectiveOverride": "The active goal defines server and leaderboard as authoritative and client analytics as diagnostics. A diagnostic source gap is recorded truthfully and does not block the next valid deploy/run iteration; full multi-source reconciliation remains mandatory before declaring a win."
+  }
+}

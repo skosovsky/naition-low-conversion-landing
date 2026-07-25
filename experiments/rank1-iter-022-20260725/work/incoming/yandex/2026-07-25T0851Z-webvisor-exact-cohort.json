@@ -1,0 +1,3346 @@
+{
+  "schemaVersion": "rank1-yandex-webvisor-browser-export.v1",
+  "provider": "Yandex.Metrica",
+  "transport": "authenticated user Chrome UI network response",
+  "vendorOfficial": true,
+  "collectedAt": "2026-07-25T08:52:28.943Z",
+  "counterId": "110921681",
+  "sourcePage": "https://metrica.yandex.com/stat/visor",
+  "requestContract": {
+    "endpoint": "https://metrica.yandex.com/i-proxy/i-webvisor-data-api/getList?lang=ru",
+    "method": "POST",
+    "date1": "2026-07-25",
+    "date2": "2026-07-25",
+    "offset": 1,
+    "limit": 200,
+    "sort": "-ym:s:dateTime",
+    "responseTotalRows": 605,
+    "responseReturnedRows": 200,
+    "sampled": false,
+    "authMaterialPersisted": false
+  },
+  "cohort": {
+    "requestedStartUtc": "2026-07-25T08:29:28Z",
+    "requestedEndUtc": "2026-07-25T08:38:09Z",
+    "metricaTimeZone": "Europe/Moscow",
+    "filterStartLocal": "2026-07-25 11:29:28",
+    "filterEndLocal": "2026-07-25 11:38:09",
+    "visitCount": 101,
+    "uniqueVisitIds": 101,
+    "piiRedacted": true,
+    "omittedFields": [
+      "userIDHash",
+      "webVisorSelectedText",
+      "auth headers",
+      "request key"
+    ]
+  },
+  "summary": {
+    "webVisorVersion2": 101,
+    "viewedNo": 101,
+    "trafficSources": {
+      "Прямые заходы": 101
+    },
+    "countries": {
+      "Россия": 101
+    },
+    "operatingSystems": {
+      "Windows 10 (и последующие)": 101
+    },
+    "browsers": {
+      "Google Chrome": 101
+    },
+    "durationSeconds": {
+      "min": 2,
+      "p25": 45,
+      "median": 49,
+      "p75": 52,
+      "max": 59
+    },
+    "activity": {
+      "min": 1,
+      "median": 2,
+      "max": 3
+    },
+    "goalVisitCounts": {
+      "Landing Viewed": 101,
+      "Pricing Plan Selected": 99,
+      "Автоцель: отправка формы": 30,
+      "Registration Form Opened": 30,
+      "Registration Attempted": 30,
+      "Registration Completed": 30,
+      "Автоцель: отправка формы заявки": 30
+    },
+    "serverAgreement": {
+      "visits": true,
+      "completedGoals": true
+    }
+  },
+  "visits": [
+    {
+      "visitId": "4220772496663642513",
+      "dateTime": "2026-07-25 11:29:29",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 2,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220773541795070038",
+      "dateTime": "2026-07-25 11:29:33",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 1,
+      "durationSeconds": 21,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220773544187920414",
+      "dateTime": "2026-07-25 11:29:33",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 3,
+      "durationSeconds": 50,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "587733472",
+          "name": "Автоцель: отправка формы",
+          "count": 1
+        },
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        },
+        {
+          "id": "588475750",
+          "name": "Registration Form Opened",
+          "count": 1
+        },
+        {
+          "id": "588476034",
+          "name": "Registration Attempted",
+          "count": 1
+        },
+        {
+          "id": "588476540",
+          "name": "Registration Completed",
+          "count": 1
+        },
+        {
+          "id": "588488321",
+          "name": "Автоцель: отправка формы заявки",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220773555671400825",
+      "dateTime": "2026-07-25 11:29:33",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 3,
+      "durationSeconds": 53,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "587733472",
+          "name": "Автоцель: отправка формы",
+          "count": 1
+        },
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        },
+        {
+          "id": "588475750",
+          "name": "Registration Form Opened",
+          "count": 1
+        },
+        {
+          "id": "588476034",
+          "name": "Registration Attempted",
+          "count": 1
+        },
+        {
+          "id": "588476540",
+          "name": "Registration Completed",
+          "count": 1
+        },
+        {
+          "id": "588488321",
+          "name": "Автоцель: отправка формы заявки",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220773557267333414",
+      "dateTime": "2026-07-25 11:29:33",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 3,
+      "durationSeconds": 59,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "587733472",
+          "name": "Автоцель: отправка формы",
+          "count": 1
+        },
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        },
+        {
+          "id": "588475750",
+          "name": "Registration Form Opened",
+          "count": 1
+        },
+        {
+          "id": "588476034",
+          "name": "Registration Attempted",
+          "count": 1
+        },
+        {
+          "id": "588476540",
+          "name": "Registration Completed",
+          "count": 1
+        },
+        {
+          "id": "588488321",
+          "name": "Автоцель: отправка формы заявки",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220773573489590367",
+      "dateTime": "2026-07-25 11:29:33",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 46,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220773585396432908",
+      "dateTime": "2026-07-25 11:29:33",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 44,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220773585849418038",
+      "dateTime": "2026-07-25 11:29:33",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 52,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220773600220414139",
+      "dateTime": "2026-07-25 11:29:33",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 50,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220773613737345176",
+      "dateTime": "2026-07-25 11:29:33",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 46,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220774025580511670",
+      "dateTime": "2026-07-25 11:29:35",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 48,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220779309633896627",
+      "dateTime": "2026-07-25 11:29:55",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 52,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220785255192199490",
+      "dateTime": "2026-07-25 11:30:17",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 49,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220785774179123670",
+      "dateTime": "2026-07-25 11:30:19",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 57,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220786039729946800",
+      "dateTime": "2026-07-25 11:30:20",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 55,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220786811643887704",
+      "dateTime": "2026-07-25 11:30:23",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 48,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220786815105237101",
+      "dateTime": "2026-07-25 11:30:23",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 50,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220787069632905440",
+      "dateTime": "2026-07-25 11:30:24",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 54,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220787559927120055",
+      "dateTime": "2026-07-25 11:30:26",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 42,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220787796231848410",
+      "dateTime": "2026-07-25 11:30:27",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 42,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220789211465777293",
+      "dateTime": "2026-07-25 11:30:33",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 54,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220793073130799459",
+      "dateTime": "2026-07-25 11:30:47",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 3,
+      "durationSeconds": 43,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "587733472",
+          "name": "Автоцель: отправка формы",
+          "count": 1
+        },
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        },
+        {
+          "id": "588475750",
+          "name": "Registration Form Opened",
+          "count": 1
+        },
+        {
+          "id": "588476034",
+          "name": "Registration Attempted",
+          "count": 1
+        },
+        {
+          "id": "588476540",
+          "name": "Registration Completed",
+          "count": 1
+        },
+        {
+          "id": "588488321",
+          "name": "Автоцель: отправка формы заявки",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220798284998902006",
+      "dateTime": "2026-07-25 11:31:07",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 49,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220798854563364892",
+      "dateTime": "2026-07-25 11:31:09",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 50,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220799102210801976",
+      "dateTime": "2026-07-25 11:31:10",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 44,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220799552002720110",
+      "dateTime": "2026-07-25 11:31:11",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 3,
+      "durationSeconds": 56,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "587733472",
+          "name": "Автоцель: отправка формы",
+          "count": 1
+        },
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        },
+        {
+          "id": "588475750",
+          "name": "Registration Form Opened",
+          "count": 1
+        },
+        {
+          "id": "588476034",
+          "name": "Registration Attempted",
+          "count": 1
+        },
+        {
+          "id": "588476540",
+          "name": "Registration Completed",
+          "count": 1
+        },
+        {
+          "id": "588488321",
+          "name": "Автоцель: отправка формы заявки",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220800036547330067",
+      "dateTime": "2026-07-25 11:31:14",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 3,
+      "durationSeconds": 52,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "587733472",
+          "name": "Автоцель: отправка формы",
+          "count": 1
+        },
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        },
+        {
+          "id": "588475750",
+          "name": "Registration Form Opened",
+          "count": 1
+        },
+        {
+          "id": "588476034",
+          "name": "Registration Attempted",
+          "count": 1
+        },
+        {
+          "id": "588476540",
+          "name": "Registration Completed",
+          "count": 1
+        },
+        {
+          "id": "588488321",
+          "name": "Автоцель: отправка формы заявки",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220800853749530799",
+      "dateTime": "2026-07-25 11:31:17",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 3,
+      "durationSeconds": 44,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "587733472",
+          "name": "Автоцель: отправка формы",
+          "count": 1
+        },
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        },
+        {
+          "id": "588475750",
+          "name": "Registration Form Opened",
+          "count": 1
+        },
+        {
+          "id": "588476034",
+          "name": "Registration Attempted",
+          "count": 1
+        },
+        {
+          "id": "588476540",
+          "name": "Registration Completed",
+          "count": 1
+        },
+        {
+          "id": "588488321",
+          "name": "Автоцель: отправка формы заявки",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220800858306904446",
+      "dateTime": "2026-07-25 11:31:17",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 51,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220801439707431181",
+      "dateTime": "2026-07-25 11:31:19",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 3,
+      "durationSeconds": 53,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "587733472",
+          "name": "Автоцель: отправка формы",
+          "count": 1
+        },
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        },
+        {
+          "id": "588475750",
+          "name": "Registration Form Opened",
+          "count": 1
+        },
+        {
+          "id": "588476034",
+          "name": "Registration Attempted",
+          "count": 1
+        },
+        {
+          "id": "588476540",
+          "name": "Registration Completed",
+          "count": 1
+        },
+        {
+          "id": "588488321",
+          "name": "Автоцель: отправка формы заявки",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220803549758226559",
+      "dateTime": "2026-07-25 11:31:27",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 51,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220804460374130776",
+      "dateTime": "2026-07-25 11:31:31",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 45,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220810774469411165",
+      "dateTime": "2026-07-25 11:31:55",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 47,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220811319483302114",
+      "dateTime": "2026-07-25 11:31:57",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 3,
+      "durationSeconds": 56,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "587733472",
+          "name": "Автоцель: отправка формы",
+          "count": 1
+        },
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        },
+        {
+          "id": "588475750",
+          "name": "Registration Form Opened",
+          "count": 1
+        },
+        {
+          "id": "588476034",
+          "name": "Registration Attempted",
+          "count": 1
+        },
+        {
+          "id": "588476540",
+          "name": "Registration Completed",
+          "count": 1
+        },
+        {
+          "id": "588488321",
+          "name": "Автоцель: отправка формы заявки",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220812247678583015",
+      "dateTime": "2026-07-25 11:32:00",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 3,
+      "durationSeconds": 46,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "587733472",
+          "name": "Автоцель: отправка формы",
+          "count": 1
+        },
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        },
+        {
+          "id": "588475750",
+          "name": "Registration Form Opened",
+          "count": 1
+        },
+        {
+          "id": "588476034",
+          "name": "Registration Attempted",
+          "count": 1
+        },
+        {
+          "id": "588476540",
+          "name": "Registration Completed",
+          "count": 1
+        },
+        {
+          "id": "588488321",
+          "name": "Автоцель: отправка формы заявки",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220812667197325800",
+      "dateTime": "2026-07-25 11:32:01",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 59,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220813815924654558",
+      "dateTime": "2026-07-25 11:32:06",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 56,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220814053199052961",
+      "dateTime": "2026-07-25 11:32:07",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 44,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220814377405644829",
+      "dateTime": "2026-07-25 11:32:09",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 49,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220815552731939008",
+      "dateTime": "2026-07-25 11:32:13",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 3,
+      "durationSeconds": 47,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "587733472",
+          "name": "Автоцель: отправка формы",
+          "count": 1
+        },
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        },
+        {
+          "id": "588475750",
+          "name": "Registration Form Opened",
+          "count": 1
+        },
+        {
+          "id": "588476034",
+          "name": "Registration Attempted",
+          "count": 1
+        },
+        {
+          "id": "588476540",
+          "name": "Registration Completed",
+          "count": 1
+        },
+        {
+          "id": "588488321",
+          "name": "Автоцель: отправка формы заявки",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220816491439194346",
+      "dateTime": "2026-07-25 11:32:17",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 3,
+      "durationSeconds": 55,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "587733472",
+          "name": "Автоцель: отправка формы",
+          "count": 1
+        },
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        },
+        {
+          "id": "588475750",
+          "name": "Registration Form Opened",
+          "count": 1
+        },
+        {
+          "id": "588476034",
+          "name": "Registration Attempted",
+          "count": 1
+        },
+        {
+          "id": "588476540",
+          "name": "Registration Completed",
+          "count": 1
+        },
+        {
+          "id": "588488321",
+          "name": "Автоцель: отправка формы заявки",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220817182484857259",
+      "dateTime": "2026-07-25 11:32:19",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 44,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220823263029493835",
+      "dateTime": "2026-07-25 11:32:42",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 40,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220824481455669496",
+      "dateTime": "2026-07-25 11:32:47",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 46,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220825734865747997",
+      "dateTime": "2026-07-25 11:32:52",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 48,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220826346096427238",
+      "dateTime": "2026-07-25 11:32:54",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 49,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220827510316728594",
+      "dateTime": "2026-07-25 11:32:59",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 51,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220828128751648867",
+      "dateTime": "2026-07-25 11:33:00",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 3,
+      "durationSeconds": 46,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "587733472",
+          "name": "Автоцель: отправка формы",
+          "count": 1
+        },
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        },
+        {
+          "id": "588475750",
+          "name": "Registration Form Opened",
+          "count": 1
+        },
+        {
+          "id": "588476034",
+          "name": "Registration Attempted",
+          "count": 1
+        },
+        {
+          "id": "588476540",
+          "name": "Registration Completed",
+          "count": 1
+        },
+        {
+          "id": "588488321",
+          "name": "Автоцель: отправка формы заявки",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220828370014306431",
+      "dateTime": "2026-07-25 11:33:02",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 41,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220828673142161472",
+      "dateTime": "2026-07-25 11:33:03",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 3,
+      "durationSeconds": 49,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "587733472",
+          "name": "Автоцель: отправка формы",
+          "count": 1
+        },
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        },
+        {
+          "id": "588475750",
+          "name": "Registration Form Opened",
+          "count": 1
+        },
+        {
+          "id": "588476034",
+          "name": "Registration Attempted",
+          "count": 1
+        },
+        {
+          "id": "588476540",
+          "name": "Registration Completed",
+          "count": 1
+        },
+        {
+          "id": "588488321",
+          "name": "Автоцель: отправка формы заявки",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220828914179375299",
+      "dateTime": "2026-07-25 11:33:04",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 53,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220831120620257310",
+      "dateTime": "2026-07-25 11:33:12",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 44,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220833989366382695",
+      "dateTime": "2026-07-25 11:33:23",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 3,
+      "durationSeconds": 51,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "587733472",
+          "name": "Автоцель: отправка формы",
+          "count": 1
+        },
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        },
+        {
+          "id": "588475750",
+          "name": "Registration Form Opened",
+          "count": 1
+        },
+        {
+          "id": "588476034",
+          "name": "Registration Attempted",
+          "count": 1
+        },
+        {
+          "id": "588476540",
+          "name": "Registration Completed",
+          "count": 1
+        },
+        {
+          "id": "588488321",
+          "name": "Автоцель: отправка формы заявки",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220836811563860125",
+      "dateTime": "2026-07-25 11:33:34",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 39,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220838532971233665",
+      "dateTime": "2026-07-25 11:33:41",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 54,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220839353856295016",
+      "dateTime": "2026-07-25 11:33:44",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 53,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220839432241283138",
+      "dateTime": "2026-07-25 11:33:44",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 46,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220840219356692560",
+      "dateTime": "2026-07-25 11:33:47",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 3,
+      "durationSeconds": 47,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "587733472",
+          "name": "Автоцель: отправка формы",
+          "count": 1
+        },
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        },
+        {
+          "id": "588475750",
+          "name": "Registration Form Opened",
+          "count": 1
+        },
+        {
+          "id": "588476034",
+          "name": "Registration Attempted",
+          "count": 1
+        },
+        {
+          "id": "588476540",
+          "name": "Registration Completed",
+          "count": 1
+        },
+        {
+          "id": "588488321",
+          "name": "Автоцель: отправка формы заявки",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220841005623541951",
+      "dateTime": "2026-07-25 11:33:50",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 50,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220841751131455568",
+      "dateTime": "2026-07-25 11:33:53",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 3,
+      "durationSeconds": 43,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "587733472",
+          "name": "Автоцель: отправка формы",
+          "count": 1
+        },
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        },
+        {
+          "id": "588475750",
+          "name": "Registration Form Opened",
+          "count": 1
+        },
+        {
+          "id": "588476034",
+          "name": "Registration Attempted",
+          "count": 1
+        },
+        {
+          "id": "588476540",
+          "name": "Registration Completed",
+          "count": 1
+        },
+        {
+          "id": "588488321",
+          "name": "Автоцель: отправка формы заявки",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220842935158833532",
+      "dateTime": "2026-07-25 11:33:58",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 49,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220843021378519244",
+      "dateTime": "2026-07-25 11:33:58",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 3,
+      "durationSeconds": 52,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "587733472",
+          "name": "Автоцель: отправка формы",
+          "count": 1
+        },
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        },
+        {
+          "id": "588475750",
+          "name": "Registration Form Opened",
+          "count": 1
+        },
+        {
+          "id": "588476034",
+          "name": "Registration Attempted",
+          "count": 1
+        },
+        {
+          "id": "588476540",
+          "name": "Registration Completed",
+          "count": 1
+        },
+        {
+          "id": "588488321",
+          "name": "Автоцель: отправка формы заявки",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220847217288151441",
+      "dateTime": "2026-07-25 11:34:14",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 3,
+      "durationSeconds": 48,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "587733472",
+          "name": "Автоцель: отправка формы",
+          "count": 1
+        },
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        },
+        {
+          "id": "588475750",
+          "name": "Registration Form Opened",
+          "count": 1
+        },
+        {
+          "id": "588476034",
+          "name": "Registration Attempted",
+          "count": 1
+        },
+        {
+          "id": "588476540",
+          "name": "Registration Completed",
+          "count": 1
+        },
+        {
+          "id": "588488321",
+          "name": "Автоцель: отправка формы заявки",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220847527765737681",
+      "dateTime": "2026-07-25 11:34:14",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 46,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220851778958131440",
+      "dateTime": "2026-07-25 11:34:31",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 39,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220852784965353942",
+      "dateTime": "2026-07-25 11:34:35",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 48,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220853024316457144",
+      "dateTime": "2026-07-25 11:34:36",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 48,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220853293772701745",
+      "dateTime": "2026-07-25 11:34:37",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 45,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220853607686471689",
+      "dateTime": "2026-07-25 11:34:38",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 41,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220854308915642482",
+      "dateTime": "2026-07-25 11:34:41",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 48,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220855977785950611",
+      "dateTime": "2026-07-25 11:34:47",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 58,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220856937595011519",
+      "dateTime": "2026-07-25 11:34:51",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 40,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220859617850949841",
+      "dateTime": "2026-07-25 11:35:01",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 3,
+      "durationSeconds": 49,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "587733472",
+          "name": "Автоцель: отправка формы",
+          "count": 1
+        },
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        },
+        {
+          "id": "588475750",
+          "name": "Registration Form Opened",
+          "count": 1
+        },
+        {
+          "id": "588476034",
+          "name": "Registration Attempted",
+          "count": 1
+        },
+        {
+          "id": "588476540",
+          "name": "Registration Completed",
+          "count": 1
+        },
+        {
+          "id": "588488321",
+          "name": "Автоцель: отправка формы заявки",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220860052033503524",
+      "dateTime": "2026-07-25 11:35:03",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 35,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220862268551463223",
+      "dateTime": "2026-07-25 11:35:11",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 3,
+      "durationSeconds": 49,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "587733472",
+          "name": "Автоцель: отправка формы",
+          "count": 1
+        },
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        },
+        {
+          "id": "588475750",
+          "name": "Registration Form Opened",
+          "count": 1
+        },
+        {
+          "id": "588476034",
+          "name": "Registration Attempted",
+          "count": 1
+        },
+        {
+          "id": "588476540",
+          "name": "Registration Completed",
+          "count": 1
+        },
+        {
+          "id": "588488321",
+          "name": "Автоцель: отправка формы заявки",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220864737186152697",
+      "dateTime": "2026-07-25 11:35:21",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 3,
+      "durationSeconds": 51,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "587733472",
+          "name": "Автоцель: отправка формы",
+          "count": 1
+        },
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        },
+        {
+          "id": "588475750",
+          "name": "Registration Form Opened",
+          "count": 1
+        },
+        {
+          "id": "588476034",
+          "name": "Registration Attempted",
+          "count": 1
+        },
+        {
+          "id": "588476540",
+          "name": "Registration Completed",
+          "count": 1
+        },
+        {
+          "id": "588488321",
+          "name": "Автоцель: отправка формы заявки",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220865315464020214",
+      "dateTime": "2026-07-25 11:35:23",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 3,
+      "durationSeconds": 52,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "587733472",
+          "name": "Автоцель: отправка формы",
+          "count": 1
+        },
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        },
+        {
+          "id": "588475750",
+          "name": "Registration Form Opened",
+          "count": 1
+        },
+        {
+          "id": "588476034",
+          "name": "Registration Attempted",
+          "count": 1
+        },
+        {
+          "id": "588476540",
+          "name": "Registration Completed",
+          "count": 1
+        },
+        {
+          "id": "588488321",
+          "name": "Автоцель: отправка формы заявки",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220865699983917554",
+      "dateTime": "2026-07-25 11:35:24",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 48,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220865773714276508",
+      "dateTime": "2026-07-25 11:35:25",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 3,
+      "durationSeconds": 43,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "587733472",
+          "name": "Автоцель: отправка формы",
+          "count": 1
+        },
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        },
+        {
+          "id": "588475750",
+          "name": "Registration Form Opened",
+          "count": 1
+        },
+        {
+          "id": "588476034",
+          "name": "Registration Attempted",
+          "count": 1
+        },
+        {
+          "id": "588476540",
+          "name": "Registration Completed",
+          "count": 1
+        },
+        {
+          "id": "588488321",
+          "name": "Автоцель: отправка формы заявки",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220867021305544738",
+      "dateTime": "2026-07-25 11:35:29",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 48,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220867712548339818",
+      "dateTime": "2026-07-25 11:35:32",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 51,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220869425642864962",
+      "dateTime": "2026-07-25 11:35:39",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 48,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220871455149392146",
+      "dateTime": "2026-07-25 11:35:46",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 50,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220872759124689067",
+      "dateTime": "2026-07-25 11:35:51",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 3,
+      "durationSeconds": 53,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "587733472",
+          "name": "Автоцель: отправка формы",
+          "count": 1
+        },
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        },
+        {
+          "id": "588475750",
+          "name": "Registration Form Opened",
+          "count": 1
+        },
+        {
+          "id": "588476034",
+          "name": "Registration Attempted",
+          "count": 1
+        },
+        {
+          "id": "588476540",
+          "name": "Registration Completed",
+          "count": 1
+        },
+        {
+          "id": "588488321",
+          "name": "Автоцель: отправка формы заявки",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220875382120513705",
+      "dateTime": "2026-07-25 11:36:01",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 3,
+      "durationSeconds": 46,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "587733472",
+          "name": "Автоцель: отправка формы",
+          "count": 1
+        },
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        },
+        {
+          "id": "588475750",
+          "name": "Registration Form Opened",
+          "count": 1
+        },
+        {
+          "id": "588476034",
+          "name": "Registration Attempted",
+          "count": 1
+        },
+        {
+          "id": "588476540",
+          "name": "Registration Completed",
+          "count": 1
+        },
+        {
+          "id": "588488321",
+          "name": "Автоцель: отправка формы заявки",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220877330936496397",
+      "dateTime": "2026-07-25 11:36:09",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 45,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220878308974264345",
+      "dateTime": "2026-07-25 11:36:12",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 56,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220878496470925683",
+      "dateTime": "2026-07-25 11:36:13",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 3,
+      "durationSeconds": 48,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "587733472",
+          "name": "Автоцель: отправка формы",
+          "count": 1
+        },
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        },
+        {
+          "id": "588475750",
+          "name": "Registration Form Opened",
+          "count": 1
+        },
+        {
+          "id": "588476034",
+          "name": "Registration Attempted",
+          "count": 1
+        },
+        {
+          "id": "588476540",
+          "name": "Registration Completed",
+          "count": 1
+        },
+        {
+          "id": "588488321",
+          "name": "Автоцель: отправка формы заявки",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220879279117828595",
+      "dateTime": "2026-07-25 11:36:16",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 47,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220879976077459841",
+      "dateTime": "2026-07-25 11:36:19",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 53,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220881301905080466",
+      "dateTime": "2026-07-25 11:36:24",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 3,
+      "durationSeconds": 55,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "587733472",
+          "name": "Автоцель: отправка формы",
+          "count": 1
+        },
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        },
+        {
+          "id": "588475750",
+          "name": "Registration Form Opened",
+          "count": 1
+        },
+        {
+          "id": "588476034",
+          "name": "Registration Attempted",
+          "count": 1
+        },
+        {
+          "id": "588476540",
+          "name": "Registration Completed",
+          "count": 1
+        },
+        {
+          "id": "588488321",
+          "name": "Автоцель: отправка формы заявки",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220882189745389724",
+      "dateTime": "2026-07-25 11:36:27",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 44,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220884681041641875",
+      "dateTime": "2026-07-25 11:36:37",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 43,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220886953861316909",
+      "dateTime": "2026-07-25 11:36:45",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 53,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220887690364059837",
+      "dateTime": "2026-07-25 11:36:48",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 3,
+      "durationSeconds": 54,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "587733472",
+          "name": "Автоцель: отправка формы",
+          "count": 1
+        },
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        },
+        {
+          "id": "588475750",
+          "name": "Registration Form Opened",
+          "count": 1
+        },
+        {
+          "id": "588476034",
+          "name": "Registration Attempted",
+          "count": 1
+        },
+        {
+          "id": "588476540",
+          "name": "Registration Completed",
+          "count": 1
+        },
+        {
+          "id": "588488321",
+          "name": "Автоцель: отправка формы заявки",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220889475192717446",
+      "dateTime": "2026-07-25 11:36:55",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 51,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220891424497860617",
+      "dateTime": "2026-07-25 11:37:02",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 52,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220891956975501809",
+      "dateTime": "2026-07-25 11:37:05",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 49,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220893214996431249",
+      "dateTime": "2026-07-25 11:37:09",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 3,
+      "durationSeconds": 41,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "587733472",
+          "name": "Автоцель: отправка формы",
+          "count": 1
+        },
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        },
+        {
+          "id": "588475750",
+          "name": "Registration Form Opened",
+          "count": 1
+        },
+        {
+          "id": "588476034",
+          "name": "Registration Attempted",
+          "count": 1
+        },
+        {
+          "id": "588476540",
+          "name": "Registration Completed",
+          "count": 1
+        },
+        {
+          "id": "588488321",
+          "name": "Автоцель: отправка формы заявки",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220894011134836877",
+      "dateTime": "2026-07-25 11:37:12",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 56,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "visitId": "4220894073198739602",
+      "dateTime": "2026-07-25 11:37:13",
+      "webVisorVersion": "2",
+      "viewed": "no",
+      "activity": 2,
+      "durationSeconds": 45,
+      "pageViews": 1,
+      "trafficSource": "Прямые заходы",
+      "country": "Россия",
+      "operatingSystem": "Windows 10 (и последующие)",
+      "browser": "Google Chrome",
+      "goals": [
+        {
+          "id": "588475613",
+          "name": "Landing Viewed",
+          "count": 1
+        },
+        {
+          "id": "588475731",
+          "name": "Pricing Plan Selected",
+          "count": 1
+        }
+      ]
+    }
+  ]
+}

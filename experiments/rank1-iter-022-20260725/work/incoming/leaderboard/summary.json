@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "rank1-leaderboard-summary.v1",
+  "iterationId": "rank1-iter-022-20260725",
+  "collectedAt": "2026-07-25T08:39:38Z",
+  "source": "https://leaders.naition.sortedmap.ru/",
+  "detailSource": "https://leaders.naition.sortedmap.ru/student/skosovsky",
+  "cacheWindowSeconds": 30,
+  "globalRank": 2,
+  "runAt": "2026-07-25T08:37:12Z",
+  "requests": 101,
+  "orders": 30,
+  "conversionRatePct": 29.7,
+  "leader": {
+    "rank": 1,
+    "requests": 504,
+    "orders": 168,
+    "conversionRatePct": 33.3
+  },
+  "candidateSha": "84d5713d8df4220a26821c939d0f568cc9c41102",
+  "versionMarker": "structured-program-evidence-salience-v1-c22-20260725"
+}

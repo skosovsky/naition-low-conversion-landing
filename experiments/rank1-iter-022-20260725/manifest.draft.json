@@ -1,0 +1,43 @@
+{
+  "schemaVersion": "2.0.0",
+  "iterationId": "rank1-iter-022-20260725",
+  "status": "completed",
+  "comparisonType": "before_after",
+  "hypothesis": {
+    "id": "structured-program-evidence-salience",
+    "statement": "Numbering the six unchanged programme modules as one explicit sequence may increase perceived completeness and completed registrations.",
+    "changeSet": [
+      "Render CSS counters 01 through 06 before the six existing programme headings."
+    ],
+    "expectedMetric": "Server-side persisted orders divided by the exact post-redeploy cohort; hard gate is at least 40% and leaderboard rank 1."
+  },
+  "baseline": {
+    "commitSha": "d416b9e016ea8f2f7c30233cc60001c1a1132653",
+    "metric": {
+      "name": "server persisted orders / visits",
+      "numerator": 30,
+      "denominator": 101,
+      "denominatorSemantics": "best valid direct-control simulator cohort",
+      "cr": 29.7029702970297
+    }
+  },
+  "candidate": {
+    "commitSha": "84d5713d8df4220a26821c939d0f568cc9c41102",
+    "versionMarker": "structured-program-evidence-salience-v1-c22-20260725",
+    "experimentMarker": "rank1-structured-program-evidence-salience-c22-20260725"
+  },
+  "mutation": {
+    "redeployEvidenceKey": "rank1-iter-022-20260725:84d5713d8df4220a26821c939d0f568cc9c41102",
+    "simulatorEvidenceKey": "rank1-iter-022-20260725:100",
+    "redeployInvocations": 1,
+    "simulatorInvocations": 1
+  },
+  "outcome": {
+    "serverVisits": 101,
+    "serverOrders": 30,
+    "serverConversionRatePct": 29.7029702970297,
+    "leaderboardRank": 2,
+    "classification": "no_effect",
+    "targetMet": false
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "rank1-deploy-evidence.v1",
+  "iterationId": "rank1-iter-022-20260725",
+  "evidenceId": "rank1-iter-022-20260725:84d5713d8df4220a26821c939d0f568cc9c41102",
+  "evidenceType": "terminal_ui_observation",
+  "evidenceArtifact": "work/deploy-terminal-observation.json",
+  "evidenceSha256": "eb923380f4b5d2e631ffcfab9ce8887e9b7fc290b9aab27d144e78fd833c8d88",
+  "candidateSha": "84d5713d8df4220a26821c939d0f568cc9c41102",
+  "remoteSha": "84d5713d8df4220a26821c939d0f568cc9c41102",
+  "versionMarker": "structured-program-evidence-salience-v1-c22-20260725",
+  "experimentId": "rank1-structured-program-evidence-salience-c22-20260725",
+  "deployedAt": "2026-07-25T08:27:49Z",
+  "status": "succeeded",
+  "attempts": 1,
+  "panelResponseSha256": null,
+  "panelResponseClaimed": false
+}
