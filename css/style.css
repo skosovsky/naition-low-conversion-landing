@@ -243,6 +243,35 @@ img {
     font-size: 1.05rem;
 }
 
+.program-list {
+    counter-reset: course-module;
+}
+
+.program-module {
+    counter-increment: course-module;
+}
+
+.program-module h3 {
+    display: grid;
+    grid-template-columns: 40px minmax(0, 1fr);
+    gap: 12px;
+    align-items: start;
+}
+
+.program-module h3::before {
+    content: counter(course-module, decimal-leading-zero);
+    display: grid;
+    min-height: 40px;
+    place-items: center;
+    border-radius: 12px;
+    background: var(--heading);
+    color: var(--white);
+    font-size: 0.82rem;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: 0.08em;
+}
+
 .injury-grid {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }

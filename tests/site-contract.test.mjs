@@ -3,6 +3,10 @@ import fs from 'node:fs';
 import test from 'node:test';
 
 const html = fs.readFileSync(new URL('../index.php', import.meta.url), 'utf8');
+const css = fs.readFileSync(
+    new URL('../css/style.css', import.meta.url),
+    'utf8',
+);
 const analyticsContract = JSON.parse(
     fs.readFileSync(
         new URL('../contracts/analytics-events.json', import.meta.url),
@@ -103,42 +107,61 @@ test('candidate experiment marker matches the executable analytics contract', ()
 
     // Assert
     assert.deepEqual(markers, {
-        contractExperimentId: 'rank1-plan-fit-rule-c21-20260725',
-        experimentMarker: 'rank1-plan-fit-rule-c21-20260725',
-        siteVersion: 'plan-fit-rule-v1-c21-20260725',
+        contractExperimentId:
+            'rank1-structured-program-evidence-salience-c22-20260725',
+        experimentMarker:
+            'rank1-structured-program-evidence-salience-c22-20260725',
+        siteVersion:
+            'structured-program-evidence-salience-v1-c22-20260725',
     });
 });
 
-test('pricing exposes one explicit truth-bounded personal plan-fit rule', () => {
+test('program salience is an isolated six-step CSS counter treatment', () => {
     // Arrange
-    const pricing = html.match(
-        /<section class="section pricing-section"[\s\S]*?<\/section>/,
-    )?.[0] || '';
-    const expectedRule = [
-        'Для личного участия выбирайте бесплатный полный курс; курс с набором —',
-        'если нужны перевязочные материалы домой; корпоративный формат — для команды.',
-    ].join(' ');
-    const normalize = (value) => value.replace(/\s+/g, ' ').trim();
+    const treatment = `.program-list {
+    counter-reset: course-module;
+}
+
+.program-module {
+    counter-increment: course-module;
+}
+
+.program-module h3 {
+    display: grid;
+    grid-template-columns: 40px minmax(0, 1fr);
+    gap: 12px;
+    align-items: start;
+}
+
+.program-module h3::before {
+    content: counter(course-module, decimal-leading-zero);
+    display: grid;
+    min-height: 40px;
+    place-items: center;
+    border-radius: 12px;
+    background: var(--heading);
+    color: var(--white);
+    font-size: 0.82rem;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: 0.08em;
+}`;
+    const program = html.match(
+        /<h2 class="section-title">Программа курса<\/h2>[\s\S]*?<div class="program-list">([\s\S]*?)<\/div>/,
+    )?.[1] || '';
 
     // Act
-    const rule = pricing.match(
-        /<p class="section-lead pricing-fit-rule">([\s\S]*?)<\/p>/,
-    )?.[1] || '';
-    const ruleAt = pricing.indexOf('class="section-lead pricing-fit-rule"');
-    const gridAt = pricing.indexOf('class="pricing-grid"');
-    const interactions = rule.match(
-        /<(?:a|button|input|select|textarea)\b/g,
+    const treatmentOccurrences = css.split(treatment).length - 1;
+    const modules = program.match(/class="program-module"/g) || [];
+    const forbiddenCss = treatment.match(
+        /\b(?:display:\s*none|visibility|opacity|order:|position:\s*(?:fixed|sticky|absolute)|animation|transition)\b/g,
     ) || [];
 
     // Assert
-    assert.equal(normalize(rule), expectedRule);
-    assert.equal(
-        (pricing.match(/class="section-lead pricing-fit-rule"/g) || []).length,
-        1,
-    );
-    assert.ok(ruleAt > 0);
-    assert.ok(ruleAt < gridAt);
-    assert.deepEqual(interactions, []);
+    assert.equal(treatmentOccurrences, 1);
+    assert.equal(modules.length, 6);
+    assert.deepEqual(forbiddenCss, []);
+    assert.equal(html.includes('pricing-fit-rule'), false);
 });
 
 test('hero and first section expose the audience-to-outcome hierarchy', () => {
