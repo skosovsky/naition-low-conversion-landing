@@ -1,0 +1,18 @@
+{
+  "schemaVersion": "analytics-source-availability.v1",
+  "iterationId": "rank1-iter-021-20260725",
+  "collectedAt": "2026-07-25T03:38:00Z",
+  "source": "Yandex Metrica Webvisor",
+  "counterId": "110921681",
+  "preferredChannel": "vendor_mcp",
+  "vendorMcpStatus": "not_callable_in_current_toolset",
+  "fallbackChannel": "authenticated_chrome_vendor_ui",
+  "authorizedChromeTabPresent": true,
+  "authorizedChromeTabTitle": "skosovsky — Вебвизор — Яндекс.Метрика",
+  "dataCollected": false,
+  "status": "collection_deferred",
+  "reason": "The authenticated vendor tab was discoverable, but tab claiming and a fresh same-origin Webvisor navigation repeatedly exceeded the browser-control deadline. No unrelated browser, credential extraction, or web-search substitute was used.",
+  "impact": "Does not block rejection of the losing C21 cohort; full Yandex reconciliation remains mandatory for a winning cohort.",
+  "piiPersisted": false,
+  "authMaterialPersisted": false
+}

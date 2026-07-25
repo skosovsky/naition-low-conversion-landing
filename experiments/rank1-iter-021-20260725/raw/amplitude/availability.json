@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "analytics-source-availability.v1",
+  "iterationId": "rank1-iter-021-20260725",
+  "collectedAt": "2026-07-25T03:38:00Z",
+  "source": "Amplitude",
+  "preferredChannel": "vendor_mcp_or_api",
+  "vendorMcpStatus": "not_callable_in_current_toolset",
+  "apiCredentialAvailable": false,
+  "fallbackChannel": "authenticated_chrome_vendor_ui",
+  "authorizedChromeTabPresent": true,
+  "authorizedChromeTabTitles": [
+    "Live Events - Amplitude",
+    "New Chart - Amplitude"
+  ],
+  "dataCollected": false,
+  "status": "collection_deferred",
+  "reason": "The authenticated vendor tabs were discoverable, but the shared Chrome control channel became unavailable while exporting Webvisor. No Amplitude result is inferred from another source.",
+  "impact": "Does not block rejection of the losing C21 cohort; full Amplitude reconciliation remains mandatory for a winning cohort.",
+  "piiPersisted": false,
+  "authMaterialPersisted": false
+}

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "leaderboard-summary.v1",
+  "iterationId": "rank1-iter-021-20260725",
+  "collectedAt": "2026-07-25T03:29:34Z",
+  "cacheWindowSeconds": 30,
+  "rankingSource": "https://leaders.naition.sortedmap.ru/?min_visits=50&sort=conversion&dir=desc",
+  "studentSource": "https://leaders.naition.sortedmap.ru/student/skosovsky",
+  "ranking": {
+    "rank": 2,
+    "login": "skosovsky",
+    "runAt": "2026-07-25T03:27:28Z",
+    "requests": 101,
+    "orders": 27,
+    "conversionRatePct": 26.7
+  },
+  "student": {
+    "runCount": 1,
+    "runAt": "2026-07-25T03:27:28Z",
+    "requests": 101,
+    "orders": 27,
+    "conversionRatePct": 26.7
+  },
+  "leader": {
+    "conversionRatePct": 33.3
+  },
+  "serverAgreement": true
+}

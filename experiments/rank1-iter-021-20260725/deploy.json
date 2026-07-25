@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "rank1-deploy-evidence.v1",
+  "iterationId": "rank1-iter-021-20260725",
+  "evidenceId": "rank1-iter-021-20260725:2fe94c3e255e49b90cf8032c001d4f7ec7349ed7",
+  "evidenceType": "terminal_ui_observation",
+  "evidenceArtifact": "work/deploy-terminal-observation.json",
+  "evidenceSha256": "1152a1f5aa89e654dc01e876e0447bffd30c5f74c3d85f7b41d04b7ea75cee05",
+  "candidateSha": "2fe94c3e255e49b90cf8032c001d4f7ec7349ed7",
+  "remoteSha": "2fe94c3e255e49b90cf8032c001d4f7ec7349ed7",
+  "versionMarker": "plan-fit-rule-v1-c21-20260725",
+  "experimentId": "rank1-plan-fit-rule-c21-20260725",
+  "deployedAt": "2026-07-25T03:18:54Z",
+  "status": "succeeded",
+  "attempts": 1,
+  "panelResponseSha256": null,
+  "panelResponseClaimed": false
+}

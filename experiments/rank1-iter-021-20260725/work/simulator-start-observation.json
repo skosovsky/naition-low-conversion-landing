@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "rank1-terminal-ui-observation.v1",
+  "iterationId": "rank1-iter-021-20260725",
+  "observedAt": "2026-07-25T03:19:40.771Z",
+  "controlPanelUrl": "https://panel.naition.sortedmap.ru/",
+  "panelAccount": "skosovsky",
+  "action": "run-visits-simulator",
+  "attempts": 1,
+  "requestedVisits": 100,
+  "initialStatus": "running_bot",
+  "initialMessage": "Симуляция 100 визитов…",
+  "candidateSha": "2fe94c3e255e49b90cf8032c001d4f7ec7349ed7",
+  "versionMarker": "plan-fit-rule-v1-c21-20260725",
+  "experimentId": "rank1-plan-fit-rule-c21-20260725",
+  "evidenceType": "terminal_ui_observation",
+  "panelResponseClaimed": false
+}

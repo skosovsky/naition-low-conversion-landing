@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "rank1-result.v1",
+  "iterationId": "rank1-iter-021-20260725",
+  "hypothesis": {
+    "mechanismId": "explicit-personal-plan-fit-rule",
+    "candidateSha": "2fe94c3e255e49b90cf8032c001d4f7ec7349ed7",
+    "versionMarker": "plan-fit-rule-v1-c21-20260725",
+    "experimentId": "rank1-plan-fit-rule-c21-20260725"
+  },
+  "baseline": {
+    "iterationId": "rank1-iter-007-20260724",
+    "serverVisits": 101,
+    "serverOrders": 30,
+    "serverConversionRatePct": 29.7029702970297,
+    "leaderboardRank": 2
+  },
+  "candidate": {
+    "successfulSimulatorVisits": 100,
+    "simulatorErrors": 0,
+    "simulatorConversions": 27,
+    "serverVisits": 101,
+    "serverOrders": 27,
+    "serverConversionRatePct": 26.732673267326735,
+    "leaderboardRequests": 101,
+    "leaderboardOrders": 27,
+    "leaderboardConversionRatePct": 26.7,
+    "leaderboardRank": 2
+  },
+  "delta": {
+    "serverOrders": -3,
+    "serverConversionRatePp": -2.970297029702963,
+    "rank": 0
+  },
+  "analytics": {
+    "server": {
+      "status": "available",
+      "artifact": "work/incoming/server/redacted-export.json",
+      "authoritative": true
+    },
+    "leaderboard": {
+      "status": "available",
+      "artifact": "work/incoming/leaderboard/summary.json",
+      "authoritative": true,
+      "serverAgreement": true
+    },
+    "ga4": {
+      "status": "available_not_observed",
+      "maturity": "standard_immature",
+      "exactCohortRows": 0,
+      "zeroInterpretationAllowed": false,
+      "artifact": "work/incoming/ga4/2026-07-25T0330Z-standard-immature.json",
+      "matureRetryScheduled": true
+    },
+    "yandex": {
+      "status": "collection_deferred",
+      "artifact": "raw/yandex/availability.json",
+      "blockingForLosingIteration": false
+    },
+    "amplitude": {
+      "status": "collection_deferred",
+      "artifact": "raw/amplitude/availability.json",
+      "blockingForLosingIteration": false
+    }
+  },
+  "outcomeAuthority": "server_and_public_leaderboard",
+  "classification": "regression",
+  "decision": "rejected_for_rank1_gate",
+  "targetMet": false
+}

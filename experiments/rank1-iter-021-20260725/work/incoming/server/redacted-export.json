@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "rank1-server-redacted.v1",
+  "iterationId": "rank1-iter-021-20260725",
+  "collectedAt": "2026-07-25T03:29:32Z",
+  "source": "https://skosovsky.naition.sortedmap.ru/api/export.php",
+  "piiRedacted": true,
+  "authMaterialPersisted": false,
+  "cohort": {
+    "requestedStart": "2026-07-25T03:19:41Z",
+    "requestedEnd": "2026-07-25T03:28:06Z"
+  },
+  "visits": {
+    "count": 101,
+    "uniqueIds": 101,
+    "firstAt": "2026-07-25T03:19:42Z",
+    "lastAt": "2026-07-25T03:27:28Z",
+    "minId": 1,
+    "maxId": 101
+  },
+  "orders": {
+    "count": 27,
+    "uniqueIds": 27,
+    "firstAt": "2026-07-25T03:20:40Z",
+    "lastAt": "2026-07-25T03:27:47Z",
+    "minId": 1,
+    "maxId": 27
+  },
+  "metric": {
+    "name": "persisted_order_conversion",
+    "numerator": 27,
+    "denominator": 101,
+    "denominatorSemantics": "server-side persisted visits",
+    "cr": 26.7327
+  }
+}
