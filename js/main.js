@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (selectionMessage && planName !== 'Unknown') {
                 selectionMessage.textContent = selectedPlan === 'basic'
-                    ? `${planName} · ${planPrice}. Если 15 августа не подходит, сохраним заявку для ближайшей даты в Москве и свяжемся после её назначения.`
+                    ? `${planName} · ${planPrice}. Выберите 15 августа одним днём или 18 и 20 августа вечером; оба варианта бесплатны и включают те же восемь часов. Если эти даты не подходят, сохраним заявку для ближайшей даты в Москве и свяжемся после её назначения.`
                     : `${planName} · ${planPrice} · 15 августа. Оставьте контакты: на этом шаге оплаты нет, мы сначала подтвердим место и детали участия.`;
                 selectionMessage.classList.add('has-selection');
             }
