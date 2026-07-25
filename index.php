@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="naition-site-version" content="hero-detail-topic-order-v1-c23-20260725">
-    <meta name="naition-experiment-id" content="rank1-hero-detail-topic-order-c23-20260725">
+    <meta name="naition-site-version" content="date-flexible-open-enrollment-v1-c24-20260725">
+    <meta name="naition-experiment-id" content="rank1-date-flexible-open-enrollment-c24-20260725">
     <title>Практический курс первой помощи за один день</title>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-699YWESPJ1"></script>
@@ -69,6 +69,10 @@
                     Москва, учебный класс рядом с метро. Точный адрес и схема проезда — в подтверждении
                 </div>
             </div>
+            <p class="next-cohort-policy">
+                Не подходит 15 августа? Мы сохраним заявку для ближайшей подходящей даты
+                в Москве и свяжемся, когда она будет назначена. Это тот же полный бесплатный курс.
+            </p>
             <div class="hero-note">
                 Страх крови, ответственности или растерянности можно спокойно обсудить
                 на разборе кейсов до итоговой практики.
@@ -174,16 +178,8 @@
                 </p>
                 <div class="injury-grid">
                     <article class="injury-card">
-                        <h3>Остановка дыхания</h3>
-                        <p>СЛР, работа в паре, использование автоматического дефibrиллятора, действия до приезда скорой.</p>
-                    </article>
-                    <article class="injury-card">
                         <h3>Кровотечения</h3>
                         <p>Артериальные, венозные и капиллярные кровотечения, давящая повязка, турникет, контроль после остановки крови.</p>
-                    </article>
-                    <article class="injury-card">
-                        <h3>Обмороки и шок</h3>
-                        <p>Признаки шока, положение тела, контроль дыхания, согревание, что нельзя давать пострадавшему.</p>
                     </article>
                     <article class="injury-card">
                         <h3>Переломы и вывихи</h3>
@@ -192,6 +188,14 @@
                     <article class="injury-card">
                         <h3>Ожоги</h3>
                         <p>Термические и химические ожоги, охлаждение, стерильная повязка, когда нельзя снимать одежду с места ожога.</p>
+                    </article>
+                    <article class="injury-card">
+                        <h3>Обмороки и шок</h3>
+                        <p>Признаки шока, положение тела, контроль дыхания, согревание, что нельзя давать пострадавшему.</p>
+                    </article>
+                    <article class="injury-card">
+                        <h3>Остановка дыхания</h3>
+                        <p>СЛР, работа в паре, использование автоматического дефibrиллятора, действия до приезда скорой.</p>
                     </article>
                     <article class="injury-card">
                         <h3>Травмы головы и позвоночника</h3>
@@ -285,6 +289,10 @@
                     Полный однодневный курс для частных участников проходит бесплатно.
                     Оставьте контакты — мы подтвердим участие и ответим на вопросы.
                 </p>
+                <p class="next-cohort-policy next-cohort-policy-pricing">
+                    Если 15 августа не подходит, заявка остаётся действующей для ближайшей
+                    подходящей даты в Москве. Мы сообщим новую дату; полный курс останется бесплатным.
+                </p>
                 <div class="pricing-grid">
                     <article class="pricing-card featured">
                         <p class="pricing-audience">Для одного участника · бесплатный формат</p>
@@ -350,15 +358,16 @@
                                 </label>
                                 <button type="submit" class="btn form-submit">Отправить заявку на участие</button>
                                 <p class="form-reassurance" id="registration-reassurance">
-                                    Полный курс бесплатный. Контакты нужны только для подтверждения участия и деталей курса.
+                                    Полный курс бесплатный. Если 15 августа не подходит, сохраним заявку
+                                    для ближайшей даты в Москве и свяжемся после её назначения.
                                 </p>
                             </form>
                             <p class="form-message ym-hide-content" id="form-message" aria-live="polite" data-amp-mask></p>
                         </div>
                         <div class="registration-support">
                             <p class="section-lead">
-                                Три коротких поля, около 30 секунд. Мы свяжемся, подтвердим участие
-                                15 августа и ответим на вопросы. Платить за полный курс не нужно.
+                                Три коротких поля, около 30 секунд. Мы свяжемся, уточним подходящую
+                                дату и ответим на вопросы. Платить за полный курс не нужно.
                             </p>
                             <aside class="registration-value-contract" aria-labelledby="practice-card-title">
                                 <p class="value-contract-kicker">Результат сразу после заявки</p>

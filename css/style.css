@@ -173,6 +173,23 @@ img {
     letter-spacing: 0.04em;
 }
 
+.next-cohort-policy {
+    margin: 0;
+    padding: 18px 22px;
+    border: 2px solid rgba(23, 107, 90, 0.28);
+    border-radius: 16px;
+    background: #eff8f3;
+    color: var(--heading);
+    font-weight: 700;
+    line-height: 1.55;
+}
+
+.next-cohort-policy-pricing {
+    max-width: 920px;
+    margin: -12px auto 28px;
+    text-align: center;
+}
+
 .hero-note {
     margin-top: 36px;
     padding: 24px 28px;

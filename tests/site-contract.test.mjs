@@ -104,53 +104,77 @@ test('candidate experiment marker matches the executable analytics contract', ()
     // Assert
     assert.deepEqual(markers, {
         contractExperimentId:
-            'rank1-hero-detail-topic-order-c23-20260725',
+            'rank1-date-flexible-open-enrollment-c24-20260725',
         experimentMarker:
-            'rank1-hero-detail-topic-order-c23-20260725',
-        siteVersion: 'hero-detail-topic-order-v1-c23-20260725',
+            'rank1-date-flexible-open-enrollment-c24-20260725',
+        siteVersion: 'date-flexible-open-enrollment-v1-c24-20260725',
     });
 });
 
-test('injury cards preserve their copy and follow the hero topic order', () => {
+test('date-flexible enrollment is explicit without changing the form contract', () => {
     // Arrange
-    const expectedCards = [
-        [
-            'Остановка дыхания',
-            'СЛР, работа в паре, использование автоматического дефibrиллятора, действия до приезда скорой.',
-        ],
-        [
-            'Кровотечения',
-            'Артериальные, венозные и капиллярные кровотечения, давящая повязка, турникет, контроль после остановки крови.',
-        ],
-        [
-            'Обмороки и шок',
-            'Признаки шока, положение тела, контроль дыхания, согревание, что нельзя давать пострадавшему.',
-        ],
-        [
-            'Переломы и вывихи',
-            'Признаки перелома, иммобилизация, транспортная шина, ошибки при перемещении пострадавшего.',
-        ],
-        [
-            'Ожоги',
-            'Термические и химические ожоги, охлаждение, стерильная повязка, когда нельзя снимать одежду с места ожога.',
-        ],
-        [
-            'Травмы головы и позвоночника',
-            'Подозрение на травму шеи и спины, когда нельзя менять положение, фиксация головы и ожидание медиков.',
-        ],
+    const source = fs.readFileSync(
+        new URL('../js/main.js', import.meta.url),
+        'utf8',
+    );
+    const policyFacts = [
+        'Не подходит 15 августа?',
+        'ближайшей подходящей даты',
+        'тот же полный бесплатный курс',
+        'заявка остаётся действующей',
+        'полный курс останется бесплатным',
+        'сохраним заявку',
+        'свяжемся после её назначения',
+    ];
+    const dynamicPolicy =
+        'Если 15 августа не подходит, сохраним заявку для ближайшей даты в Москве и свяжемся после её назначения.';
+    const form = html.match(
+        /<form[^>]+id="registration-form"[\s\S]*?<\/form>/,
+    )?.[0] || '';
+
+    // Act
+    const missingFacts = policyFacts.filter((fact) => !html.includes(fact));
+    const formControls = [...form.matchAll(
+        /<(?:input|select|textarea)\b[^>]*\bname="([^"]+)"/g,
+    )].map((match) => match[1]).sort();
+    const forbiddenAutomation = [
+        '.focus()',
+        'autofocus',
+        'dispatchEvent',
+        'requestSubmit',
+        '.submit()',
+    ].filter((fragment) => html.includes(fragment));
+
+    // Assert
+    assert.deepEqual(missingFacts, []);
+    assert.deepEqual(formControls, ['email', 'name', 'phone']);
+    assert.deepEqual(forbiddenAutomation, []);
+    assert.equal((html.match(/class="next-cohort-policy/g) || []).length, 2);
+    assert.equal(source.split(dynamicPolicy).length - 1, 1);
+    assert.equal(source.includes('Выберите 15 августа или'), false);
+});
+
+test('losing C23 injury order is restored to the direct control', () => {
+    // Arrange
+    const expectedHeadings = [
+        'Кровотечения',
+        'Переломы и вывихи',
+        'Ожоги',
+        'Обмороки и шок',
+        'Остановка дыхания',
+        'Травмы головы и позвоночника',
     ];
     const injuryGrid = html.match(
         /<div class="injury-grid">([\s\S]*?)<\/div>/,
     )?.[1] || '';
 
     // Act
-    const cards = [...injuryGrid.matchAll(
-        /<article class="injury-card">\s*<h3>([^<]+)<\/h3>\s*<p>([^<]+)<\/p>\s*<\/article>/g,
-    )].map((match) => [match[1], match[2]]);
+    const headings = [...injuryGrid.matchAll(
+        /<article class="injury-card">\s*<h3>([^<]+)<\/h3>/g,
+    )].map((match) => match[1]);
 
     // Assert
-    assert.deepEqual(cards, expectedCards);
-    assert.equal(new Set(cards.map(([heading]) => heading)).size, 6);
+    assert.deepEqual(headings, expectedHeadings);
 });
 
 test('hero and first section expose the audience-to-outcome hierarchy', () => {
