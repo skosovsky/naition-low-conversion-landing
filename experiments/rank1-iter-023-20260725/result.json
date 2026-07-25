@@ -1,0 +1,136 @@
+{
+  "schemaVersion": "rank1-result.v1",
+  "iterationId": "rank1-iter-023-20260725",
+  "hypothesis": {
+    "mechanismId": "hero-to-detail-topic-order-continuity",
+    "candidateSha": "ec8866e9af598315f8daab53ecc7e80dcb79bd52",
+    "versionMarker": "hero-detail-topic-order-v1-c23-20260725",
+    "experimentMarker": "rank1-hero-detail-topic-order-c23-20260725"
+  },
+  "baseline": {
+    "iterationId": "rank1-iter-022-20260725",
+    "serverVisits": 101,
+    "serverOrders": 30,
+    "serverConversionRatePct": 29.7029702970297,
+    "leaderboardRank": 2
+  },
+  "candidate": {
+    "successfulSimulatorVisits": 100,
+    "simulatorErrors": 0,
+    "simulatorConversions": 28,
+    "serverVisits": 101,
+    "serverOrders": 28,
+    "serverConversionRatePct": 27.722772277227726,
+    "leaderboardRequests": 101,
+    "leaderboardOrders": 28,
+    "leaderboardConversionRatePct": 27.7,
+    "leaderboardRank": 2
+  },
+  "delta": {
+    "serverOrders": -2,
+    "serverConversionRatePp": -1.980198019801974,
+    "rank": 0
+  },
+  "evidence": {
+    "deploy": {
+      "valid": true,
+      "redeployInvocations": 1,
+      "terminalStatus": "deployed_live_verified",
+      "candidateShaMatched": true,
+      "liveMarkersMatched": true,
+      "artifact": "deploy.json"
+    },
+    "simulator": {
+      "valid": true,
+      "invocations": 1,
+      "requestedVisits": 100,
+      "successfulVisits": 100,
+      "errors": 0,
+      "artifact": "simulator.json"
+    },
+    "server": {
+      "available": true,
+      "authoritative": true,
+      "numerator": 28,
+      "denominator": 101,
+      "artifact": "raw/server/redacted-export.json"
+    },
+    "leaderboard": {
+      "available": true,
+      "authoritative": true,
+      "cacheMature": true,
+      "serverAgreement": true,
+      "rank": 2,
+      "artifact": "raw/leaderboard/summary.json"
+    },
+    "yandexMetrica": {
+      "available": true,
+      "transport": "authorized Chrome vendor-request fallback",
+      "granularity": "individual_visit_proxy",
+      "exactCohortVisits": 100,
+      "registrationCompletedGoalVisits": 27,
+      "sampled": false,
+      "paginationComplete": true,
+      "completeVisitBundles": 99,
+      "partialVisitBundles": 1,
+      "serverDiscrepancy": {
+        "visits": -1,
+        "orders": -1,
+        "cause": "unproven"
+      },
+      "artifact": "raw/yandex/collection-manifest.json"
+    },
+    "googleAnalytics": {
+      "available": true,
+      "transport": "official googleanalytics/google-analytics-mcp",
+      "maturity": "standard_immature",
+      "decisionGrade": false,
+      "zeroInterpretationAllowed": false,
+      "process": {
+        "exitCode": 0,
+        "exitSignal": null,
+        "closeObserved": true,
+        "forcedTermination": null
+      },
+      "artifact": "raw/ga4/2026-07-25T0948Z-standard-immature-attempt2.json"
+    },
+    "amplitude": {
+      "available": true,
+      "transport": "official vendor MCP",
+      "exactCohortVisits": 101,
+      "exactCohortCompleted": 28,
+      "exactCohortConversionRatePct": 27.722772277227726,
+      "diagnosticFunnel": [
+        {
+          "event": "Landing Viewed",
+          "users": 101
+        },
+        {
+          "event": "Registration Form Opened",
+          "users": 28
+        },
+        {
+          "event": "Registration Form Submitted",
+          "users": 28
+        },
+        {
+          "event": "Registration Completed",
+          "users": 28
+        }
+      ],
+      "serverAgreement": true,
+      "artifact": "raw/amplitude/2026-07-25T0945Z-exact-cohort.json"
+    },
+    "rawFreeze": {
+      "state": "frozen",
+      "fileCount": 124,
+      "checksumsSha256": "900cdccc4ea128cceae477b6a36ae520b5d493717c13ec8ff76c9ad4a6389d10",
+      "artifact": "raw/freeze.json"
+    }
+  },
+  "outcomeAuthority": "server_and_public_leaderboard",
+  "classification": "negative_effect",
+  "decision": "rejected_for_rank1_gate",
+  "nextAction": "rotate_hypothesis",
+  "targetMet": false
+}

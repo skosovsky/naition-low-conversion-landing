@@ -22,14 +22,14 @@
     }
   },
   "candidate": {
-    "commitSha": null,
+    "commitSha": "ec8866e9af598315f8daab53ecc7e80dcb79bd52",
     "versionMarker": "hero-detail-topic-order-v1-c23-20260725",
     "experimentMarker": "rank1-hero-detail-topic-order-c23-20260725"
   },
   "mutation": {
-    "redeployEvidenceKey": null,
+    "redeployEvidenceKey": "rank1-iter-023-20260725:ec8866e9af598315f8daab53ecc7e80dcb79bd52",
     "simulatorEvidenceKey": "rank1-iter-023-20260725:100",
-    "redeployInvocations": 0,
-    "simulatorInvocations": 0
+    "redeployInvocations": 1,
+    "simulatorInvocations": 1
   }
 }

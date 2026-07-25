@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "rank1-deploy-evidence.v1",
+  "iterationId": "rank1-iter-023-20260725",
+  "candidate": {
+    "commitSha": "ec8866e9af598315f8daab53ecc7e80dcb79bd52",
+    "remoteMainShaBeforeRedeploy": "ec8866e9af598315f8daab53ecc7e80dcb79bd52",
+    "versionMarker": "hero-detail-topic-order-v1-c23-20260725",
+    "experimentMarker": "rank1-hero-detail-topic-order-c23-20260725"
+  },
+  "invocation": {
+    "control": "authenticated panel Redeploy button",
+    "attempts": 1,
+    "clickedAt": "2026-07-25T09:03:52.469Z"
+  },
+  "terminalObservation": {
+    "observedAt": "2026-07-25T09:04:23Z",
+    "status": "deployed_live_verified",
+    "panelControlsReenabled": true,
+    "liveCandidateMatched": true,
+    "serverResetMatched": true,
+    "artifact": "work/deploy-terminal-observation.json"
+  },
+  "valid": true
+}

@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "rank1-deploy-terminal-observation.v1",
+  "iterationId": "rank1-iter-023-20260725",
+  "controlPanelUrl": "https://panel.naition.sortedmap.ru/",
+  "panelAccount": "skosovsky",
+  "clickedAt": "2026-07-25T09:03:52.469Z",
+  "observedAt": "2026-07-25T09:04:23Z",
+  "redeployInvocations": 1,
+  "panelControlsReenabled": true,
+  "panelStatusSurface": "previous bot terminal status retained",
+  "liveVerification": {
+    "url": "https://skosovsky.naition.sortedmap.ru/",
+    "httpAvailable": true,
+    "candidateSha": "ec8866e9af598315f8daab53ecc7e80dcb79bd52",
+    "versionMarker": "hero-detail-topic-order-v1-c23-20260725",
+    "experimentMarker": "rank1-hero-detail-topic-order-c23-20260725",
+    "injuryHeadingOrder": [
+      "Остановка дыхания",
+      "Кровотечения",
+      "Обмороки и шок",
+      "Переломы и вывихи",
+      "Ожоги",
+      "Травмы головы и позвоночника"
+    ],
+    "indexSha256": "b1cb58661f2b60b8076efbfeb73f133e2d55ff8d4868cddc36efb55d757de9cc",
+    "cssSha256": "38371210a0ee07c72bd73e25671b1aad923ac79712e3098f2a5dd1272dd986cb",
+    "bundleSha256": "f1289fd8d6c28c8f88be49bc1a72da744901b0a3cbc576a63ffe20fc2de511ee",
+    "localRemoteHashesMatched": true,
+    "c22CounterTreatmentAbsent": true
+  },
+  "serverReset": {
+    "visits": 0,
+    "orders": 0
+  }
+}

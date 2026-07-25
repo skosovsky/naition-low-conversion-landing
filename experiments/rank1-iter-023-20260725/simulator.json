@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "rank1-simulator-evidence.v1",
+  "iterationId": "rank1-iter-023-20260725",
+  "candidate": {
+    "commitSha": "ec8866e9af598315f8daab53ecc7e80dcb79bd52",
+    "versionMarker": "hero-detail-topic-order-v1-c23-20260725",
+    "experimentMarker": "rank1-hero-detail-topic-order-c23-20260725"
+  },
+  "invocation": {
+    "control": "authenticated panel Run visits simulator button",
+    "attempts": 1,
+    "requestedVisits": 100,
+    "parallelism": 10,
+    "clickedAt": "2026-07-25T09:05:43.663Z",
+    "startObservationSha256": "716d95464fd33eb75105223d3bfbc7b932a5984c9f611e7f0c27b266ff8016a3"
+  },
+  "terminalObservation": {
+    "observedAt": "2026-07-25T09:17:42Z",
+    "status": "bot_completed",
+    "startedAt": "2026-07-25T09:05:46Z",
+    "finishedAt": "2026-07-25T09:14:34Z",
+    "successfulVisits": 100,
+    "errors": 0,
+    "conversions": 28,
+    "conversionPercent": 28,
+    "elapsedSeconds": 528.2,
+    "panelResponseClaimed": false,
+    "evidenceSha256": "dea543fa70a9974af5a7df2a35998ac4a58eb8367b17e94fb3e8bff1739ba355"
+  },
+  "valid": true
+}
