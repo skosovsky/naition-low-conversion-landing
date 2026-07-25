@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="naition-site-version" content="focus-ready-registration-v1-c26-20260725">
-    <meta name="naition-experiment-id" content="rank1-focus-ready-registration-c26-20260725">
+    <meta name="naition-site-version" content="instant-registration-route-v1-c25-20260725">
+    <meta name="naition-experiment-id" content="rank1-instant-registration-route-c25-20260725">
     <title>Практический курс первой помощи за один день</title>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-699YWESPJ1"></script>
