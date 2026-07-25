@@ -104,10 +104,10 @@ test('candidate experiment marker matches the executable analytics contract', ()
     // Assert
     assert.deepEqual(markers, {
         contractExperimentId:
-            'rank1-instructor-proof-c28-20260725',
+            'rank1-instant-registration-route-c25-20260725',
         experimentMarker:
-            'rank1-instructor-proof-c28-20260725',
-        siteVersion: 'instructor-proof-v1-c28-20260725',
+            'rank1-instant-registration-route-c25-20260725',
+        siteVersion: 'instant-registration-route-v1-c25-20260725',
     });
 });
 
@@ -288,12 +288,11 @@ test('hero makes the mastery path explicit without adding another interaction', 
     );
 });
 
-test('candidate adds attributable instructor proof with an explicit verification route', () => {
+test('candidate removes unsupported authority precision without adding proof claims', () => {
     // Arrange
-    const proofClaims = [
-        'Кто отвечает за практику',
-        'Опыт, который можно проверить до занятия',
-        'копии действующих сертификатов',
+    const unsupportedClaims = [
+        'Добросовестный помощник',
+        'закон защищает вас от необоснованных претензий',
         'Алексей Кравцов',
         'Марина Соколова',
         'Дмитрий Новиков',
@@ -302,10 +301,6 @@ test('candidate adds attributable instructor proof with an explicit verification
         'European Resuscitation Council',
         'ERC First Aid Provider',
         'региональной команды инструкторов РКК',
-    ];
-    const stillForbiddenLegalClaims = [
-        'Добросовестный помощник',
-        'закон защищает вас от необоснованных претензий',
     ];
     const sourceBoundedFacts = [
         'Порядок действий до приезда медиков',
@@ -318,10 +313,7 @@ test('candidate adds attributable instructor proof with an explicit verification
     ];
 
     // Act
-    const missingProofClaims = proofClaims.filter(
-        (claim) => !html.includes(claim),
-    );
-    const survivingForbiddenLegalClaims = stillForbiddenLegalClaims.filter(
+    const survivingUnsupportedClaims = unsupportedClaims.filter(
         (claim) => html.includes(claim),
     );
     const missingSourceBoundedFacts = sourceBoundedFacts.filter(
@@ -329,10 +321,8 @@ test('candidate adds attributable instructor proof with an explicit verification
     );
 
     // Assert
-    assert.deepEqual(missingProofClaims, []);
-    assert.deepEqual(survivingForbiddenLegalClaims, []);
+    assert.deepEqual(survivingUnsupportedClaims, []);
     assert.deepEqual(missingSourceBoundedFacts, []);
-    assert.equal((html.match(/class="instructor-proof-card"/g) || []).length, 3);
 });
 
 test('registration presents the real form before supporting content without synthetic focus', () => {
