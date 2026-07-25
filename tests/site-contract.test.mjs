@@ -104,10 +104,10 @@ test('candidate experiment marker matches the executable analytics contract', ()
     // Assert
     assert.deepEqual(markers, {
         contractExperimentId:
-            'rank1-instant-registration-route-c25-20260725',
+            'rank1-confirmation-contract-c27-20260725',
         experimentMarker:
-            'rank1-instant-registration-route-c25-20260725',
-        siteVersion: 'instant-registration-route-v1-c25-20260725',
+            'rank1-confirmation-contract-c27-20260725',
+        siteVersion: 'confirmation-contract-v1-c27-20260725',
     });
 });
 
@@ -174,6 +174,41 @@ test('pricing selection uses an immediate route to the registration section', ()
     assert.equal(usesImmediateRoute, true);
     assert.equal(source.includes("behavior: 'smooth'"), false);
     assert.match(stylesheet, /html\s*\{[\s\S]*?scroll-behavior:\s*auto;/);
+});
+
+test('confirmation contract is explicit at pricing and registration without changing submit semantics', () => {
+    // Arrange
+    const source = fs.readFileSync(
+        new URL('../js/main.js', import.meta.url),
+        'utf8',
+    );
+    const registration = html.match(
+        /<section class="section registration-section"[\s\S]*?<\/section>/,
+    )?.[0] || '';
+    const pricing = html.match(
+        /<section class="section pricing-section"[\s\S]*?<\/section>/,
+    )?.[0] || '';
+
+    // Act
+    const contractFacts = [
+        'До 15 минут',
+        '24 часа',
+        'без оплаты',
+        'без рекламных рассылок',
+        'отмена или перенос',
+    ];
+    const missingFacts = contractFacts.filter(
+        (fact) => !pricing.includes(fact) && !registration.includes(fact),
+    );
+
+    // Assert
+    assert.deepEqual(missingFacts, []);
+    assert.match(pricing, /class="confirmation-contract confirmation-contract-pricing"/);
+    assert.match(registration, /class="confirmation-contract confirmation-contract-registration"/);
+    assert.match(source, /держим место 24 часа без оплаты/);
+    assert.equal((html.match(/id="registration-form"/g) || []).length, 1);
+    assert.equal(source.includes('requestSubmit'), false);
+    assert.equal(source.includes('.submit()'), false);
 });
 
 test('losing C23 injury order is restored to the direct control', () => {
