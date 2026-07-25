@@ -104,10 +104,10 @@ test('candidate experiment marker matches the executable analytics contract', ()
     // Assert
     assert.deepEqual(markers, {
         contractExperimentId:
-            'rank1-split-session-choice-c30-20260725',
+            'rank1-instant-registration-route-c25-20260725',
         experimentMarker:
-            'rank1-split-session-choice-c30-20260725',
-        siteVersion: 'split-session-choice-v1-c30-20260725',
+            'rank1-instant-registration-route-c25-20260725',
+        siteVersion: 'instant-registration-route-v1-c25-20260725',
     });
 });
 
@@ -127,7 +127,7 @@ test('date-flexible enrollment is explicit without changing the form contract', 
         'свяжемся после её назначения',
     ];
     const dynamicPolicy =
-        'Выберите 15 августа одним днём или 18 и 20 августа вечером; оба варианта бесплатны и включают те же восемь часов.';
+        'Если 15 августа не подходит, сохраним заявку для ближайшей даты в Москве и свяжемся после её назначения.';
     const form = html.match(
         /<form[^>]+id="registration-form"[\s\S]*?<\/form>/,
     )?.[0] || '';
@@ -423,42 +423,4 @@ test('free Basic offer is explicit and internally consistent', () => {
         cta: true,
         paidPrice: false,
     });
-});
-
-test('split-session choice preserves the same full course without new controls', () => {
-    // Arrange
-    const source = fs.readFileSync(
-        new URL('../js/main.js', import.meta.url),
-        'utf8',
-    );
-    const form = html.match(
-        /<form[^>]+id="registration-form"[\s\S]*?<\/form>/,
-    )?.[0] || '';
-    const normalizedHtml = html.replace(/\s+/g, ' ');
-
-    // Act
-    const requiredFacts = [
-        'Один день: 15 августа, 10:00–18:00',
-        '18 и 20 августа, 18:30–22:30',
-        'те же шесть модулей и восемь часов',
-        'Все 8 часов — за один день или за два вечера',
-        'Оба варианта проходят в Москве и остаются бесплатными',
-    ];
-    const missingFacts = requiredFacts.filter(
-        (fact) => !normalizedHtml.includes(fact),
-    );
-    const formControls = [...form.matchAll(
-        /<(?:input|select|textarea)\b[^>]*\bname="([^"]+)"/g,
-    )].map((match) => match[1]).sort();
-
-    // Assert
-    assert.deepEqual(missingFacts, []);
-    assert.deepEqual(formControls, ['email', 'name', 'phone']);
-    assert.equal((html.match(/id="registration-form"/g) || []).length, 1);
-    assert.match(
-        source,
-        /15 августа одним днём или 18 и 20 августа вечером/,
-    );
-    assert.equal(source.includes('schedule_choice'), false);
-    assert.equal(source.includes('evening_format'), false);
 });

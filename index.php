@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="naition-site-version" content="split-session-choice-v1-c30-20260725">
-    <meta name="naition-experiment-id" content="rank1-split-session-choice-c30-20260725">
+    <meta name="naition-site-version" content="instant-registration-route-v1-c25-20260725">
+    <meta name="naition-experiment-id" content="rank1-instant-registration-route-c25-20260725">
     <title>Практический курс первой помощи за один день</title>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-699YWESPJ1"></script>
@@ -62,8 +62,7 @@
                 </div>
                 <div class="meta-card">
                     <strong>Время</strong>
-                    Один день: 15 августа, 10:00–18:00. Или два вечера:
-                    18 и 20 августа, 18:30–22:30
+                    10:00 – 18:00, перерыв на обед
                 </div>
                 <div class="meta-card">
                     <strong>Место</strong>
@@ -116,8 +115,6 @@
                 <p class="section-lead program-intro">
                     За один день вы пройдёте путь от оценки обстановки до цельного сценария помощи.
                     В каждом модуле: короткий разбор, демонстрация инструктора и практика руками.
-                    Ниже показан порядок однодневного потока; в вечернем формате те же шесть
-                    модулей и восемь часов делятся между двумя встречами.
                 </p>
                 <div class="program-list">
                     <article class="program-module">
@@ -293,10 +290,8 @@
                     Оставьте контакты — мы подтвердим участие и ответим на вопросы.
                 </p>
                 <p class="next-cohort-policy next-cohort-policy-pricing">
-                    Выберите темп: весь курс 15 августа за один день или те же 8 часов
-                    вечером 18 и 20 августа. Оба варианта проходят в Москве и остаются бесплатными.
-                    Если эти даты не подходят, заявка остаётся действующей для ближайшей
-                    подходящей даты в Москве; полный курс останется бесплатным.
+                    Если 15 августа не подходит, заявка остаётся действующей для ближайшей
+                    подходящей даты в Москве. Мы сообщим новую дату; полный курс останется бесплатным.
                 </p>
                 <div class="pricing-grid">
                     <article class="pricing-card featured">
@@ -304,7 +299,7 @@
                         <h3>Бесплатный полный курс</h3>
                         <div class="price">0 ₽ <span>за весь курс</span></div>
                         <ul class="pricing-list">
-                            <li>Все 8 часов — за один день или за два вечера</li>
+                            <li>Все 8 часов программы и практики</li>
                             <li>Работа на манекенах в малой группе</li>
                             <li>Сертификат и памятка</li>
                         </ul>
