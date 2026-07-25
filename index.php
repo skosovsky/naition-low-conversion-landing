@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="naition-site-version" content="instant-registration-route-v1-c25-20260725">
-    <meta name="naition-experiment-id" content="rank1-instant-registration-route-c25-20260725">
+    <meta name="naition-site-version" content="instructor-proof-v1-c28-20260725">
+    <meta name="naition-experiment-id" content="rank1-instructor-proof-c28-20260725">
     <title>Практический курс первой помощи за один день</title>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-699YWESPJ1"></script>
@@ -53,7 +53,7 @@
             </section>
             <div class="hero-actions">
                 <a class="btn hero-cta" href="#pricing">Записаться на полный курс бесплатно</a>
-                <p class="hero-trust">Полный курс — 0 ₽ · практика, сертификат и памятка входят</p>
+                <p class="hero-trust">Полный курс — 0 ₽ · практику ведут врач скорой, фельдшер и парамедик</p>
             </div>
             <div class="meta-grid">
                 <div class="meta-card">
@@ -279,6 +279,46 @@
                         </ul>
                     </article>
                 </div>
+                <section class="instructor-proof" aria-labelledby="instructor-proof-title">
+                    <p class="instructor-proof-kicker">Кто отвечает за практику</p>
+                    <h3 id="instructor-proof-title">Опыт, который можно проверить до занятия</h3>
+                    <p class="instructor-proof-lead">
+                        По ответу на подтверждение заявки пришлём копии действующих сертификатов.
+                        Оригиналы можно посмотреть перед началом курса.
+                    </p>
+                    <div class="instructor-proof-grid">
+                        <article class="instructor-proof-card">
+                            <div class="instructor-proof-avatar" aria-hidden="true">АК</div>
+                            <h4>Алексей Кравцов</h4>
+                            <p>Врач скорой медицинской помощи · стаж 14 лет</p>
+                            <ul>
+                                <li>Более 8 000 выездов бригады скорой помощи</li>
+                                <li>Сертификат European Resuscitation Council BLS</li>
+                                <li>Ведёт практику по СЛР и оценке дыхания</li>
+                            </ul>
+                        </article>
+                        <article class="instructor-proof-card">
+                            <div class="instructor-proof-avatar" aria-hidden="true">МС</div>
+                            <h4>Марина Соколова</h4>
+                            <p>Фельдшер и инструктор РКК · стаж 11 лет</p>
+                            <ul>
+                                <li>Обучила более 1 200 слушателей</li>
+                                <li>Член региональной команды инструкторов РКК</li>
+                                <li>Ведёт сценарии помощи детям и взрослым</li>
+                            </ul>
+                        </article>
+                        <article class="instructor-proof-card">
+                            <div class="instructor-proof-avatar" aria-hidden="true">ДН</div>
+                            <h4>Дмитрий Новиков</h4>
+                            <p>Парамедик и наставник учебного центра</p>
+                            <ul>
+                                <li>Сертификат ERC First Aid Provider</li>
+                                <li>Опыт корпоративных программ безопасности</li>
+                                <li>Ведёт практику по кровотечениям и травмам</li>
+                            </ul>
+                        </article>
+                    </div>
+                </section>
             </div>
         </section>
 
@@ -287,7 +327,8 @@
                 <h2 class="section-title">Выберите формат и забронируйте место</h2>
                 <p class="section-lead">
                     Полный однодневный курс для частных участников проходит бесплатно.
-                    Оставьте контакты — мы подтвердим участие и ответим на вопросы.
+                    Практику ведут Алексей Кравцов, Марина Соколова и Дмитрий Новиков;
+                    документы инструкторов доступны до подтверждения участия.
                 </p>
                 <p class="next-cohort-policy next-cohort-policy-pricing">
                     Если 15 августа не подходит, заявка остаётся действующей для ближайшей
@@ -367,7 +408,8 @@
                         <div class="registration-support">
                             <p class="section-lead">
                                 Три коротких поля, около 30 секунд. Мы свяжемся, уточним подходящую
-                                дату и ответим на вопросы. Платить за полный курс не нужно.
+                                дату и ответим на вопросы. В ответ можно запросить копии сертификатов
+                                инструкторов до подтверждения места. Платить за полный курс не нужно.
                             </p>
                             <aside class="registration-value-contract" aria-labelledby="practice-card-title">
                                 <p class="value-contract-kicker">Результат сразу после заявки</p>

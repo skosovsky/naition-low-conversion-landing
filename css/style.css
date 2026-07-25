@@ -319,6 +319,85 @@ img {
 .instructor-card:nth-child(2) .instructor-photo { background: var(--mint); }
 .instructor-card:nth-child(3) .instructor-photo { background: var(--peach); }
 
+.instructor-proof {
+    margin-top: 32px;
+    padding: 28px;
+    border: 1px solid rgba(23, 107, 90, 0.28);
+    border-radius: 22px;
+    background: linear-gradient(135deg, rgba(232, 245, 233, 0.9), rgba(255, 255, 255, 0.98));
+    box-shadow: 0 18px 42px rgba(23, 107, 90, 0.1);
+}
+
+.instructor-proof-kicker {
+    margin: 0;
+    color: var(--primary-dark);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.instructor-proof > h3 {
+    margin: 4px 0 10px;
+    color: var(--heading);
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+}
+
+.instructor-proof-lead {
+    max-width: 760px;
+    margin: 0 0 22px;
+    color: #526060;
+}
+
+.instructor-proof-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.instructor-proof-card {
+    padding: 20px;
+    border: 1px solid rgba(53, 122, 87, 0.18);
+    border-radius: 16px;
+    background: var(--white);
+}
+
+.instructor-proof-card h4 {
+    margin: 12px 0 4px;
+    color: var(--heading);
+    font-size: 1.1rem;
+}
+
+.instructor-proof-card p {
+    min-height: 44px;
+    margin: 0 0 12px;
+    color: #5f6969;
+    font-size: 0.92rem;
+}
+
+.instructor-proof-card ul {
+    display: grid;
+    gap: 8px;
+    margin: 0;
+    padding-left: 20px;
+    color: var(--heading);
+    font-size: 0.9rem;
+}
+
+.instructor-proof-avatar {
+    width: 56px;
+    height: 56px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--blue);
+    color: var(--heading);
+    font-weight: 800;
+}
+
+.instructor-proof-card:nth-child(2) .instructor-proof-avatar { background: var(--mint); }
+.instructor-proof-card:nth-child(3) .instructor-proof-avatar { background: var(--peach); }
+
 .instructor-title {
     color: #6c757d;
     font-size: 0.95rem;
@@ -674,6 +753,14 @@ img {
     }
 
     .practice-loop-steps {
+        grid-template-columns: 1fr;
+    }
+
+    .instructor-proof {
+        padding: 20px;
+    }
+
+    .instructor-proof-grid {
         grid-template-columns: 1fr;
     }
 
