@@ -104,10 +104,10 @@ test('candidate experiment marker matches the executable analytics contract', ()
     // Assert
     assert.deepEqual(markers, {
         contractExperimentId:
-            'rank1-optional-companion-seat-c29-20260725',
+            'rank1-instant-registration-route-c25-20260725',
         experimentMarker:
-            'rank1-optional-companion-seat-c29-20260725',
-        siteVersion: 'optional-companion-seat-v1-c29-20260725',
+            'rank1-instant-registration-route-c25-20260725',
+        siteVersion: 'instant-registration-route-v1-c25-20260725',
     });
 });
 
@@ -408,10 +408,10 @@ test('free Basic offer is explicit and internally consistent', () => {
 
     // Act
     const offer = {
-        heading: basicCard.includes('<h3>Полный курс: вы + близкий</h3>'),
-        price: basicCard.includes('<div class="price">0 ₽ <span>за два места</span></div>'),
+        heading: basicCard.includes('<h3>Бесплатный полный курс</h3>'),
+        price: basicCard.includes('<div class="price">0 ₽ <span>за весь курс</span></div>'),
         cta: basicCard.includes(
-            'data-plan-id="basic" data-price="0 ₽ за два места"',
+            'data-plan-id="basic" data-price="0 ₽ за полный курс"',
         ),
         paidPrice: basicCard.includes('4 900 ₽'),
     };
@@ -423,54 +423,4 @@ test('free Basic offer is explicit and internally consistent', () => {
         cta: true,
         paidPrice: false,
     });
-});
-
-test('optional companion bundle is coherent without changing form topology', () => {
-    // Arrange
-    const source = fs.readFileSync(
-        new URL('../js/main.js', import.meta.url),
-        'utf8',
-    );
-    const basicCard = html.match(
-        /<article class="pricing-card featured">([\s\S]*?)<\/article>/,
-    )?.[1] || '';
-    const form = html.match(
-        /<form[^>]+id="registration-form"[\s\S]*?<\/form>/,
-    )?.[0] || '';
-    const heroOffer = html.match(
-        /<aside class="hero-companion-offer"[\s\S]*?<\/aside>/,
-    )?.[0] || '';
-    const normalizedHeroOffer = heroOffer.replace(/\s+/g, ' ');
-    const normalizedBasicCard = basicCard.replace(/\s+/g, ' ');
-
-    // Act
-    const formControls = [...form.matchAll(
-        /<(?:input|select|textarea)\b[^>]*\bname="([^"]+)"/g,
-    )].map((match) => match[1]).sort();
-    const requiredFacts = [
-        'Одна заявка — два бесплатных места',
-        'Спутник необязателен',
-        'можно прийти одному',
-        'имя второго участника уточним при подтверждении',
-    ];
-    const missingHeroFacts = requiredFacts.filter(
-        (fact) => !normalizedHeroOffer.includes(fact),
-    );
-    const basicFacts = [
-        'Для одного или двоих',
-        '0 ₽ <span>за два места</span>',
-        'Два места на все 8 часов',
-        'Спутник необязателен',
-    ].filter((fact) => !normalizedBasicCard.includes(fact));
-
-    // Assert
-    assert.deepEqual(missingHeroFacts, []);
-    assert.deepEqual(basicFacts, []);
-    assert.deepEqual(formControls, ['email', 'name', 'phone']);
-    assert.equal((html.match(/id="registration-form"/g) || []).length, 1);
-    assert.match(
-        source,
-        /Одна заявка включает вас и одного близкого; спутник необязателен/,
-    );
-    assert.equal(source.includes('companion_name'), false);
 });
