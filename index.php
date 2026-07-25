@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="naition-site-version" content="instant-registration-route-v1-c25-20260725">
-    <meta name="naition-experiment-id" content="rank1-instant-registration-route-c25-20260725">
+    <meta name="naition-site-version" content="optional-companion-seat-v1-c29-20260725">
+    <meta name="naition-experiment-id" content="rank1-optional-companion-seat-c29-20260725">
     <title>Практический курс первой помощи за один день</title>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-699YWESPJ1"></script>
@@ -53,8 +53,17 @@
             </section>
             <div class="hero-actions">
                 <a class="btn hero-cta" href="#pricing">Записаться на полный курс бесплатно</a>
-                <p class="hero-trust">Полный курс — 0 ₽ · практика, сертификат и памятка входят</p>
+                <p class="hero-trust">Полный курс — 0 ₽ за два места · практика, сертификаты и памятки входят</p>
             </div>
+            <aside class="hero-companion-offer" aria-labelledby="companion-offer-title">
+                <p class="practice-loop-kicker">Можно прийти не одному</p>
+                <h2 id="companion-offer-title">Одна заявка — два бесплатных места</h2>
+                <p>
+                    Для вас и одного близкого на тот же полный курс. Спутник необязателен:
+                    можно прийти одному. Сейчас оставьте только свои контакты — имя второго
+                    участника уточним при подтверждении.
+                </p>
+            </aside>
             <div class="meta-grid">
                 <div class="meta-card">
                     <strong>Дата</strong>
@@ -287,7 +296,8 @@
                 <h2 class="section-title">Выберите формат и забронируйте место</h2>
                 <p class="section-lead">
                     Полный однодневный курс для частных участников проходит бесплатно.
-                    Оставьте контакты — мы подтвердим участие и ответим на вопросы.
+                    Одна заявка может включать вас и одного близкого; прийти одному тоже можно.
+                    Оставьте свои контакты — мы уточним второго участника при подтверждении.
                 </p>
                 <p class="next-cohort-policy next-cohort-policy-pricing">
                     Если 15 августа не подходит, заявка остаётся действующей для ближайшей
@@ -295,16 +305,16 @@
                 </p>
                 <div class="pricing-grid">
                     <article class="pricing-card featured">
-                        <p class="pricing-audience">Для одного участника · бесплатный формат</p>
-                        <h3>Бесплатный полный курс</h3>
-                        <div class="price">0 ₽ <span>за весь курс</span></div>
+                        <p class="pricing-audience">Для одного или двоих · бесплатный формат</p>
+                        <h3>Полный курс: вы + близкий</h3>
+                        <div class="price">0 ₽ <span>за два места</span></div>
                         <ul class="pricing-list">
-                            <li>Все 8 часов программы и практики</li>
+                            <li>Два места на все 8 часов программы и практики</li>
                             <li>Работа на манекенах в малой группе</li>
-                            <li>Сертификат и памятка</li>
+                            <li>Сертификат и памятка для каждого</li>
                         </ul>
-                        <p class="pricing-commitment">Обучение, практика, сертификат и памятка входят бесплатно.</p>
-                        <button type="button" class="btn btn-register" data-plan-id="basic" data-price="0 ₽ за полный курс" aria-controls="registration-form">Записаться бесплатно</button>
+                        <p class="pricing-commitment">Спутник необязателен. Сейчас нужны только ваши контакты; имя второго участника уточним позже.</p>
+                        <button type="button" class="btn btn-register" data-plan-id="basic" data-price="0 ₽ за два места" aria-controls="registration-form">Записаться бесплатно</button>
                     </article>
                     <article class="pricing-card">
                         <p class="pricing-audience">Для одного участника · с материалами домой</p>
@@ -358,16 +368,19 @@
                                 </label>
                                 <button type="submit" class="btn form-submit">Отправить заявку на участие</button>
                                 <p class="form-reassurance" id="registration-reassurance">
-                                    Полный курс бесплатный. Если 15 августа не подходит, сохраним заявку
-                                    для ближайшей даты в Москве и свяжемся после её назначения.
+                                    Одна заявка включает вас и одного близкого; прийти одному тоже можно.
+                                    Сейчас нужны только ваши контакты — имя второго участника уточним
+                                    при подтверждении. Полный курс бесплатный. Если 15 августа не подходит,
+                                    сохраним заявку для ближайшей даты в Москве и свяжемся после её назначения.
                                 </p>
                             </form>
                             <p class="form-message ym-hide-content" id="form-message" aria-live="polite" data-amp-mask></p>
                         </div>
                         <div class="registration-support">
                             <p class="section-lead">
-                                Три коротких поля, около 30 секунд. Мы свяжемся, уточним подходящую
-                                дату и ответим на вопросы. Платить за полный курс не нужно.
+                                Три коротких поля, около 30 секунд. Для заявки на два места не нужно
+                                заполнять данные спутника сейчас: мы уточним их при подтверждении.
+                                Платить за полный курс не нужно.
                             </p>
                             <aside class="registration-value-contract" aria-labelledby="practice-card-title">
                                 <p class="value-contract-kicker">Результат сразу после заявки</p>
