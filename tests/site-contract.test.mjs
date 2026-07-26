@@ -104,10 +104,10 @@ test('candidate experiment marker matches the executable analytics contract', ()
     // Assert
     assert.deepEqual(markers, {
         contractExperimentId:
-            'rank1-current-cohort-cutoff-c31-20260725',
+            'rank1-next-step-certainty-c32-20260726',
         experimentMarker:
-            'rank1-current-cohort-cutoff-c31-20260725',
-        siteVersion: 'current-cohort-cutoff-v1-c31-20260725',
+            'rank1-next-step-certainty-c32-20260726',
+        siteVersion: 'next-step-certainty-v1-c32-20260726',
     });
 });
 

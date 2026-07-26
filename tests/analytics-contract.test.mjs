@@ -88,7 +88,7 @@ test('dispatcher emits one success event per provider with shared version contex
         assert.equal(properties.analytics_schema_version, '2.0.0');
         assert.equal(
             properties.experiment_id,
-            'rank1-current-cohort-cutoff-c31-20260725',
+            'rank1-next-step-certainty-c32-20260726',
         );
         assert.equal(properties.site_version, 'candidate-test');
         assert.equal(properties.email, undefined);

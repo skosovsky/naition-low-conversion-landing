@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="naition-site-version" content="current-cohort-cutoff-v1-c31-20260725">
-    <meta name="naition-experiment-id" content="rank1-current-cohort-cutoff-c31-20260725">
+    <meta name="naition-site-version" content="next-step-certainty-v1-c32-20260726">
+    <meta name="naition-experiment-id" content="rank1-next-step-certainty-c32-20260726">
     <title>Практический курс первой помощи за один день</title>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-699YWESPJ1"></script>
@@ -344,6 +344,14 @@
                             <p class="registration-selection" id="registration-selection" aria-live="polite">
                                 Выберите формат выше — здесь появятся цена и следующий шаг.
                             </p>
+                            <section class="registration-next-step" aria-labelledby="registration-next-step-title">
+                                <h3 id="registration-next-step-title">Что произойдёт после заявки</h3>
+                                <ol>
+                                    <li>Учебный центр «Спаси-Себя» подтвердит участие и ответит на вопросы.</li>
+                                    <li>В подтверждении пришлём точный адрес учебного класса и схему проезда.</li>
+                                    <li>Полный курс остаётся бесплатным: до подтверждения места платить не нужно.</li>
+                                </ol>
+                            </section>
                             <form class="form-grid form-grid-compact ym-disable-keys" id="registration-form" action="api/submit.php" method="post" aria-describedby="registration-reassurance" data-amp-mask>
                                 <label>
                                     Имя
